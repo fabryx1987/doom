@@ -61,7 +61,7 @@ and syntax checking in development mode and minification for production mode
 
 ## Get Started
 
-Before get started with doom-tasks, verify that you have installed node with npm
+Before get started with doom, verify that you have installed node with npm
 
 ```bash
 which node
@@ -80,10 +80,16 @@ And verify that gulp and bower are installed globally
 $ sudo npm install -g gulp bower
 ```
 
-Then you can install doom-tasks
+Then you can install doom through npm
 
 ```bash
-$ sudo npm install -g doom-tasks
+$ sudo npm install -g doom
+```
+
+Or through github (you must add the doom and doom/task path to your NODE_PATH)
+
+```bash
+$ git clone git@github.com:codezilla-it/doom.git
 ```
 
 ## Set Global Gulp
