@@ -63,7 +63,6 @@ var create_third_party_scripts = function () {
 module.exports = {
     delete_third_party_styles: delete_third_party_styles,
     delete_third_party_scripts: delete_third_party_scripts,
-    create_third_party: create_third_party,
     create_third_party_styles: create_third_party_styles,
     create_third_party_scripts: create_third_party_scripts
 };
