@@ -41,6 +41,6 @@ var create_fonts_app = function () {
 // ---------------------------------------------
 
 module.exports = {
-    delete_fonts_app: delete_fonts_app(),
-    create_fonts_app: create_fonts_app()
+    'delete_fonts_app': delete_fonts_app(),
+    'create_fonts_app': create_fonts_app()
 };

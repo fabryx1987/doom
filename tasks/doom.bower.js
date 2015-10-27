@@ -11,6 +11,10 @@ var $ = require('../lib/plugins');
 // Methods
 // ---------------------------------------------
 
+var bower_manager = function () {
+
+};
+
 var create_bower_stack = function (vendor_src, vendor_files) {
 
     var vendor_stack = [];
@@ -124,15 +128,15 @@ var vendor = function () {
 // ---------------------------------------------
 
 module.exports = {
-    delete_bower_styles: delete_bower_styles(),
-    delete_bower_scripts: delete_bower_scripts(),
-    delete_bower_fonts: delete_bower_fonts(),
-    delete_bower_images: delete_bower_images(),
-    delete_bower_install: delete_bower_install(),
-    create_bower_install: create_bower_install(),
-    create_bower_styles: create_bower_styles(),
-    create_bower_scripts: create_bower_scripts(),
-    create_bower_images: create_bower_images(),
-    create_bower_fonts: create_bower_fonts(),
-    vendor: vendor()
+    'delete_bower_styles': delete_bower_styles(),
+    'delete_bower_scripts': delete_bower_scripts(),
+    'delete_bower_fonts': delete_bower_fonts(),
+    'delete_bower_images': delete_bower_images(),
+    'delete_bower_install': delete_bower_install(),
+    'create_bower_install': create_bower_install(),
+    'create_bower_styles': create_bower_styles(),
+    'create_bower_scripts': create_bower_scripts(),
+    'create_bower_images': create_bower_images(),
+    'create_bower_fonts': create_bower_fonts(),
+    'vendor': vendor()
 };

@@ -105,11 +105,11 @@ var mail = function () {
 // ---------------------------------------------
 
 module.exports = {
-    delete_mail_templates: delete_mail_templates(),
-    delete_mail_styles: delete_mail_styles(),
-    mail_styles: mail_styles(),
-    mail_styles_inliner: mail_styles_inliner(),
-    mail_styles_inject: mail_styles_inject(),
-    mail_styles_convert: mail_styles_convert(),
-    mail: mail()
+    'delete_mail_templates': delete_mail_templates(),
+    'delete_mail_styles': delete_mail_styles(),
+    'mail_styles': mail_styles(),
+    'mail_styles_inliner': mail_styles_inliner(),
+    'mail_styles_inject': mail_styles_inject(),
+    'mail_styles_convert': mail_styles_convert(),
+    'mail': mail()
 };

@@ -30,6 +30,6 @@ var serve_templates = function () {
 // ---------------------------------------------
 
 module.exports = {
-    serve_browser_sync: serve_browser_sync(),
-    serve_templates: serve_templates()
+    'serve_browser_sync': serve_browser_sync(),
+    'serve_templates': serve_templates()
 };

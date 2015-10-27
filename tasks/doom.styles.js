@@ -74,8 +74,8 @@ var create_styles_gui = function () {
 // ---------------------------------------------
 
 module.exports = {
-    delete_styles_app: delete_styles_app(),
-    delete_styles_gui: delete_styles_gui(),
-    create_styles_app: create_styles_app(),
-    create_styles_gui: create_styles_gui()
+    'delete_styles_app': delete_styles_app(),
+    'delete_styles_gui': delete_styles_gui(),
+    'create_styles_app': create_styles_app(),
+    'create_styles_gui': create_styles_gui()
 };

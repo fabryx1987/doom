@@ -49,6 +49,6 @@ var create_scripts_app = function () {
 // ---------------------------------------------
 
 module.exports = {
-    delete_scripts_app: delete_scripts_app(),
-    create_scripts_app: create_scripts_app()
+    'delete_scripts_app': delete_scripts_app(),
+    'create_scripts_app': create_scripts_app()
 };

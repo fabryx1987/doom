@@ -9,73 +9,96 @@ var run_sequence = require('run-sequence');
 // ---------------------------------------------
 
 process.wraith = {
-    paths: {
-        halo: '/halo',
-        fulgor: '/fulgor'
+    'paths': {
+        'halo': '/halo',
+        'fulgor': '/fulgor'
     }
 };
 
 process.doom = {
-    gulp: gulp,
-    static: './static',
-    templates: './templates',
-    common: '/common',
-    dist: '/_dist',
-    proxy: 'local.dev:8000',
-    app: {
-        name: 'app',
-        styles: '/styles',
-        scripts: '/scripts',
-        images: '/images',
-        fonts: '/fonts'
+    'gulp': gulp,
+    'static': './static',
+    'templates': './templates',
+    'common': '/common',
+    'dist': '/_dist',
+    'proxy': 'local.dev:8000',
+    'app': {
+        'name': 'app',
+        'styles': '/styles',
+        'scripts': '/scripts',
+        'images': '/images',
+        'fonts': '/fonts'
     },
-    gui: {
-        name: 'gui',
-        styles: '/styles',
-        images: '/images'
+    'gui': {
+        'name': 'gui',
+        'styles': '/styles',
+        'images': '/images'
     },
-    mail: {
-        root: './mail_system',
-        dist: '/static/_dist',
-        styles: '/static/styles',
-        templates: {
-            origin: '/templates/origin',
-            inlined: '/templates/inlined'
+    'mail': {
+        'root': './mail_system',
+        'dist': '/static/_dist',
+        'styles': '/static/styles',
+        'templates': {
+            'origin': '/templates/origin',
+            'inlined': '/templates/inlined'
         }
     },
-    bower: {
-        name: 'vendor',
-        root: '/bower_components',
-        static: '/vendor',
-        order: [
+    'bower': {
+        'name': 'vendor',
+        'root': '/bower_components',
+        'static': '/vendor',
+        'install': {
+            'base': 'static/common/',
+            'path': 'vendor',
+            'sources': {
+                'jquery': [
+                    'bower_components/jquery/dist/jquery.min.js'
+                ],
+                'font-awesome': [
+                    'bower_components/font-awesome/css/font-awesome.css',
+                    'bower_components/font-awesome/fonts/*.**'
+                ],
+                'modernizr': [
+                    'bower_components/modernizr/modernizr.js'
+                ]
+            },
+            'ignore': [
+                'requirejs',
+                'gsap',
+                'bourbon',
+                'neat',
+                'sass-mediaqueries'
+            ]
+        },
+        'order': [
             'jquery/*.js',
             'modernizr/*.js',
             '**/*.js'
         ],
-        include_paths: [
+        'include_paths': [
             './bower_components/sass-mediaqueries',
             './bower_components/bourbon/app/assets/stylesheets',
             './bower_components/neat/app/assets/stylesheets'
         ],
-        fonts: [
+        'fonts': [
             '/font-awesome'
         ],
-        images: []
+        'images': []
     },
-    third_party: {
-        name: 'third_party',
-        static: '/third_party'
+    'third_party': {
+        'name': 'third_party',
+        'static': '/third_party'
     },
-    serve: {
-        styles: '/styles/**/*.{sass,scss}',
-        scripts: '/scripts/**/*.js',
-        markup: '/**/*.{html, phtml}',
-        mail: {
-            templates: '/templates/src/**/*.{html}',
-            styles: '/styles/sass/**/*.{sass,scss}'
+    'serve': {
+        'styles': '/styles/**/*.{sass,scss}',
+        'scripts': '/scripts/**/*.js',
+        'markup': '/**/*.{html, phtml}',
+        'mail': {
+            'templates': '/templates/src/**/*.{html}',
+            'styles': '/styles/sass/**/*.{sass,scss}'
         },
-        bower: '/**/*.*',
-        third_party: '/**/*.js'
+        'bower': '/**/*.*',
+        'third_party': '/**/*.js'
     }
 };
 
@@ -109,7 +132,7 @@ var serve = function () {
 // ---------------------------------------------
 
 module.exports = {
-    dev: dev(),
-    prod: prod(),
-    serve: serve()
+    'dev': dev(),
+    'prod': prod(),
+    'serve': serve()
 };

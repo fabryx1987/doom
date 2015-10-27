@@ -39,8 +39,8 @@ var flush_cache_bower = function () {
 // ---------------------------------------------
 
 module.exports = {
-    task_listing: task_listing(),
-    delete_dist: delete_dist(),
-    flush_cache_npm: flush_cache_npm(),
-    flush_cache_bower: flush_cache_bower()
+    'task_listing': task_listing(),
+    'delete_dist': delete_dist(),
+    'flush_cache_npm': flush_cache_npm(),
+    'flush_cache_bower': flush_cache_bower()
 };

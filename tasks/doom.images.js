@@ -41,6 +41,6 @@ var create_images_app = function () {
 // ---------------------------------------------
 
 module.exports = {
-    delete_images_app: delete_images_app(),
-    create_images_app: create_images_app()
+    'delete_images_app': delete_images_app(),
+    'create_images_app': create_images_app()
 };
