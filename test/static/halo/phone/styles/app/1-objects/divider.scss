@@ -1,0 +1,66 @@
+//------------------------------------
+//  $Divider
+//------------------------------------
+
+.o--divider {
+  margin: 15px 0;
+  width: 100%;
+  line-height: 1em;
+  clear: both;
+
+  .o--divider__child {
+    background: #E4EBF2;
+    width: 20%;
+    display: inline-block;
+    line-height: 1em;
+    margin: 0 auto;
+  }
+}
+
+.o--divider--thick-solid {
+  border-bottom: 6px solid #E4EBF2;
+}
+
+.o--divider--thick-solid-center {
+  text-align: center;
+
+  .o--divider__child {
+    height: 4px;
+  }
+}
+
+.o--divider--thin-solid {
+  border-bottom: 1px solid #E4EBF2;
+}
+
+.o--divider--thin-solid-center {
+  text-align: center;
+
+  .o--divider__child {
+    height: 1px;
+  }
+}
+
+.o--divider--single-dotted {
+  border-bottom: 1px dotted #E4EBF2;
+}
+
+.o--divider--double-dotted {
+  border-bottom: 2px dotted #E4EBF2;
+  border-top: 2px dotted #E4EBF2;
+  height: 6px;
+}
+
+.o--divider--single-dashed {
+  border-bottom: 1px dashed #E4EBF2;
+}
+
+.o--divider--double-dashed {
+  border-bottom: 2px dashed #E4EBF2;
+  border-top: 2px dashed #E4EBF2;
+  height: 6px;
+}
+
+ul > .o--divider:last-child {
+  display: none;
+}

@@ -1,0 +1,101 @@
+//------------------------------------
+//  $Visibility
+//------------------------------------
+
+.o--visible {
+    visibility: visible !important;
+}
+
+//  $Hide
+//------------------------------------
+
+.o--hide {
+  display: none !important;
+}
+
+@media screen and (max-width: 479px) {
+
+  .o--hide\@xs {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .o--hide\@sm, [class*='o--hide\@xs'].o--hide\@sm {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  .o--hide\@md, [class*='o--hide\@xs'].o--hide\@md, [class*='o--hide\@sm'].o--hide\@md, [class*='o--hide\@xs'][class*='o--hide\@sm'].o--hide\@md {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+
+  .o--hide\@lg, [class*='o--hide\@xs'].o--hide\@lg, [class*='o--hide\@sm'].o--hide\@lg, [class*='o--hide\@md'].o--hide\@lg {
+    display: none !important;
+  }
+
+  [class*='o--hide\@xs'] {
+    &[class*='o--hide\@sm'].o--hide\@lg, &[class*='o--hide\@md'].o--hide\@lg {
+      display: none !important;
+    }
+  }
+
+  [class*='o--hide\@sm'][class*='o--hide\@md'].o--hide\@lg, [class*='o--hide\@xs'][class*='o--hide\@sm'][class*='o--hide\@md'].o--hide\@lg {
+    display: none !important;
+  }
+}
+
+.o--show {
+  display: block !important;
+}
+
+//  $Ghost
+//------------------------------------
+
+.o--ghost {
+  visibility: hidden !important;
+}
+
+@media screen and (max-width: 479px) {
+
+  .o--ghost\@xs {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .o--ghost\@sm, [class*='o--ghost\@xs'].o--ghost\@sm {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  .o--ghost\@md, [class*='o--ghost\@xs'].o--ghost\@md, [class*='o--ghost\@sm'].o--ghost\@md, [class*='o--ghost\@xs'][class*='o--ghost\@sm'].o--ghost\@md {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+
+  .o--ghost\@lg, [class*='o--ghost\@xs'].o--ghost\@lg, [class*='o--ghost\@sm'].o--ghost\@lg, [class*='o--ghost\@md'].o--ghost\@lg {
+    display: none !important;
+  }
+
+  [class*='o--ghost\@xs'] {
+    &[class*='o--ghost\@sm'].o--ghost\@lg, &[class*='o--ghost\@md'].o--ghost\@lg {
+      display: none !important;
+    }
+  }
+
+  [class*='o--ghost\@sm'][class*='o--ghost\@md'].o--ghost\@lg, [class*='o--ghost\@xs'][class*='o--ghost\@sm'][class*='o--ghost\@md'].o--ghost\@lg {
+    display: none !important;
+  }
+}

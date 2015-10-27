@@ -1,0 +1,14 @@
+//------------------------------------
+//  $Breadcrumb
+//------------------------------------
+
+.c--breadcrumbs {
+  &.breadcrumb_top {
+    display: block !important;
+  }
+
+  #header_breadcrumbs ul li {
+    float: none !important;
+    text-indent: -9999em;
+  }
+}

@@ -1,0 +1,81 @@
+//------------------------------------
+//  $Footer
+//------------------------------------
+
+.p--footer {
+  position: relative;
+  width: 100%;
+  padding: 40px 0 90px 0;
+  background-color: #4E5464;
+  color: #fff;
+  font-size: .85em;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: #A8E8FF;
+      border-color: #646d83;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .p--footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.p--footer__nav {
+  ul {
+    list-style: none;
+    vertical-align: top;
+  }
+
+  li {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+.p--footer__copy {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  color: #fff;
+  background-color: #434856;
+  text-align: center;
+}
+
+.p--footer__nav {
+  text-align: center;
+}
+
+.p--footer .o--logo {
+  margin: 40px auto;
+}
+
+@media screen and (min-width: 768px) {
+  .p--footer__nav {
+    text-align: left;
+  }
+
+  .p--footer .o--logo {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .p--footer .o--logo {
+    margin: 0;
+  }
+}

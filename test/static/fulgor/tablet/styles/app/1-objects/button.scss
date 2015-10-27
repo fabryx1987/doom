@@ -1,0 +1,37 @@
+//------------------------------------
+//  $Buttons
+//------------------------------------
+
+.o--btn {
+  padding: 10px 20px;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+*.o--btn:hover {
+  cursor: pointer;
+}
+
+.o--btn--xs {
+  padding: 5px 12px;
+  font-size: 9px;
+  font-size: .9rem;
+}
+
+.o--btn--sm {
+  padding: 8px 16px;
+  font-size: 11px;
+  font-size: 1.1rem;
+}
+
+.o--btn--md {
+  padding: 12px 30px;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+.o--btn--lg {
+  padding: 15px 40px;
+  font-size: 14px;
+  font-size: 1.4rem;
+}

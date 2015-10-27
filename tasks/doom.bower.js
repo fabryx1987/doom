@@ -12,7 +12,7 @@ var $ = require('../lib/plugins');
 // ---------------------------------------------
 
 var bower_manager = function () {
-
+    //console.log($.path.join(doom.bower.root, 'bower.json'));
 };
 
 var create_bower_stack = function (vendor_src, vendor_files) {
@@ -128,6 +128,7 @@ var vendor = function () {
 // ---------------------------------------------
 
 module.exports = {
+    'bower_manager': bower_manager(),
     'delete_bower_styles': delete_bower_styles(),
     'delete_bower_scripts': delete_bower_scripts(),
     'delete_bower_fonts': delete_bower_fonts(),

@@ -12,6 +12,11 @@ process.wraith = {
     'paths': {
         'halo': '/halo',
         'fulgor': '/fulgor'
+    },
+    'context': {
+        'desktop': '/desktop',
+        'tablet': '/tablet',
+        'phone': '/phone'
     }
 };
 

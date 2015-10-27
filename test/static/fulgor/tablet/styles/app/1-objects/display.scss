@@ -1,0 +1,39 @@
+//------------------------------------
+// Display
+//------------------------------------
+
+.o--display {
+
+  .o--display--table {
+    display: table !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .o--display--table__cell {
+    display: table-cell !important;
+  }
+
+  .o--display--center {
+    display: block;
+    text-align: center;
+    word-spacing: -1px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em;
+      /* Adjusts for spacing */
+    }
+  }
+
+  .o--display--center__child {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

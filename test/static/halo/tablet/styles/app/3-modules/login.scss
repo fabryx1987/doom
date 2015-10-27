@@ -1,0 +1,40 @@
+//------------------------------------
+//  $Login
+//------------------------------------
+
+.m--login {
+  position: relative;
+  width: auto;
+  max-width: 700px;
+  padding: 0;
+  margin: auto;
+  border: none;
+  border-radius: .25em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06) !important;
+  background-color: #FFF;
+}
+
+.m--login__inner {
+  padding: 4% 2.5%;
+  border-radius: .25em;
+  background: #FCFCFD;
+
+  .o--form__row:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .m--login__inner {
+    padding: 2.5%;
+
+    .o--divider {
+      margin: 0;
+    }
+  }
+}
+
+.m--login__title {
+  padding: 10px 20px;
+  margin: 0;
+}
