@@ -33,11 +33,11 @@ process.doom = {
         images: '/images'
     },
     mail: {
-        dist: '/_dist',
-        root: '/mail_system',
-        styles: '/styles',
+        root: './mail_system',
+        dist: '/static/_dist',
+        styles: '/static/styles',
         templates: {
-            src: '/templates/src',
+            origin: '/templates/origin',
             inlined: '/templates/inlined'
         }
     },

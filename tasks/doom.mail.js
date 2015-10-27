@@ -4,38 +4,32 @@
 
 var doom = process.doom;
 var config = require('../lib/config');
-var utils = require('../lib/utils');
+var core = require('../lib/core');
 var errors = require('../lib/errors');
 var $ = require('../lib/plugins');
 
 // Functions
 // ---------------------------------------------
 
-var delete_mail_files = function (target, type) {
-    utils.set_wraith(utils.which_wraith);
-    utils.delete_files(target, type);
+var delete_mail_templates = function () {
+    $.gulp.task('mail:delete_templates', function () {
+        $.del(doom.mail.root + doom.mail.templates.inlined);
+    });
 };
 
-module.exports = function () {
-
-    // Tasks
-    // ---------------------------------------------
-
-    $.gulp.task('delete:mail_templates', function () {
-        delete_mail_files(doom.mail.templates.inlined);
+var delete_mail_styles = function () {
+    $.gulp.task('mail:delete_styles', function () {
+        core.delete_files(doom.mail.root + doom.mail.styles, doom.mail.dist);
     });
+};
 
-    $.gulp.task('delete:mail_styles', function () {
-        delete_mail_files(doom.mail.styles, doom.mail.dist);
-    });
-
+var mail_styles = function () {
     $.gulp.task('mail:styles', function () {
-        utils.set_wraith(utils.which_wraith);
-        return $.gulp.src(config.static + doom.mail.styles)
-            .pipe($.changed(config.static + doom.mail.root + doom.mail.dist))
+        return $.gulp.src(doom.mail.root + doom.mail.styles + '/*.{sass,scss}')
+            .pipe($.changed(doom.mail.root + doom.mail.dist))
             .pipe($.globbing({extensions: ['.scss', '.sass']}))
             .pipe($.sass({
-                sourceMap: doom.dist,
+                sourceMap: doom.mail.dist,
                 includePaths: doom.bower.include_paths,
                 indentedSyntax: true,
                 precision: 10,
@@ -43,17 +37,19 @@ module.exports = function () {
                 sourceMapContents: true
             }))
             .on('error', errors)
-            .pipe($.gulp.dest(config.static + doom.mail.root + doom.mail.dist))
+            .pipe($.gulp.dest(doom.mail.root + doom.mail.dist))
             .pipe($.gulp_if(!process.prod || !$.argv.prod, $.browser_sync.reload({stream: true})))
             .pipe($.size({showFiles: true}))
             .pipe($.gulp_if(!process.prod || !$.argv.prod, $.livereload()));
     });
+};
 
+var mail_styles_inliner = function () {
     $.gulp.task('mail:styles_inliner', function () {
-        utils.set_wraith(utils.which_wraith);
-        return $.gulp.src(config.static + doom.mail.templates.src)
+
+        return $.gulp.src(doom.mail.root + doom.mail.templates.origin + '/**/**/*.html')
             .pipe($.inject(
-                $.gulp.src(config.static + doom.mail.root + doom.mail.dist + '/base.css', {read: false}), {
+                $.gulp.src(doom.mail.root + doom.mail.dist + '/base.css', {read: false}), {
                     relative: true,
                     starttag: '<!-- inject:base:{{ext}} -->'
                 }
@@ -64,15 +60,16 @@ module.exports = function () {
                 removeStyleTags: true,
                 removeLinkTags: true
             }))
-            .pipe($.gulp.dest(config.static + doom.mail.templates.inlined))
+            .pipe($.gulp.dest(doom.mail.root + doom.mail.templates.inlined))
             .pipe($.size({showFiles: true}));
     });
+}
 
+var mail_styles_inject = function () {
     $.gulp.task('mail:styles_inject', function () {
-        utils.set_wraith(utils.which_wraith);
-        return $.gulp.src(config.static + doom.mail.templates.inlined + '/_extend/base.html')
+        return $.gulp.src(doom.mail.root + doom.mail.templates.inlined + '/_extend/base.html')
             .pipe($.inject(
-                $.gulp.src(config.static + doom.mail.root + doom.mail.dist + '/responsive.css', {read: true}), {
+                $.gulp.src(doom.mail.root + doom.mail.dist + '/responsive.css', {read: true}), {
                     relative: true,
                     starttag: '<!-- inject:responsive:{{ext}} -->',
                     transform: function (filePath, file) {
@@ -80,23 +77,36 @@ module.exports = function () {
                     }
                 }
             ))
-            .pipe($.gulp.dest(config.static + doom.mail.templates.inlined + '/_extend'))
+            .pipe($.gulp.dest(doom.mail.root + doom.mail.templates.inlined + '/_extend'))
             .pipe($.size({showFiles: true}));
     });
+};
 
+var mail_styles_convert = function () {
     $.gulp.task('mail:styles_convert', function () {
-        utils.set_wraith(utils.which_wraith);
-        return $.gulp.src(config.static + doom.mail.templates.inlined + '/_extend/base.html')
+        return $.gulp.src(doom.mail.root + doom.mail.templates.inlined + '/_extend/base.html')
             .pipe($.debug())
             .pipe($.replace(/<link.*?href="(.+?\.css)"[^>]*>/g, function (s, filename) {
                 var style = $.fs.readFileSync(filename, 'utf8');
                 return '<style>\n' + style + '\n</style>';
             }))
-            .pipe($.gulp.dest(config.static + doom.mail.templates.inlined + '/_extend'))
+            .pipe($.gulp.dest(doom.mail.root + doom.mail.templates.inlined + '/_extend'))
             .pipe($.size({showFiles: true}));
     });
+}
 
-    $.gulp.task('mail', ['delete:mail_styles', 'delete:mail_templates'], function () {
+var mail = function () {
+    $.gulp.task('mail', ['mail:delete_styles', 'mail:delete_templates'], function () {
         $.run_sequence('mail:styles', ['mail:styles_inliner'], ['mail:styles_inject'], ['mail:styles_convert']);
     });
+};
+
+module.exports = {
+    delete_mail_templates: delete_mail_templates(),
+    delete_mail_styles: delete_mail_styles(),
+    mail_styles: mail_styles(),
+    mail_styles_inliner: mail_styles_inliner(),
+    mail_styles_inject: mail_styles_inject(),
+    mail_styles_convert: mail_styles_convert(),
+    mail: mail()
 };

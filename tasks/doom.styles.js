@@ -11,8 +11,20 @@ var $ = require('../lib/plugins');
 // Functions
 // ---------------------------------------------
 
-var delete_styles = function (target, type) {
-    core.delete_files(target, type);
+var delete_styles_app = function () {
+    $.gulp.task('delete:styles_app', function () {
+        core.wraith_manager(function () {
+            core.delete_files(doom.app.name, '.{css,css.map}');
+        });
+    });
+};
+
+var delete_styles_gui = function () {
+    $.gulp.task('delete:styles_gui', function () {
+        core.wraith_manager(function () {
+            core.delete_files(doom.gui.name, '.{css,css.map}');
+        });
+    });
 };
 
 var create_styles = function (type) {
@@ -42,32 +54,32 @@ var create_styles = function (type) {
         .pipe($.gulp_if(!process.prod || !$.argv.prod, $.livereload()));
 };
 
-module.exports = function () {
-
-    // Tasks
-    // ---------------------------------------------
-
-    $.gulp.task('delete:styles_app', function () {
-        core.wraith_manager(function () {
-            delete_styles(doom.app.name, '.{css,css.map}')
-        });
-    });
-
-    $.gulp.task('delete:styles_gui', function () {
-        core.wraith_manager(function () {
-            delete_styles(doom.gui.name, '.{css,css.map}');
-        });
-    });
-
+var create_styles_app = function () {
     $.gulp.task('create:styles_app', function () {
         core.wraith_manager(function () {
             create_styles(doom.app);
         });
     });
+};
 
+var create_styles_gui = function () {
     $.gulp.task('create:styles_gui', function () {
         core.wraith_manager(function () {
             create_styles(doom.gui)
         });
     });
+}
+
+var styles = function () {
+    $.gulp.task('styles', ['delete:styles_app', 'delete:styles_gui'], function () {
+
+    });
+};
+
+module.exports = {
+    delete_styles_app: delete_styles_app(),
+    delete_styles_gui: delete_styles_gui(),
+    create_styles_app: create_styles_app(),
+    create_styles_gui: create_styles_gui(),
+    styles: styles
 };

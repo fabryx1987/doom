@@ -19,5 +19,5 @@ require('doom.scripts')();
 require('doom.images')();
 require('doom.fonts')();
 //require('doom.third_party')();
-//require('doom.mail')();
+require('doom.mail');
 //require('doom.serve')();
