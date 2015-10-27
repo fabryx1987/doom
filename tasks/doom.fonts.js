@@ -8,7 +8,7 @@ var core = require('../lib/core');
 var errors = require('../lib/errors');
 var $ = require('../lib/plugins');
 
-// Functions
+// Methods
 // ---------------------------------------------
 
 var delete_fonts = function (target, type) {
@@ -21,20 +21,26 @@ var create_fonts = function (target, type) {
         .pipe($.size({showFiles: true}));
 };
 
-module.exports = function () {
-
-    // Tasks
-    // ---------------------------------------------
-
+var delete_fonts_app = function () {
     $.gulp.task('delete:fonts_app', function () {
         core.wraith_manager(function () {
             delete_fonts('/*', '.{ttf,eot,woff,woff2}');
         });
     });
+};
 
+var create_fonts_app = function () {
     $.gulp.task('create:fonts_app', function () {
         core.wraith_manager(function () {
             create_fonts(doom.dist, doom.app);
         });
     });
+};
+
+// Module Api
+// ---------------------------------------------
+
+module.exports = {
+    delete_fonts_app: delete_fonts_app(),
+    create_fonts_app: create_fonts_app()
 };

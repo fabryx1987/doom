@@ -11,13 +11,13 @@
  */
 
 
-require('./doomfile')();
-require('doom.index')();
-require('doom.bower')();
-require('doom.styles')();
-require('doom.scripts')();
-require('doom.images')();
-require('doom.fonts')();
-//require('doom.third_party')();
+require('./doomfile');
+require('doom.index');
+require('doom.bower');
+require('doom.styles');
+require('doom.scripts');
+require('doom.images');
+require('doom.fonts');
+require('doom.third_party');
 require('doom.mail');
-//require('doom.serve')();
+require('doom.serve');

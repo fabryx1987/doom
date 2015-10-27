@@ -8,7 +8,7 @@ var core = require('../lib/core');
 var errors = require('../lib/errors');
 var $ = require('../lib/plugins');
 
-// Functions
+// Methods
 // ---------------------------------------------
 
 var delete_images = function (target, type) {
@@ -21,20 +21,26 @@ var create_images = function (target, type) {
         .pipe($.size({showFiles: true}));
 };
 
-module.exports = function () {
-
-    // Tasks
-    // ---------------------------------------------
-
+var delete_images_app = function () {
     $.gulp.task('delete:images_app', function () {
         core.wraith_manager(function () {
-            delete_images('/*','.{gif,jpg,png,svg}');
+            delete_images('/*', '.{gif,jpg,png,svg}');
         });
     });
+};
 
+var create_images_app = function () {
     $.gulp.task('create:images_app', function () {
         core.wraith_manager(function () {
             create_images(doom.dist, doom.app);
         });
     });
+};
+
+// Module Api
+// ---------------------------------------------
+
+module.exports = {
+    delete_images_app: delete_images_app(),
+    create_images_app: create_images_app()
 };

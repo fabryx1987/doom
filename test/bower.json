@@ -49,7 +49,7 @@
   },
   "overrides": {},
   "install": {
-    "base": "public/common/",
+    "base": "static/common/",
     "path": "vendor",
     "sources": {
       "jquery": [

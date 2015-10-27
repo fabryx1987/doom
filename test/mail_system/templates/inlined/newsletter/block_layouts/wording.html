@@ -1,0 +1,59 @@
+<!-- inject:base:css --><!-- endinject -->
+
+<!-- @start: wording
+            ///////////////////////////////////////////////////////////////////////////// -->
+
+            <table width="640" cellpadding="0" cellspacing="0" border="0" align="center" class="wording section devicewidth" style="border-collapse: collapse; border-left-color: #e2e3e5; border-left-style: solid; border-left-width: 1px; border-right-color: #e2e3e5; border-right-style: solid; border-right-width: 1px; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                <tr>
+                    <td width="100%" style="border-collapse: collapse;">
+                        <table bgcolor="#FFFFFF" width="640" align="center" cellspacing="0" cellpadding="0" border="0" class="devicewidth" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                            <tr>
+                                <td width="100%" height="25" style="border-collapse: collapse;">&nbsp;</td>
+                            </tr>
+                            {% if titolo %}
+                            <tr>
+                                <td class="wording__title wording__title--h1" style="border-collapse: collapse; color: #445566; font-family: helvetica, sans-serif; font-size: 24px; line-height: 30px; padding-left: 20px; padding-right: 20px; text-align: center;">
+                                    <strong>
+                                        {{ titolo }}
+                                    </strong>
+                                </td>
+                            </tr>
+                            {% endif %}
+                            <tr>
+                                <td width="100%" height="20" style="border-collapse: collapse;">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="wording__text devicewidthtext" style="background-color: #ffffff; border-collapse: collapse; color: #445566; font-family: helvetica, arial, sans-serif; font-size: 14px; line-height: 22px; padding-left: 20px; padding-right: 20px; text-align: left;">
+                                    {{ html|safe }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100%" height="20" style="border-collapse: collapse;">&nbsp;</td>
+                            </tr>
+                            {% if testo_pulsante %}
+                            <tr>
+                                <td align="center" style="border-collapse: collapse;">
+                                    <table width="250" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidthcta" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+
+                                        <tr>
+                                            <td class="btn btn--green" style="-moz-border-radius: 6px; -webkit-border-radius: 6px; background: #28BA0F; border-collapse: collapse; border-radius: 6px; font-size: 18px; height: 45px; line-height: 18px; text-align: center; width: 250px;">
+                                                {% if href %}
+                                                <a href="{{ href }}" target="_blank" class="btn__link" style="color: #ffffff; display: block; font-family: helvetica, sans-serif; font-size: 18px; line-height: 18px; padding: 12px 10px; text-decoration: none;">
+                                                {% endif %}
+                                                    <strong>{{ testo_pulsante }}</strong>
+                                                {% if href %}
+                                                </a>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </td>
+                            </tr>
+                            {% endif %}
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- @end: wording  -->

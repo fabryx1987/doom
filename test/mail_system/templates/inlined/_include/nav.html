@@ -1,0 +1,80 @@
+<!-- inject:base:css --><!-- endinject -->
+
+{% load catalogo email_url %}
+
+<!-- @start: nav
+///////////////////////////////////////////////////////////////////////////// -->
+
+<table width="640" cellpadding="0" cellspacing="0" border="0" align="center" class="nav section devicewidth" style="border-collapse: collapse; border-left-color: #e2e3e5; border-left-style: solid; border-left-width: 1px; border-right-color: #e2e3e5; border-right-style: solid; border-right-width: 1px; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+    <tr>
+        <td width="100%" style="border-collapse: collapse;">
+
+            <table bgcolor="#E6FBFF" width="640" align="center" cellspacing="0" cellpadding="0" border="0" class="nav__outer devicewidth" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                <tr>
+                    <td class="nav__item" height="41" valign="middle" style="border-collapse: collapse; font: 14px/1.3em 'Helvetica', 'Arial', sans-serif;">
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                            <tr>
+                                <td width="32" class="nav__item__icon" align="right" style="border-collapse: collapse; font: 12px/0px 'Helvetica', 'Arial', sans-serif;">
+                                    <a href="{% if cliente %}{% get_catalogo_email_url cliente k0='genere' v0='cane' %}{% else %}{{ settings.SITE_URL }}{% get_catalogo_url k0='genere' v0='cane' %}{% endif %}" style="color: #00adef; text-decoration: none;">
+                                        <img width="32" height="32" class="nav__item__icon" src="http://media.sailthru.com/3m9/1jz/7/2/5594fa7bcdfe0.png" alt="" style="-ms-interpolation-mode: bicubic; border: none; font: 12px/0px 'Helvetica', 'Arial', sans-serif; margin-right: 10px; outline: none; padding-bottom: 3px; text-decoration: none;">
+                                    </a>
+                                </td>
+                                <td class="nav__item__text" align="left" style="border-collapse: collapse; font: 14px/21px 'Helvetica', 'Arial', sans-serif;">
+                                    <a href="{% if cliente %}{% get_catalogo_email_url cliente k0='genere' v0='cane' %}{% else %}{{ settings.SITE_URL }}{% get_catalogo_url k0='genere' v0='cane' %}{% endif %}" style="color: #0F67AA; text-decoration: none;">
+                                        Cani
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="nav__item" height="41" valign="middle" style="border-collapse: collapse; font: 14px/1.3em 'Helvetica', 'Arial', sans-serif;">
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                            <tr>
+                                <td width="32" class="nav__item__icon" align="right" style="border-collapse: collapse; font: 12px/0px 'Helvetica', 'Arial', sans-serif;">
+                                    <a href="{% if cliente %}{% get_catalogo_email_url cliente k0='genere' v0='gatto' %}{% else %}{{ settings.SITE_URL }}{% get_catalogo_url k0='genere' v0='gatto' %}{% endif %}" style="color: #00adef; text-decoration: none;">
+                                        <img width="32" height="32" class="nav__item__icon" src="http://media.sailthru.com/3m9/1jz/7/2/5594fa752f632.png" alt="" style="-ms-interpolation-mode: bicubic; border: none; font: 12px/0px 'Helvetica', 'Arial', sans-serif; margin-right: 10px; outline: none; padding-bottom: 3px; text-decoration: none;">
+                                    </a>
+                                </td>
+                                <td class="nav__item__text" align="left" style="border-collapse: collapse; font: 14px/21px 'Helvetica', 'Arial', sans-serif;">
+                                    <a href="{% if cliente %}{% get_catalogo_email_url cliente k0='genere' v0='gatto' %}{% else %}{{ settings.SITE_URL }}{% get_catalogo_url k0='genere' v0='gatto' %}{% endif %}" style="color: #0F67AA; text-decoration: none;">
+                                        Gatti
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="nav__item" height="41" valign="middle" style="border-collapse: collapse; font: 14px/1.3em 'Helvetica', 'Arial', sans-serif;">
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                            <tr>
+                                <td width="32" class="nav__item__icon" align="right" style="border-collapse: collapse; font: 12px/0px 'Helvetica', 'Arial', sans-serif;">
+                                    <a href="{% if cliente %}{% get_email_url 'front_office:brands' cliente %}{% else %}{{ settings.SITE_URL }}{% url 'front_office:brands' %}{% endif %}" style="color: #00adef; text-decoration: none;">
+                                        <img width="32" height="32" class="nav__item__icon" src="http://media.sailthru.com/3m9/1jz/7/2/5594fa6d18ab6.png" alt="" style="-ms-interpolation-mode: bicubic; border: none; font: 12px/0px 'Helvetica', 'Arial', sans-serif; margin-right: 10px; outline: none; padding-bottom: 3px; text-decoration: none;">
+                                    </a>
+                                </td>
+                                <td class="nav__item__text" align="left" style="border-collapse: collapse; font: 14px/21px 'Helvetica', 'Arial', sans-serif;">
+                                    <a href="{% if cliente %}{% get_email_url 'front_office:brands' cliente %}{% else %}{{ settings.SITE_URL }}{% url 'front_office:brands' %}{% endif %}" style="color: #0F67AA; text-decoration: none;">
+                                        Brands
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td bgcolor="#3DC1DB" class="nav__item nav__item--accent" height="41" valign="middle" style="background-color: #36CEEC; border-collapse: collapse; color: #FFFFFF; font: 12px/1.2em 'Helvetica', 'Arial', sans-serif;">
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                            <tr>
+                                <td width="100%" class="nav__item__text" align="center" style="border-collapse: collapse; color: #FFFFFF; font: 12px/21px 'Arial', 'Helvetica', sans-serif; text-align: center; text-transform: uppercase;">
+                                    <a href="{% if cliente %}{% get_email_url 'flash_sale:render_flash_sale' cliente %}{% else %}{{ settings.SITE_URL }}{% url 'flash_sale:render_flash_sale' %}{% endif %}" style="color: #FFFFFF; text-decoration: none;">
+                                        <b style="color: #FFFFFF;">Offerte speciali</b>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+<!-- @end: nav  -->

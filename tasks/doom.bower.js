@@ -8,7 +8,7 @@ var core = require('../lib/core');
 var errors = require('../lib/errors');
 var $ = require('../lib/plugins');
 
-// Functions
+// Methods
 // ---------------------------------------------
 
 var create_bower_stack = function (vendor_src, vendor_files) {
@@ -28,95 +28,111 @@ var delete_bower_path = function (target) {
     core.delete_path(target);
 };
 
-var create_bower_styles = function (target, type) {
-    return $.gulp.src(config.static + doom.common + type.static + '/**/*.css')
-        .pipe($.order(doom.bower.order))
-        .pipe($.concat(doom.bower.name + '.css'))
-        .pipe($.replace(/([^'"(]*fonts\/|font\/|images\/|img\/)/g, './'))
-        .pipe($.minify({
-            keepBreaks: false,
-            keepSpecialComments: 0,
-            shorthandCompacting: true
-        }))
-        .pipe($.gulp.dest(doom.static + doom.common + target))
-        .on('error', errors)
-        .pipe($.size({showFiles: true}));
-};
-
-var create_bower_scripts = function (target, type) {
-    return $.gulp.src(config.static + doom.common + type.static + '/**/*.js')
-        .pipe($.order(doom.bower.order))
-        .pipe($.concat(doom.bower.name + '.js'))
-        .pipe($.uglify({mangle: true}))
-        .pipe($.gulp.dest(config.static + doom.common + target))
-        .on('error', errors)
-        .pipe($.size({showFiles: true}));
-};
-
-var create_bower_images = function (target, type) {
-    return $.gulp.src(create_bower_stack(type.images, '/*.{gif,png,jpg,jpeg,cur}'))
-        .pipe($.gulp.dest(config.static + doom.common + target))
-        .on('error', errors)
-        .pipe($.size({showFiles: true}));
-};
-
-var create_bower_fonts = function (target, type) {
-    return $.gulp.src(create_bower_stack(type.fonts, '/*.{ttf,eot,svg,woff,woff2}'))
-        .pipe($.gulp.dest(config.static + doom.common + target))
-        .on('error', errors)
-        .pipe($.size({showFiles: true}));
-};
-
-module.exports = function () {
-
-    // Tasks
-    // ---------------------------------------------
-
+var delete_bower_styles = function () {
     $.gulp.task('delete:bower_styles', function () {
         delete_bower_files(doom.bower.name, '.css');
     });
+};
 
+var delete_bower_scripts = function () {
     $.gulp.task('delete:bower_scripts', function () {
         delete_bower_files(doom.bower.name, '.js');
     });
+};
 
-    $.gulp.task('delete:bower_images', function () {
-        delete_bower_files('/*', '.{gif,png,jpg,jpeg,cur}');
-    });
-
+var delete_bower_fonts = function () {
     $.gulp.task('delete:bower_fonts', function () {
         delete_bower_files('/*', '.{ttf,eot,svg,woff,woff2}');
     });
+};
 
+var delete_bower_images = function () {
+    $.gulp.task('delete:bower_images', function () {
+        delete_bower_files('/*', '.{gif,png,jpg,jpeg,cur}');
+    });
+};
+
+var delete_bower_install = function () {
     $.gulp.task('delete:bower_install', function () {
         delete_bower_path(config.static + doom.bower.static);
     });
+};
 
+var create_bower_install = function () {
     $.gulp.task('create:bower_install', function () {
         $.run('bower-installer').exec();
     });
+};
 
+var create_bower_styles = function () {
     $.gulp.task('create:bower_styles', function () {
-        create_bower_styles(doom.dist, doom.bower);
+        return $.gulp.src(config.static + doom.common + doom.bower.static + '/**/*.css')
+            .pipe($.order(doom.bower.order))
+            .pipe($.concat(doom.bower.name + '.css'))
+            .pipe($.replace(/([^'"(]*fonts\/|font\/|images\/|img\/)/g, './'))
+            .pipe($.minify({
+                keepBreaks: false,
+                keepSpecialComments: 0,
+                shorthandCompacting: true
+            }))
+            .pipe($.gulp.dest(doom.static + doom.common + doom.dist))
+            .on('error', errors)
+            .pipe($.size({showFiles: true}));
     });
+};
 
+var create_bower_scripts = function () {
     $.gulp.task('create:bower_scripts', function () {
-        create_bower_scripts(doom.dist, doom.bower);
+        return $.gulp.src(config.static + doom.common + doom.bower.static + '/**/*.js')
+            .pipe($.order(doom.bower.order))
+            .pipe($.concat(doom.bower.name + '.js'))
+            .pipe($.uglify({mangle: true}))
+            .pipe($.gulp.dest(config.static + doom.common + doom.dist))
+            .on('error', errors)
+            .pipe($.size({showFiles: true}));
     });
+};
 
+var create_bower_images = function () {
     $.gulp.task('create:bower_images', function () {
-        create_bower_images(doom.dist, doom.bower);
+        return $.gulp.src(create_bower_stack(doom.bower.images, '/*.{gif,png,jpg,jpeg,cur}'))
+            .pipe($.gulp.dest(config.static + doom.common + doom.dist))
+            .on('error', errors)
+            .pipe($.size({showFiles: true}));
     });
+};
 
+var create_bower_fonts = function () {
     $.gulp.task('create:bower_fonts', function () {
-        create_bower_fonts(doom.dist, doom.bower);
+        return $.gulp.src(create_bower_stack(doom.bower.fonts, '/*.{ttf,eot,svg,woff,woff2}'))
+            .pipe($.gulp.dest(config.static + doom.common + doom.dist))
+            .on('error', errors)
+            .pipe($.size({showFiles: true}));
     });
+};
 
-    $.gulp.task('vendor', ['delete:bower_install'], function () {
+var vendor = function () {
+    $.gulp.task('vendor', ['delete:bower_install', 'create:bower_install'], function () {
         $.run_sequence(
-            ['create:bower_install'],
             ['delete:bower_styles', 'delete:bower_scripts'],
             ['create:bower_styles', 'create:bower_scripts', 'create:bower_fonts', 'create:bower_images']
         );
     });
+};
+
+// Module Api
+// ---------------------------------------------
+
+module.exports = {
+    delete_bower_styles: delete_bower_styles(),
+    delete_bower_scripts: delete_bower_scripts(),
+    delete_bower_fonts: delete_bower_fonts(),
+    delete_bower_images: delete_bower_images(),
+    delete_bower_install: delete_bower_install(),
+    create_bower_install: create_bower_install(),
+    create_bower_styles: create_bower_styles(),
+    create_bower_scripts: create_bower_scripts(),
+    create_bower_images: create_bower_images(),
+    create_bower_fonts: create_bower_fonts(),
+    vendor: vendor()
 };

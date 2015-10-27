@@ -8,7 +8,7 @@ var core = require('../lib/core');
 var errors = require('../lib/errors');
 var $ = require('../lib/plugins');
 
-// Functions
+// Methods
 // ---------------------------------------------
 
 var delete_mail_templates = function () {
@@ -100,6 +100,9 @@ var mail = function () {
         $.run_sequence('mail:styles', ['mail:styles_inliner'], ['mail:styles_inject'], ['mail:styles_convert']);
     });
 };
+
+// Module Api
+// ---------------------------------------------
 
 module.exports = {
     delete_mail_templates: delete_mail_templates(),

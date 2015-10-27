@@ -1,0 +1,106 @@
+<!-- inject:base:css --><!-- endinject -->
+
+{% extends 'mail_system/inlined/transactional/_extend/base.html' %}
+{% load email_url %}
+
+{% block content %}
+
+    <tr>
+        <td valign="middle" align="left">
+            <h1 class="wording__title wording__title--h1 no-mg-b" style="color: #445566; font-family: helvetica, sans-serif; font-size: 24px; line-height: 30px; margin-bottom: 0; padding-left: 20px; padding-right: 20px; text-align: center;">
+                <b>Spedizione Organizzata</b>
+            </h1>
+            <h3 class="wording__title wording__title--h3 no-mg-t" style="color: #445566; font-family: helvetica, sans-serif; font-size: 18px; font-weight: normal; line-height: 26px; margin-top: 0; padding-left: 20px; padding-right: 20px; text-align: center;">
+                <em>Cliente {{ cliente.email }}</em>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td valign="middle" align="center" class="wording__text devicewidthtext" style="background-color: #ffffff; color: #445566; font-family: helvetica, arial, sans-serif; font-size: 14px; line-height: 22px; padding-left: 20px; padding-right: 20px; text-align: left;">
+            Salve {{ cliente.nominativo }},
+            <br>
+            sono Roberta dal servizio clienti Bauzaar.
+
+            <br>
+            <br>
+
+            Le ricordiamo che in data {{ programma.get_data_prossimo_trigger|date:'d/m/Y' }}
+            le verranno addebitati {{ programma.importo_vendita }} €
+            relativi alla spedizione organizzata numero {{ programma.codice }}.
+            Al fine di rispettare la consegna nella data da lei richiesta le consigliamo di verificare che
+            l'importo possa essere addebitato sulla sua carta di credito (Visa, Mastercard, Maestro, American
+            Express).
+            <br>
+            <br>
+
+            A tal proposito le comunichiamo che a partire da questo momento ha 48 ore per poter eventualmente
+            modificare il contenuto aggiungendo o eliminando degli articoli della sua spedizione organizzata
+            numero {{ programma.codice }}.
+        </td>
+    </tr>
+    <tr>
+        <td width="100%" height="5" class="spacing" style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+    </tr>
+    <tr>
+        <td valign="middle" align="center" class="wording__text text-center devicewidthtext" style="background-color: #ffffff; color: #445566; font-family: helvetica, arial, sans-serif; font-size: 14px; line-height: 22px; padding-left: 20px; padding-right: 20px; text-align: center;">
+            <b>
+                Ecco qui il contenuto del suo programma:
+            </b>
+        </td>
+    </tr>
+    <tr>
+        <td width="100%" height="10" class="spacing" style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">&nbsp;</td>
+    </tr>
+    <tr>
+        <td valign="middle" align="center" class="wording__text wording__text--bordered text-center devicewidthtext bg-light-gray" style="background-color: #fbfbfc; border-bottom: 1px dashed #E2E3E5; border-top: 1px dashed #E2E3E5; color: #445566; font-family: helvetica, arial, sans-serif; font-size: 14px; line-height: 22px; padding: 12px; padding-left: 20px; padding-right: 20px; text-align: center;">
+            Ordine spedito a:
+            <br>
+            {% with programma.indirizzo_sped as indirizzo_sped %}
+                {% include 'mail_system/inlined/transactional/_include/spedito_a.html' %}
+            {% endwith %}
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" align="justify" class="wording__text nested-table-container devicewidthtext" style="background-color: #ffffff; color: #445566; font-family: helvetica, arial, sans-serif; font-size: 14px; line-height: 22px; padding-left: 0; padding-right: 0; text-align: left;">
+            <h3 class="wording__title wording__title--h3 text-color-orange" style="color: #FC531E; font-family: helvetica, sans-serif; font-size: 18px; font-weight: normal; line-height: 26px; padding-left: 20px; padding-right: 20px; text-align: center;">
+                <b>
+                    Contenuto dell’ordine
+                    programmato
+                </b>
+            </h3>
+            {% with programma as basket %}
+                {% with programma.rigacontenutoprogramma_set.all as righe_contenuto %}
+                    {% include 'mail_system/inlined/transactional/_include/contenuto_ordine.html' %}
+                {% endwith %}
+            {% endwith %}
+        </td>
+    </tr>
+    <tr>
+        <td width="100%" height="10" class="spacing" style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td valign="top" align="center" class="wording__text wording__text--small wording__text--ghost text-center devicewidthtext" style="background-color: #ffffff; color: #a2adba; font-family: helvetica, arial, sans-serif; font-size: 10px; line-height: 15px; padding-left: 20px; padding-right: 20px; text-align: center;">
+            Se vuoi disattivare il tuo programma contatta il nostro Servizio Clienti
+        </td>
+    </tr>
+    <tr>
+        <td width="100%" height="10" class="spacing" style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td valign="top" align="justify" class="wording__text devicewidthtext" style="background-color: #ffffff; color: #445566; font-family: helvetica, arial, sans-serif; font-size: 14px; line-height: 22px; padding-left: 20px; padding-right: 20px; text-align: left;">
+            Riceverai il link per la tracciabilità del tuo ordine nella mail di
+            <b>Conferma Spedizione</b>
+            .
+            Se il link non dovesse funzionare potrai richiedere il numero d'ordine scrivendo a
+            <a href="mailto:{{ settings.MAIL_SERVIZIO_CLIENTI }}" target="_blank" style="color: #00adef; text-decoration: none;">
+                servizioclienti@bauzaar.it
+            </a>
+            o contattandoci telefonicamente chiamando il numero
+            <b>(+39) {{ settings.CUSTOMER_CARE_PHONE }}</b>
+            .
+        </td>
+    </tr>
+
+{% endblock %}

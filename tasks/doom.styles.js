@@ -8,7 +8,7 @@ var core = require('../lib/core');
 var errors = require('../lib/errors');
 var $ = require('../lib/plugins');
 
-// Functions
+// Methods
 // ---------------------------------------------
 
 var delete_styles_app = function () {
@@ -70,16 +70,12 @@ var create_styles_gui = function () {
     });
 }
 
-var styles = function () {
-    $.gulp.task('styles', ['delete:styles_app', 'delete:styles_gui'], function () {
-
-    });
-};
+// Module Api
+// ---------------------------------------------
 
 module.exports = {
     delete_styles_app: delete_styles_app(),
     delete_styles_gui: delete_styles_gui(),
     create_styles_app: create_styles_app(),
-    create_styles_gui: create_styles_gui(),
-    styles: styles
+    create_styles_gui: create_styles_gui()
 };

@@ -4,31 +4,40 @@
 
 var doom = process.doom;
 var config = require('../lib/config');
-var utils = require('../lib/utils');
+var core = require('../lib/core');
 var errors = require('../lib/errors');
 var $ = require('../lib/plugins');
 
-// Functions
+// Methods
 // ---------------------------------------------
 
 var delete_third_party = function (target, type) {
     utils.delete_files(target, type);
 };
 
-module.exports = function () {
-
-    // Tasks
-    // ---------------------------------------------
-
-    $.gulp.task('delete:third_party_styles', ['set:wraith'], function () {
+var delete_third_party_styles = function () {
+    $.gulp.task('delete:third_party_styles', function () {
         delete_third_party(doom.third_party.name, '.css');
     });
+};
 
-    $.gulp.task('delete:third_party_scripts', ['set:wraith'], function () {
+var delete_third_party_scripts = function () {
+    $.gulp.task('delete:third_party_scripts', function () {
         delete_third_party(doom.third_party.name, '.js');
     });
+};
 
-    $.gulp.task('create:third_party_styles', ['set:wraith'], function () {
+var create_third_party = function (target, type, path) {
+    return $.gulp.src(config.static + type.static + path)
+        .pipe($.concat(type.name + '.css'))
+        .pipe($.minify())
+        .pipe($.gulp.dest(config.static + target))
+        .on('error', errors)
+        .pipe($.size({showFiles: true}));
+};
+
+var create_third_party_styles = function () {
+    $.gulp.task('create:third_party_styles', function () {
         return $.gulp.src(config.static + doom.third_party.static + '/**/*.css')
             .pipe($.concat(doom.third_party.name + '.css'))
             .pipe($.minify())
@@ -36,13 +45,26 @@ module.exports = function () {
             .on('error', errors)
             .pipe($.size({showFiles: true}));
     });
+};
 
-    $.gulp.task('create:third_party_scripts', ['set:wraith'], function () {
+var create_third_party_scripts = function () {
+    $.gulp.task('create:third_party_scripts', function () {
         return $.gulp.src(config.static + doom.third_party.static + '/**/*.js')
-            .pipe($.concat(doom.third_party.name + '.js'))
+            .pipe($.concat(doom.third_party.name + '.css'))
             .pipe($.uglify({mangle: true}))
             .pipe($.gulp.dest(config.static + doom.dist))
             .on('error', errors)
             .pipe($.size({showFiles: true}));
     });
+};
+
+// Module Api
+// ---------------------------------------------
+
+module.exports = {
+    delete_third_party_styles: delete_third_party_styles,
+    delete_third_party_scripts: delete_third_party_scripts,
+    create_third_party: create_third_party,
+    create_third_party_styles: create_third_party_styles,
+    create_third_party_scripts: create_third_party_scripts
 };
