@@ -9,6 +9,7 @@ and syntax checking in development mode and minification for production mode
 - Watch changed files with [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) integration
 - Mail inliner 
 - Project tasks customization
+- Wraith manager
 
 ```bash
  gulp ls
