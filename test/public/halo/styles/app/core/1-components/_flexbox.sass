@@ -1,0 +1,23 @@
+.flexbox
+  +display(flex)
+  +justify-content(space-around)
+  +align-items(flex-start)
+  +align-content(flex-start)
+
+.flexbox--horizontal
+  +flex-direction(row)
+  +flex-wrap(nowrap)
+
+.flexbox--vertical
+  +flex-direction(column)
+  +flex-wrap(wrap)
+
+.flexbox__child
+  +margin(0 auto)
+
+.flexbox__child--first
+  +order(1)
+
+.flexbox__child--last
+  +order(2)
+

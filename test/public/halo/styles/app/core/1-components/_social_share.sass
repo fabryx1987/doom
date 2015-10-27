@@ -1,0 +1,42 @@
+.share
+  height: 46px
+  color: #fff
+  margin: auto
+  padding: 0
+  list-style: none
+
+
+  .share__child
+    position: relative
+    display: block
+    width: 60px
+    float: left
+    font-size: 20px
+    cursor: pointer
+    margin: 0
+    padding: 10px 0
+    text-align: center
+    z-index: 2
+    transition: all .3s ease
+    color: #fff
+
+    +max-screen($mq-xxs)
+      width: 55px
+
+.share__child--pinterest
+  background: #c5282f
+
+.share__child--twitter
+  background: #6cdfea
+
+.share__child--facebook
+  background: #3b5998
+
+.share__child--google-plus
+  background: #e34429
+
+.share__child--envelope
+  background: #42c5b0
+  a
+    display: block
+    color: #fff

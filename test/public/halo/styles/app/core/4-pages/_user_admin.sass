@@ -1,0 +1,31 @@
++min-screen($mq-0)
+  .right-container
+    +max-screen($mq-md)
+      +margin(20px null null null)
+
++min-screen($mq-md)
+  .left-container
+    +margin(15px null null null)
+    +padding(null null null 0)
+
+  .right-container
+    +padding(null 0 null null)
+
++max-screen($mq-md)
+  .left-container, .right-container
+    +padding(0)
+
+.js-save-date
+  display: none
+  float: left
+  margin-left: 6px !important
+
+#view-order
+  .basket
+    width: 100%
+    +margin(0)
+
+#fds-body
+  .basket
+    width: 100%
+    +margin(0)

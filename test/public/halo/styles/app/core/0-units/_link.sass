@@ -1,0 +1,67 @@
+// --------------------------------------------------------------------------
+// Link
+// --------------------------------------------------------------------------
+
+link
+  display: inline !important
+
+a
+  text-decoration: none
+  cursor: pointer
+  transition: all 0.1s ease-in
+
+  &:hover, &:active, &:focus
+    outline: 0
+    text-decoration: none
+
+  &:before, &:after
+    transition: all 0.1s ease-in
+
+  img
+    border: none
+
+.links
+  +margin(0)
+
+  li
+    display: inline
+    +padding(null 10px null null)
+
+  .icon
+    +margin(null 3px null null)
+
+  &.with-separator
+    li
+      &:before
+        content: '|'
+        color: #cecece
+        +margin(0 5px)
+
+      &:first-child
+        +padding(null null null 0)
+
+        &:before
+          display: none
+          content: ''
+          +margin(0)
+
+      &.hide
+        & + li:before
+          content: '' !important
+          +margin(0)
+
+    .icon-text
+      border-radius: 3px
+      border: 1px solid
+      line-height: 1.8em
+      +padding(0 3px)
+      +position(relative, -1px null null null)
+      +margin(null 3px null null)
+
+
+.simple-links li
+  list-style: none
+
+  a
+    border-bottom: 1px solid
+    +padding(null null 1px null)

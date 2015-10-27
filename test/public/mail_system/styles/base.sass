@@ -1,0 +1,496 @@
+/*------------------------------------*\
+ *    basic tags
+ *\*------------------------------------
+/* Force Outlook to provide a "view in browser" menu link.
+
+body
+  width: 100% !important
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+  margin: 0
+  padding: 0
+
+a
+  color: #00adef
+  text-decoration: none
+
+img
+  outline: none
+  text-decoration: none
+  border: none
+  -ms-interpolation-mode: bicubic
+
+a img
+  border: none
+
+p
+  margin: 0px 0px !important
+
+table
+  border-collapse: collapse
+  mso-table-lspace: -1pt
+  mso-table-rspace: -1pt
+  margin: 0 auto
+  /* fix yahoo mail bug
+
+  th
+    border-collapse: collapse
+    line-height: 1.2
+
+  td
+    border-collapse: collapse
+
+.nested-table-container
+  padding-left: 0 !important
+  padding-right: 0 !important
+
+.nested-table
+  tr
+    border-bottom: 1px dashed #eeeeee
+
+  th
+    height: 40px
+    font-size: 11px
+    background-color: #fbfbfc
+    padding: 5px
+
+  td
+    font-size: 11px
+    padding: 5px
+
+  img
+    max-height: 70px !important
+    width: auto !important
+
+/*------------------------------------*\
+ *    common classes
+ *\*------------------------------------
+
+.spacing
+  font-size: 1px
+  line-height: 1px
+  mso-line-height-rule: exactly
+
+.wrap
+  margin: 0 auto
+
+.section
+  border-left-style: solid
+  border-left-width: 1px
+  border-left-color: #e2e3e5
+  border-right-style: solid
+  border-right-width: 1px
+  border-right-color: #e2e3e5
+
+.btn
+  width: 250px
+  height: 45px
+  font-size: 18px
+  line-height: 18px
+  text-align: center
+  -moz-border-radius: 6px
+  -webkit-border-radius: 6px
+  border-radius: 6px
+  &.btn--blue
+    background: #405C9A
+  &.btn--cyan
+    background: #00adef
+  &.btn--green
+    background: #28BA0F
+  &.btn--orange
+    background: #FC7B1E
+  &.btn--square
+    border-radius: 0px !important
+
+.btn__link
+  font-family: helvetica, sans-serif
+  font-size: 18px
+  line-height: 18px
+  color: #ffffff
+  text-decoration: none
+  display: block
+  padding: 12px 10px
+
+/*------------------------------------*\
+ *    .text selectors & modifiers
+ *\*------------------------------------
+
+.text-color--light-gray
+  color: #8D9298 !important
+
+.text-color--gray
+  color: #8B939B !important
+
+.text-color--orange
+  color: #FC7B1E !important
+
+.text-size--xs
+  font-size: 9px !important
+
+.text-decoration--underline
+  text-decoration: underline !important
+
+/*------------------------------------*\
+ *    utils & hacks
+ *\*------------------------------------
+
+.pd-l-10
+  padding-left: 10px
+
+.block
+  display: block
+
+/* Client-specific Styles
+
+#outlook a
+  padding: 0
+
+/* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design.
+
+.ExternalClass
+  width: 100%
+  line-height: 100%
+  p, span, font, td, div
+    line-height: 100%
+
+/* Force Hotmail to display emails at full width
+
+/* Force Hotmail to display normal line spacing.
+
+#backgroundTable
+  margin: 0
+  padding: 0
+  width: 100% !important
+  line-height: 100% !important
+
+.image_fix
+  display: block
+
+.mobilelink a
+  text-decoration: none
+  color: #9da2a8
+
+.text-left
+  text-align: left !important
+
+.text-right
+  text-align: right !important
+
+.text-center
+  text-align: center !important
+
+.text-justify
+  text-align: justify !important
+
+.no-line-height
+  line-height: 0 !important
+
+.no-mg
+  margin: 0 !important
+
+.no-mg-t
+  margin-top: 0 !important
+
+.no-mg-b
+  margin-bottom: 0 !important
+
+.no-mg-l
+  margin-left: 0 !important
+
+.no-mg-r
+  margin-right: 0 !important
+
+.no-pd
+  padding: 0 !important
+
+.no-pd-t
+  padding-top: 0 !important
+
+.no-pd-b
+  padding-bottom: 0 !important
+
+.no-pd-l
+  padding-left: 0 !important
+
+.no-pd-r
+  padding-right: 0 !important
+
+.mg-b-xs
+  margin-bottom: 4px !important
+
+.mg-b-sm
+  margin-bottom: 8px !important
+
+.mg-b-md
+  margin-bottom: 12px !important
+
+.mg-b-lg
+  margin-bottom: 16px !important
+
+.mg-b-xl
+  margin-bottom: 24px !important
+
+.text-bold
+  font-weight: bold !important
+
+.text-underline-dashed
+  border-bottom: 1px dashed #dddddd
+
+.text-color-orange
+  color: #FC531E !important
+
+.text-color-gray
+  color: #9DA2A8 !important
+
+.bg-light-gray
+  background-color: #fbfbfc !important
+
+.hide
+  display: none !important
+
+.ghost
+  visibility: hidden !important
+
+/*------------------------------------*\
+ *    .preheader
+ *\*------------------------------------
+
+.preheader
+  font-size: 1px
+  display: none !important
+
+/*------------------------------------*\
+ *    .topbar
+ *\*------------------------------------
+
+.topbar__inner
+  color: #99aabb
+  font: normal 11px Arial, sans-serif
+  text-align: center
+
+/*------------------------------------*\
+ *    .header
+ *\*------------------------------------
+
+.header__starter-image
+  line-height: 5px
+
+.header__logo
+  font: 25px/1.0em 'Helvetica', 'Arial', sans-serif
+  text-align: left
+  line-height: 28px
+  td
+    padding-top: 3px
+
+.header__usp
+  font: 11px/1.3em 'Helvetica', 'Arial', sans-serif
+  letter-spacing: 1px
+  a, b
+    color: #656565
+    display: block
+
+.header__usp__icon
+  font: 11px/1.3em 'Helvetica', 'Arial', sans-serif
+  img
+    margin-right: 10px
+    font: 11px/15px 'Helvetica', 'Arial', sans-serif
+
+.header__usp__text
+  color: #656565
+  letter-spacing: 0px
+  font: 11px/15px 'Helvetica', 'Arial', sans-serif
+
+/*------------------------------------*\
+ *    .nav
+ *\*------------------------------------
+
+.nav__item
+  font: 14px/1.3em 'Helvetica', 'Arial', sans-serif
+
+.nav__item--accent
+  background-color: #36CEEC
+  color: #FFFFFF
+  font: 12px/1.2em 'Helvetica', 'Arial', sans-serif
+
+.nav__divider
+  line-height: 0
+  background-color: #FFFFFF
+
+.nav__item__icon
+  font: 12px/0px 'Helvetica', 'Arial', sans-serif
+
+  img
+    margin-right: 10px
+    padding-bottom: 3px
+
+.nav__item__text
+  font: 14px/21px 'Helvetica', 'Arial', sans-serif
+
+.nav__item--accent .nav__item__text
+  color: #FFFFFF
+  text-align: center
+  text-transform: uppercase
+  font: 12px/21px 'Arial', 'Helvetica', sans-serif
+
+.nav__item__text
+  a, b
+    color: #0F67AA
+
+.nav__item--accent .nav__item__text
+  a, b
+    color: #FFFFFF
+
+/*------------------------------------*\
+ *    .footer
+ *\*------------------------------------
+
+.footer__outer
+  border-bottom-style: solid
+  border-bottom-width: 3px
+  border-bottom-color: #d8d8da
+
+.footer__inner__text
+  background-color: #ffffff
+  color: #445566
+  font-family: helvetica, arial, sans-serif
+  font-size: 13px
+  line-height: 22px
+  padding-left: 20px
+  padding-right: 20px
+
+/*------------------------------------*\
+ *    .postfooter
+ *\*------------------------------------
+
+.postfooter__outer
+  font-family: helvetica, sans-serif
+  font-size: 13px
+  line-height: 12px
+  color: #334455
+
+.postfooter__inner
+  text-align: center
+  color: #9da2a8
+  font-size: 10px
+  line-height: 12px
+  padding-bottom: 5px
+
+.postfooter__inner__social
+  margin: 0 5px
+
+/*------------------------------------*\
+ *    .wording
+ *\*------------------------------------
+
+.wording__title
+  font-family: helvetica, sans-serif
+  text-align: center
+  color: #445566
+  padding-right: 20px
+  padding-left: 20px
+
+.wording__title--h1
+  font-size: 24px
+  line-height: 30px
+
+.wording__title--h3
+  font-size: 18px
+  line-height: 26px
+  font-weight: normal
+
+.wording__text
+  background-color: #ffffff
+  color: #445566
+  font-family: helvetica, arial, sans-serif
+  font-size: 14px
+  line-height: 22px
+  padding-left: 20px
+  padding-right: 20px
+  text-align: left
+
+.wording__text--bordered
+  padding: 12px
+  border-top: 1px dashed #E2E3E5
+  border-bottom: 1px dashed #E2E3E5
+
+.wording__text--small
+  font-size: 10px
+  line-height: 15px
+
+.wording__text--light-gray
+  color: #828C96
+
+.wording__text--ghost
+  color: #a2adba
+
+/*------------------------------------*\
+ *    .product
+ *\*------------------------------------
+
+.product__title
+  font-family: Helvetica, arial, sans-serif
+  font-size: 14px
+  text-align: center
+  line-height: 18px
+  color: #00adef
+  text-decoration: none
+  font-weight: bold
+
+.product__text
+  font-family: Helvetica, arial, sans-serif
+  font-size: 13px
+  color: #334455
+  text-align: left
+  line-height: 19px
+  padding-bottom: 19px
+
+.product__pricing
+  border-collapse: collapse
+  color: #FC531E
+  text-align: left
+  font: normal 12px/16px 'Helvetica', 'Arial', sans-serif
+
+.product__pricing__old
+  text-decoration: line-through
+  color: #222
+  font-weight: normal
+
+.product__btn
+  height: 32px
+  font-size: 13px
+  line-height: 16px
+
+  .btn__link
+    font-size: 13px
+    line-height: 16px
+    padding: 5px 10px
+
+/*------------------------------------*\
+ *    .blocks
+ *\*------------------------------------
+
+.blocks-1
+  .product__btn
+    width: 250px
+    height: 38px
+    font-size: 16px
+    line-height: 18px
+
+  .btn__link
+    padding: 12px 10px
+    font-size: 16px
+    line-height: 18px
+
+  .product__title,
+  .product__text,
+  .product__pricing
+    text-align: center !important
+
+.blocks-2 .product__btn
+  width: 188px
+
+.blocks-3 .product__btn
+  width: 135px
+
+.blocks-4 .product__btn
+  width: 125px

@@ -1,0 +1,92 @@
+.switch-bar
+  .page-header
+    border-bottom-color: transparent
+    color: #fff
+    background-color: #6AC053
+
+    &.page-header--cyan
+      background-color: #00AECE
+
+      .switch-toggle
+        background: #1190A7 !important
+        border: 1px solid #0D8196 !important
+        box-shadow: inset 0 0 0 1px #1392A9 !important
+
+        &.js-active
+          border-color: #0D8196 !important
+          box-shadow: inset 0 0 0 13px #1392A9 !important
+
+      .timer__value
+        background-color: #0D8196
+
+    +max-screen($mq-md)
+      +padding(8px null null null)
+
+      .title
+        float: none
+        text-align: center
+        +margin(8px null)
+
+      .right-header
+        display: block
+        float: none
+        text-align: center
+        +margin(0)
+
+        +max-screen($mq-sm)
+          .category-toggle
+            float: none
+            text-align: center
+            +margin(0 auto 8px auto)
+
+          +max-screen($mq-xs)
+            .timer
+              +margin(0 auto 8px auto)
+
+              .timer__value
+                display: block
+                text-align: center
+
+  .breadcrumb
+    +margin(5px 0 0 0)
+
+  .title
+    float: left
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 16px
+    color: #fff
+    +margin(0 0 0 20px)
+
+  .category-toggle
+    float: left
+    width: 230px
+    +padding(0 30px)
+
+    .icon
+      &.icon--dog
+        color: $color_aluminium !important
+
+    .category-toggle__btn
+      +position(relative, 4px 0 0 0)
+      +padding(0 10px)
+
+      .fa
+        font-size: 25px
+
+    .category-toggle__label
+      +position(relative, -5px 0 0 0)
+      +padding(0 10px)
+
+  .timer
+    display: inline-block
+    font-size: 16px
+    color: $color_white
+    +margin(2px 0 0 0)
+
+    .timer__value
+      color: #fff !important
+      background-color: #42842B
+      +border-radius(4px)
+      +padding(3px 10px)
+      +margin(0 0 0 10px)

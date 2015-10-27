@@ -1,0 +1,1016 @@
+b, strong
+  color: #445565
+
+a, .fake-link
+  color: $color_summer_sky
+
+  &:focus
+    color: $color_summer_sky
+
+  &:hover, &:active
+    color: $color_tree_poppy
+
+.color a
+  color: #fff
+
+hr
+  border-color: #eee
+
+dt
+  color: #474C52
+
+body
+  color: $body_color
+  background-color: $body_bg
+  overflow-x: hidden
+
+h1, h2, h3, h4, h5, h6
+  color: #575C63
+
+a h1, a h2, a h3, a h4, a h5, a h6
+  color: #3CB6E3
+
+  &:focus
+    color: $color_summer_sky
+
+  &:hover
+    color: $color_tree_poppy
+
+#footer
+  h1, h2, h3, h4, h5, h6
+    color: #fff
+
+.error-404
+  color: #0068C0
+
+.bz-docs
+  .example
+    border-color: #e5e5e5 #eee #eee
+
+  .grid [class*="col-"]
+    background-color: #eee
+    background-color: rgba(165, 170, 197, 0.15)
+    border-color: #ddd
+    border-color: rgba(194, 203, 221, 0.2)
+
++min-screen($mq-sm)
+  .bz-docs .example
+    background-color: #fff
+    border-color: #ddd
+
++selection(true)
+  background-color: #ff9c1a
+  color: $color_white
+
+#header
+  .header-top
+    +selection(true)
+    background-color: $header_top_bg
+    color: $header_top_color
+
+#nav
+  +selection(true)
+    background: #B5F0FF
+    color: $color_astral
+
+#footer
+  +selection(true)
+    background: #3C6097
+    color: $color_white
+
+#copy
+  +selection(true)
+    background: #9797A6
+    color: $color_white
+
+.icon.fill
+  background: #ddd
+  color: #fff
+
+.table-bordered
+  background: #fff
+  border-color: #e8e8e8
+
+  th
+    border-right-color: #e8e8e8
+    border-bottom-color: #e8e8e8
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th
+  background-color: #FCFBFB
+
+.table.sleek td
+  border-right-color: #e8e8e8
+  border-bottom-color: #e8e8e8
+
+.table-bordered thead th
+  background: -webkit-linear-gradient(to top, white, #fcfcfc)
+  background: -moz-linear-gradient(to top, white, #fcfcfc)
+  background: -o-linear-gradient(to top, white, #fcfcfc)
+  background: -ms-linear-gradient(to top, white, #fcfcfc)
+  background: linear-gradient(to bottom, white, #fcfcfc)
+
+input, .form-control
+  border-color: #d3d3d4
+  background: #ffffff
+  background: -moz-linear-gradient(to top, white 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(49%, #fefefe), color-stop(49%, #fdfdfd), color-stop(100%, #fefefe))
+  background: -webkit-linear-gradient(to top, white 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%)
+  background: -o-linear-gradient(to top, white 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%)
+  background: -ms-linear-gradient(to top, white 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%)
+  background: linear-gradient(to bottom, white 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#fefefe', GradientType=0)
+
+input:focus, .form-control:focus
+  border-color: $color_tree_poppy !important
+
+input:-moz-placeholder, textarea:-moz-placeholder, input::-moz-placeholder, textarea::-moz-placeholder, input:-ms-input-placeholder, textarea:-ms-input-placeholder, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+  color: #BCBCC4
+
+::-webkit-input-placeholder, .form-control::-webkit-input-placeholder
+  color: #9797A6
+
+&:-moz-placeholder, .form-control:-moz-placeholder
+  color: #9797A6
+
+::-moz-placeholder, .form-control::-moz-placeholder
+  color: #9797A6
+
+&:-ms-input-placeholder, .form-control:-ms-input-placeholder
+  color: #9797A6
+
+.has-success
+  .help-block, .control-label, .radio, .checkbox, .radio-inline, .checkbox-inline
+    color: #7ABE37
+
+  .form-control
+    border-color: #7ABE37
+
+  .form-control-feedback
+    color: #7ABE37
+
+  .form-control:focus
+    border-color: #7ABE37
+
+.has-warning
+  .help-block, .control-label, .radio, .checkbox, .radio-inline, .checkbox-inline
+    color: #E49E26
+  .form-control
+    border-color: #E49E26
+  .form-control-feedback
+    color: #E49E26
+  .form-control:focus
+    border-color: #DD9B25
+
+.has-error
+  .help-block, .control-label, .radio, .checkbox, .radio-inline, .checkbox-inline
+    color: #E44357
+
+  .form-control
+    border-color: #E44357
+
+  .form-control-feedback
+    color: #E44357
+
+  .form-control:focus
+    border-color: #E44357
+
+*[class*="badge"]
+  color: #FFFFFF
+
+  &.double:before
+    border-color: #f5f8fb
+
+  a
+    color: #fff
+    border-color: #faa
+
+.blockquote
+  border-color: #f1f1f1
+  background: #fff
+
+.panel
+  background: #FCFCFD
+  border-color: rgba(210, 215, 226, 0.49) rgba(187, 197, 214, 0.48) rgba(183, 192, 205, 0.38)
+
+  > .head
+    color: #7f889e
+    background-color: #F8FAFC
+    background-image: linear-gradient(to bottom, #f8fafc, #eef0f3)
+    background-image: -webkit-linear-gradient(to top, #f8fafc, #eef0f3)
+    background-image: -moz-linear-gradient(to top, #f8fafc, #eef0f3)
+    background-image: -o-linear-gradient(to top, #f8fafc, #eef0f3)
+    background-image: linear-gradient(to bottom, #f8fafc, #eef0f3)
+    border-bottom-color: #E2E2E3
+
+  &.flat
+    background: -webkit-linear-gradient(to top, white, #fafafa)
+    background: -moz-linear-gradient(to top, white, #fafafa)
+    background: -o-linear-gradient(to top, white, #fafafa)
+    background: -ms-linear-gradient(to top, white, #fafafa)
+    background: linear-gradient(to bottom, white, #fafafa)
+    border-color: #EAE8E7
+
+    > .head
+      background-color: #FDFDFD
+      border-color: #EAE8E7
+
+    .panel-body
+      background-color: $color_white
+      border-color: #EAE8E7
+
+  > .head
+    color: #575C63
+
+    .icon
+      color: #C7C4BD
+
+code, pre
+  color: #232527
+
+code
+  border-color: #dde4e9
+  background-color: #F6F6F6
+  color: #232527
+
+pre
+  border-color: #dde4e9
+  background-color: #FCFCFC
+
+  code
+    background-color: transparent
+    color: inherit
+
+.btn
+  color: #fff
+
+  &:hover, &:active, &:focus
+    color: #fff
+
+.btn-default
+  background-color: transparent
+  border-color: #aeaeae
+  color: #979797
+
+.btn-primary
+  color: #ffffff
+  text-shadow: 0
+  background-color: #0074cc
+  background-image: -ms-linear-gradient(to top, #0088cc, #0055cc)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0055cc))
+  background-image: -webkit-linear-gradient(to top, #0088cc, #0055cc)
+  background-image: -o-linear-gradient(to top, #0088cc, #0055cc)
+  background-image: -moz-linear-gradient(to top, #0088cc, #0055cc)
+  background-image: linear-gradient(to top, #0088cc, #0055cc)
+  background-repeat: repeat-x
+  border-color: #05c #05c #003580
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+
+  &:hover, &:active, &.active, &.disabled, &[disabled]
+    color: #ffffff
+    background-color: #05c
+    background-image: none
+
+  &:active, &.active
+    background-color: #003399 \9
+
+.btn-warning
+  color: #ffffff
+  background: #faa732 repeat-x
+  border-color: #f89406 #f89406 #ad6704
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+
+  &:hover, &:active, &.active, &.disabled, &[disabled]
+    color: #ffffff
+    background-color: #f89406
+    *background-color: #df8505
+
+  &:active, &.active
+    background-color: #c67605 \9
+
+.btn-danger
+  color: #ffffff
+  background: #da4f49 repeat-x
+
+  &.border
+    border-color: #bd362f #bd362f #802420
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+
+  &:hover, &:active, &.active, &.disabled, &[disabled]
+    color: #ffffff
+    background-color: #bd362f
+    *background-color: #a9302a
+
+  &:active, &.active
+    background-color: #942a25 \9
+
+.btn-success
+  color: #ffffff
+  background: #5bb75b repeat-x
+  border-color: transparent
+
+  &.border
+    border-color: #51a351 #51a351 #387038
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+
+  &:hover, &:active, &.active, &.disabled, &[disabled]
+    color: #ffffff
+    background-color: #51a351
+    *background-color: #499249
+
+  &:active, &.active
+    background-color: #408140 \9
+
+.btn-info
+  color: #ffffff
+  background: #49afcd repeat-x
+  border-color: transparent
+
+  &.border
+    border-color: #2f96b4 #2f96b4 #1f6377
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+
+  &:hover, &:active, &.active, &.disabled, &[disabled]
+    color: #ffffff
+    background-color: #2f96b4
+    *background-color: #2a85a0
+
+  &:active, &.active
+    background-color: #24748c \9
+
+.btn-inverse
+  color: #ffffff
+  background-color: #363636
+  *background-color: #222222
+
+  &.border
+    border-color: #222222 #222222 #000000
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+
+  &:hover, &:active, &.active, &.disabled, &[disabled]
+    color: #ffffff
+    background-color: #222222
+    *background-color: #151515
+
+  &:active, &.active
+    background-color: #080808 \9
+
+.rating
+  .stars
+    &
+      [class*="star"]
+        color: $color_anti_flash_light
+
+    &.colored
+      [class*="star"]
+        color: $color_macaroni_and_cheese
+
+.price
+  color: $color_tree_poppy
+
+  .price__old
+    color: #999
+
+.title .icon
+  color: #C7C4BD
+
+.mfp-preloader
+  background-color: #FF9854
+
+.alert.snow
+  background-color: #FFFDFB
+  color: #FF633C !important
+
+  .close, strong
+    color: #FF633C
+
+.alert.yellow
+  background-color: #FFFDEC
+  border: none
+  color: #a78843 !important
+
+  .close
+    color: #C1A438
+
+  strong
+    color: #9B7930
+
+.alert.orange
+  .close, strong
+    color: #FF633C
+
+.alert.brown
+  background-color: #A6958A
+  color: #FFF
+
+  .close, strong
+    color: #FFF
+
+.dropdown-mega .promo .title
+  border-bottom-color: #333
+
+.pagination
+  > li
+    > a, span
+      border-color: transparent !important
+      color: #33B5E5
+      font-weight: lighter
+      font-family: $secondary-font
+
+    &:hover
+      > a
+        background-color: #efefef
+        color: #FF8F00 !important
+
+  > .active
+    > a,
+    > span,
+    > a:hover, span:hover,
+    > a:focus, span:focus
+      background-color: #F8FDFF
+      border-color: #33B5E5 !important
+      color: #33B5E5
+      text-decoration: none !important
+
+.breadcrumb
+  color: #1C7CCE
+
+  > .active
+    color: #B98C71
+
+  > li + li:before
+    color: #EFE6D1
+
+.popup-content
+  background: #fff
+  border-color: #dedede
+
+.mfp-figure
+  figure
+    background: #FFF
+
+  &:after
+    background-color: transparent
+
+//.mfp-bg
+//  background: $color_arsenic !important
+
+.mfp-bottom-bar
+  background: #eee
+
+.mfp-arrow-right
+  &:before, .mfp-b
+    border-left-color: transparent !important
+
+.mfp-arrow-left
+  &:before, .mfp-b
+    border-right-color: transparent !important
+
+.mfp-close-btn-in
+  .popup-content button
+    &.mfp-close, &.mfp-arrow
+      color: #cecece
+
+    &.mfp-close:hover, &.mfp-arrow:hover
+      color: #FF7E00
+
+  .mfp-close
+    color: #fff
+
+.mfp-title
+  +rem(font-size, 1.5rem)
+  color: #555
+
+  a
+    color: $color_dark_orange
+
+.accordion
+  .panel-group
+    .panel-heading
+      + .panel-collapse
+        .panel-body
+          border-color: #E8E8E8
+          background: #fff
+
+      .panel-title
+        > a
+          color: #999
+          background-color: #fefefe
+          border-color: #e8e8e8
+
+          &[aria-expanded='true']
+            color: $color_orange
+            border-top-color: $color_orange
+
+          &:not([aria-expanded='true']):hover
+            background-color: #FCFCFC
+
+        .collapsed
+          background: #fefefe
+          border-top-color: #e8e8e8
+
+.tabs
+  .nav-tabs
+    border-color: #EAE8E7
+
+    li a
+      color: #999
+
+      & h1, & h2, & h3, & h4, & h5, & h6
+        color: #999
+
+      &:hover
+        background-color: #fcfcfc
+
+    > li.active > a
+      border-color: $color_dark_orange #EAE8E7 transparent #EAE8E7
+      color: #555
+
+      & h1, & h2, & h3, & h4, & h5, & h6
+        color: #555
+
+      &:hover, &:focus
+        border-color: $color_dark_orange #EAE8E7 transparent #EAE8E7
+        color: #555
+
+        & h1, & h2, & h3, & h4, & h5, & h6
+          color: #555
+
+  .tab-content
+    border-color: #EAE8E7
+
++max-screen($mq-sm)
+  .nav-tabs > li
+    &:last-child > a
+      border-bottom-color: #E8E8E8 !important
+
+    > a
+      border-color: #E8E8E8
+
+    &.active > a
+      background: #fcfcfd
+      border-color: #E8E8E8
+
+      &:hover, &:focus
+        background: #fcfcfd
+        border-color: #E8E8E8
+
+.owl-theme .owl-controls .owl-nav [class*=owl-]
+  color: #FFF
+  background: #A09A90
+
+  &:hover
+    background: #FF9854
+    color: #fff
+
+.owl-carousel .owl-controls .owl-dots .owl-dot span
+  background: #fff
+  border-color: #2b96f1
+
+.cta
+  border-color: #e9e9e9
+
+.callout
+  border-color: #eee
+
+.callout-danger
+  border-left-color: #d9534f
+
+.callout-warning
+  border-left-color: #f0ad4e
+
+.callout-info
+  border-left-color: #5bc0de
+
+.callout-success
+  border-left-color: #78C10F
+
+.chosen-container-single .chosen-single
+  border-color: #d0d0d0
+  background: #ffffff
+  background: -moz-linear-gradient(to top, white 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(49%, #fefefe), color-stop(49%, #fdfdfd), color-stop(100%, #fefefe))
+  background: -webkit-linear-gradient(to top, white 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%)
+  background: -o-linear-gradient(to top, white 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%)
+  background: -ms-linear-gradient(to top, white 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%)
+  background: linear-gradient(to bottom, white 0%, #fefefe 49%, #fdfdfd 49%, #fefefe 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#fefefe', GradientType=0)
+  color: #444
+
+// Catalog + Filter
+.homepage-head__catalog,
+.widget--list,
+.filter--catalog
+  .title
+    color: #FF5301
+
+  a
+    color: #781321
+
+    &:hover
+      color: $color_sorbus
+
+  &.filter
+    .filter-label
+      background-color: $color_romance
+      border-color: $color_concrete
+      color: $color_zorba
+
+    .title
+      color: #ff6d35
+
+    .level-1 > li > .title
+      background-color: #FDFCFC
+
+    .level-2 .title
+      color: #817066
+
+    .list li:hover:before
+      color: $color_dark_orange
+
+    .icon-remove li:before, li.icon-remove:before, .icon-remove li:hover:before, li.icon-remove li:hover:before
+      color: red !important
+
+    .list
+      &.icon-remove li:hover a, li.icon-remove li:hover a
+        color: red !important
+
+.search
+  [class^="icon-"], .fa-search
+    color: #B3B6C3
+
+.page-header, .breadcrumb
+  border-bottom-color: $color_concrete
+  color: $color_mako
+  background-color: $color_white
+
+.page-header
+  .right-header
+    color: #6F6357
+
+#header
+  background-color: $header_bg
+
+  .header-top
+    color: #FFF
+
+    &.color
+      background-color: $color_tree_poppy
+      border-bottom-color: $color_tree_poppy
+      border-top: 1px solid #EC8031
+
+    a
+      color: #FFF
+
+    .user-menu a:hover
+      background-color: $color_tree_poppy
+
+    .dropdown-menu
+      border-color: $color_tree_poppy
+
+      a
+        color: #9797A6
+
+        &:hover
+          color: $color_tree_poppy
+          background: #FDFDFC
+
+.usp
+  background-color: $color_white
+
+  li
+    .text
+      color: #7C7C88
+
+.cart
+  .text
+    color: #FF7E00
+
+  .qty
+    background-color: #FF7E00
+
+    *
+      color: #fff
+      font-weight: bold !important
+      letter-spacing: -1px
+
+  .cart-cta hr
+    border-color: #FFF
+
+  .dropdown-menu
+    border-color: $color-tree-poppy
+    box-shadow: -1px 0 0 rgba(24, 24, 20, 0.03), 1px 0 0 rgba(24, 24, 20, 0.02)
+
+    li
+      .details
+        color: #9797A6
+
+      .title
+        color: #4F97CA
+
+      .qty
+        color: #9797A6
+        background-color: transparent
+
+      a:hover
+        color: $color_dark_orange
+        background: #FDFDFC none
+
+        .title
+          border-bottom-color: $color_outrangeous_orange
+          color: #FF6912
+
++min-screen($mq-md)
+  .cart:hover
+    .cart-cta
+      border-color: $color-tree-poppy $color-tree-poppy transparent
+      box-shadow: -1px 0 0 rgba(24, 24, 20, 0.03), 1px 0 0 rgba(24, 24, 20, 0.02)
+
+#nav
+  .primary-nav > li > a
+    color: #0064AE
+
+  ul > li
+    color: #3A7FB3
+
+    &.active a
+      color: #0868AC
+
+  .primary-nav
+    > li
+      > a:hover
+        color: #0868AC
+
+  .secondary-nav
+    &.dropdown-menu
+      .sub-title
+        a
+          color: $color_summer_sky
+
+.dropdown-mega .dropdown-menu
+  background: #FFF
+  border-color: #C9F4FF
+
+.dropdown.mega li a
+  background: transparent
+
+.dropdown-mega
+  .dropdown-menu
+    a:hover:not(.btn)
+      background: transparent
+
+    .title
+      color: #4F97CA
+
+  .category
+    text-transform: uppercase
+    font-weight: bold
+
+  .promo .btn
+    color: #FFF !important
+
+  .dropdown-menu .promo .title
+    border-color: #EEE
+
+  .promo
+    .title span
+      color: #21577F
+
+    .price, .discount
+      color: #999
+      border-color: #EEE
+
+    .price__new
+      color: #D01C24
+
++min-screen($mq-xxs)
+  #nav .level-2 ul > li > a
+    border-bottom-color: #D2F2FD
+
+#main
+  background-color: $main_bg
+
+#testimonials
+  background-color: #FCFCFC
+  border-bottom: none
+  color: #696969
+
+  .text
+    color: #4c5f71
+
+    .name
+      color: $color_tree_poppy
+
+#footer
+  background: $footer_bg
+  color: #FFF
+
+  .icon
+    color: #fff
+
+  a
+    color: #DADADA
+
+    &:hover
+      color: $color_macaroni_and_cheese
+
+  .top
+    background: $footer_top_bg
+    border-bottom: none
+
+    .text
+      a
+        color: #fff
+
+      .title
+        color: #DADADA
+
+#social .circle-line
+  border-color: rgba(255, 255, 255, 0.4)
+
+#partners
+  background-color: $footer_partners_bg
+
+  .title > *
+    color: #B4B7BD
+
+#copy
+  background-color: $footer_copy_bg
+  color: #DADADA
+
+.shops
+  .shop
+    border-color: #FFDAA9
+
+    .head
+      border-bottom-color: #FFFCF9
+      background-color: #FFFCF7
+
+      a
+        color: $color_dark_gray
+
+        &:hover
+          color: $color_tree_poppy
+
+      .title
+        color: $color_dark_orange
+
+.shop
+  .btn
+    color: #fff
+
+    &:hover
+      color: #fff
+
+  .title
+    color: #A35827
+
+.products-list
+  .title
+    color: $color_macaroni_and_cheese
+
+    .color
+      color: $color_tree_poppy
+
+  .item
+    .title
+      color: $color_summer_sky
+
+      a
+        color: $color_summer_sky
+
+        &:hover
+          color: $color_tree_poppy
+
+  .price
+    color: #999
+
+    .text-color
+      color: $color_tree_poppy
+
+.section-title
+  color: $color_tree_poppy
+
+  .color
+    color: #6C7075
+
+.reviews
+  .title
+    color: $color_dark_orange
+
+  .posted .title, .reviewer .title
+    color: #6C7075
+
+.products
+  .product
+    &:nth-child(even)
+      background-color: $color_white
+
+    &:nth-child(odd)
+      background-color: $color_white
+
+  .product__features
+    .title
+      color: #52565C
+
+  .head
+    .title
+      color: #445565
+
+.gallery
+  .owl-theme
+    .owl-controls
+      .owl-nav
+        [class*=owl-]
+          color: #C4CBD1
+
+          &:hover
+            color: #fa9507
+            background-color: transparent
+            opacity: 1
+
+.gallery__preview
+  background-color: #FFF
+
+.gallery__thumbs
+  a
+    border-color: #F9F8F6
+
+    &:hover
+      border-color: #EBDFD2
+
+    &.active
+      border-color: $color_dark_orange
+
+.links.text-dark
+  color: #6C6666
+
+  a
+    color: #445565
+
+  &.text-cyan a
+    color: $color_summer_sky
+
+  a:hover
+    color: $color_tree_poppy
+
+    .icon-text
+      border-color: $color_tree_poppy
+
+  .icon-text
+    border-color: #52565C
+
+.delivery
+  border-color: $color_concrete
+
+  .title
+    background-color: $color_romance
+    color: $color_zorba
+
+  .item
+    .icon
+      color: #C7C4BD
+
+    .text
+      h5
+        color: #63605E
+
+      p
+        .color
+          color: $color_outrangeous_orange
+
+// Deals
+
+.deals
+  .wrap
+    border-color: transparent
+
+  .item
+    .desc
+      color: #4c5f71
+
+    .price
+      color: #8D8D8D
+
+      .price__old
+        color: #8D8D8D
+
+.product-compare
+  .plus
+    color: #aaa
+
+.simple-links li
+  a
+    border-bottom-color: #33B5E5
+
+.comments
+  .answers
+    border-left-color: #FDFBF8
+
+  .answer
+    border-bottom-color: #FDFBF8
+
+.list
+  &.text-dark
+    a
+      color: #555A6B

@@ -1,0 +1,193 @@
+// --------------------------------------------------------------------------
+// Size
+// --------------------------------------------------------------------------
+
+.full
+  width: 100%
+
+.half
+  width: 50%
+
+.one-third
+  width: 33.33333333%
+
+.two-third
+  width: 66.66666667%
+
+.col-1
+  width: 8.33333333%
+
+.col-2
+  width: 16.66666667%
+
+.col-3
+  width: 25%
+
+.col-4
+  width: 33.33333333%
+
+.col-5
+  width: 41.66666667%
+
+.col-6
+  width: 50%
+
+.col-7
+  width: 58.33333333%
+
+.col-8
+  width: 66.66666667%
+
+.col-9
+  width: 75%
+
+.col-10
+  width: 83.33333333%
+
+.col-11
+  width: 91.66666667%
+
+.col-12
+  width: 100%
+
+// Five columns
+
+.col-xs-15, .col-sm-15, .col-md-15, .col-lg-15
+  position: relative
+  min-height: 1px
+  +padding(null 15px)
+
+.col-xs-15
+  width: 20%
+  float: left
+
++min-screen($mq-sm)
+  .col-sm-15
+    width: 20%
+    float: left
+
++min-screen($mq-md)
+  .col-md-15
+    width: 20%
+    float: left
+
++min-screen($mq-lg)
+  .col-lg-15
+    width: 20%
+    float: left
+
+// centered columns styles
+
+.row-centered
+  text-align: center
+
+.col-centered
+  display: inline-block
+  float: none
+  // reset the text-align
+  text-align: left
+  // inline-block space fix
+  +margin(null -4px null null)
+
+// Col override width
+
+.col-fixed-xxs
+  width: 320px
+
+.col-min-xxs
+  min-width: 320px
+
+.col-max-xxs
+  max-width: 320px
+
+.col-fixed-xs
+  width: 480px
+
+.col-min-xs
+  min-width: 480px
+
+.col-max-xs
+  max-width: 480px
+
+.col-fixed-sm
+  width: 768px
+
+.col-min-sm
+  min-width: 768px
+
+.col-max-sm
+  max-width: 768px
+
+.col-fixed-md
+  width: 992px
+
+.col-min-md
+  min-width: 992px
+
+.col-max-md
+  max-width: 992px
+
+.col-fixed-lg
+  width: 1200px
+
+.col-min-lg
+  min-width: 1200px
+
+.col-max-lg
+  max-width: 1200px
+
+// Equal columns height
+
+.equal-height
+  +equal_height($equal_height_target)
+
+.container-xs-height
+  +display_table("&")
+
+.row-xs-height
+  +display_table_row("&")
+
+.col-xs-height
+  +display_table_cell("&")
+
++min-screen($mq-sm)
+  .container-sm-height
+    +display_table("&")
+  .row-sm-height
+    +display_table_row("&")
+  .col-sm-height
+    +display_table_cell("&")
+
++min-screen($mq-md)
+  .container-md-height
+    +display_table("&")
+  .row-md-height
+    +display_table_row("&")
+  .col-md-height
+    +display_table_cell("&")
+
++min-screen($mq-lg)
+  .container-lg-height
+    +display_table("&")
+  .row-lg-height
+    +display_table_row("&")
+  .col-lg-height
+    +display_table_cell("&")
+
+// vertical alignment styles
+
+.col-top
+  vertical-align: top
+
+.col-middle
+  vertical-align: middle
+
+.col-bottom
+  vertical-align: bottom
+
+// min sizes
+
+.min-height
+  min-height: 1px
+.min-width
+  min-width: 1px

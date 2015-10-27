@@ -1,0 +1,46 @@
++min-screen($mq-0)
+  .cart
+    .dropdown-menu .scroll-wrapper,
+    .cart-preview
+      max-height: $cart_preview_height
+
+  .disable-scroll
+    overflow-y: hidden
+    overflow-x: hidden
+
+  .scrollbar-dynamic
+    > .scroll-element
+      .scroll-bar
+        background-color: #918D87
+      &.scroll-y
+        &,
+        & .scroll-element_outer,
+        & .scroll-bar
+          min-width: 6px
+          width: 6px
+          border-radius: 10px
+
+          .scroll-element_track
+            background: rgba(0,0,0,.1)
+
+        &:hover .scroll-element_outer,
+        &.scroll-draggable .scroll-element_outer
+          min-width: 6px
+          width: 10px
+          border-radius: 0
+
+      &.scroll-draggable .scroll-element_outer .scroll-bar,
+      &:hover .scroll-element_outer .scroll-bar,
+      & .scroll-element_size
+        border-radius: 0
+
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+
++min-screen($mq-md)
+
++min-screen($mq-lg)

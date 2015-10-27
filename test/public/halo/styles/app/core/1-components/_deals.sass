@@ -1,0 +1,80 @@
+// Deals
+.deals-container
+  +padding(0 5px)
+
+.deals
+  .panel-body
+    +padding(5px 15px)
+
+  .item
+    float: left
+    border: 1px solid #F5F5F5
+    border-radius: 2px
+    background: #fdfdfd
+    +margin(0.5%)
+
+    .wrap
+      +margin(null null 0 null)
+
+    +last_item(3n)
+
+    .image
+      display: block
+      text-align: center
+      height: 145px
+      +padding(0)
+      +margin(4px null null null)
+
+    [class*="badge"]
+      top: 0
+      right: 0
+
+    .image
+      img
+        display: inline-block
+        width: 100%
+    .content
+      +padding(10px 10px 0 10px)
+
+    .title
+      +margin(null null 3px null)
+
+    .desc
+      +margin(0 0 10px 0)
+
+    .price
+      +margin(5px 0)
+
+      .price__old
+        +margin(5px 0)
+
+    .btn
+      +margin(5px 0 15px 0)
+
+  +max-screen($mq-xs)
+    .item
+      width: 100% !important
+      float: none
+      +margin(0)
+
+  +min-max-screen($mq-sm, $mq-md)
+    .item
+      width: 100% !important
+      float: none
+      +margin(0)
+
+
++min-screen($mq-0)
+  .deals
+    .wrap
+      +margin(0)
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+
++min-screen($mq-md)
+
++min-screen($mq-lg)

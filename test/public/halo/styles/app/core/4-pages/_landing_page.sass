@@ -1,0 +1,152 @@
+.landing-page
+  .teaser
+    position: relative
+    +margin(0)
+    +padding(0)
+
+    img
+      width: 100%
+
+  .coupon-code
+    .color
+      color: $color_burnt_orange
+
+  .panel
+    +margin(20px)
+    +padding(0 null)
+
+  .panel-body
+    background-color: $color_white
+
+  .disclaimer
+    +padding(0)
+    +margin(0)
+
+.landing-page-closed
+  #header
+    border-top: 3px solid #e2e2e2
+    border-bottom: none
+
+    .logo
+      +min-screen($mq-0)
+        float: none
+        background-size: 85%
+        +position(static, 0 auto null auto)
+        +margin(6px auto)
+
+  #background-holder
+    +clearfix
+
+    +min-screen($mq-0)
+      height: $lading_page_background_height_mq_0
+      max-height: $lading_page_background_height_mq_0
+      min-height: $lading_page_background_height_mq_0
+
+    +min-screen($mq-sm)
+      height: $lading_page_background_height_mq_sm
+      max-height: $lading_page_background_height_mq_sm
+      min-height: $lading_page_background_height_mq_sm
+
+    width: 100%
+    background-position: top center
+    background-repeat: no-repeat
+
+    +min-screen($mq-lg)
+      background-size: cover
+
+    .cta
+      border-color: transparent !important
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, .25)
+
+      +min-screen($mq-md)
+        +padding(null 120px)
+
+      > *
+        color: #fff
+
+      .title
+        font-size: 50px
+        line-height: 1.2
+        +margin(25px 0 15px 0)
+
+        +max-screen($mq-sm)
+          +margin(10px 0)
+          font-size: 38px
+
+      .sub-title
+        font-size: 22px
+        font-weight: 700
+        line-height: 1.5
+        +margin(10px 0)
+
+        +max-screen($mq-sm)
+          font-size: 18px
+
+    .form-container
+      background: rgba(255,255,255,.85)
+      border-radius: 4px
+      max-width: 600px
+      text-align: left
+      +margin(20px auto 15px auto)
+      +padding(20px 40px)
+
+      +min-screen($mq-0)
+        width: 90%
+        +padding(20px)
+        +margin(0 auto 15px)
+
+      +min-screen($mq-xs)
+        width: 80%
+
+      +min-screen($mq-lg)
+        width: 60%
+
+      .facebook-btn
+        +max-screen($mq-sm)
+          margin: 0 auto
+          padding-right: 0
+          font-size: 14px !important
+
+      #registration-box
+        display: block
+        +margin(15px null null null)
+
+      #login-box
+        display: block
+        +margin(15px null null null)
+
+    #user_registered
+      display: none
+
+  #main
+    background-color: #F9F9F9
+    +padding(40px null 30px null)
+
+    .usp-item
+      display: block
+      text-align: center
+      color: #63636E
+
+      +min-screen($mq-md)
+        +margin(-100px null null null)
+
+      .icon
+        font-size: 55px
+        border: 1px solid #E8E8E8
+        border-radius: 50%
+        width: 125px
+        height: 125px
+        line-height: 125px
+        background: #fff
+
+        > *
+          color: #B5B5BB
+
+      .title
+        line-height: 1.5
+        font-size: 18px
+        +margin(15px 0 10px 0)
+
+  #footer
+    .top, .bottom
+      display: none

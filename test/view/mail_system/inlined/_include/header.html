@@ -1,0 +1,105 @@
+<!-- inject:base:css --><!-- endinject -->
+
+{% load email_url %}
+
+<!-- @start: header
+///////////////////////////////////////////////////////////////////////////// -->
+
+<table width="640" cellpadding="0" cellspacing="0" border="0" align="center" class="header section devicewidth" style="border-collapse: collapse; border-left-color: #e2e3e5; border-left-style: solid; border-left-width: 1px; border-right-color: #e2e3e5; border-right-style: solid; border-right-width: 1px; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+    <tr>
+        <td width="100%" style="border-collapse: collapse;">
+            <table bgcolor="#FF8000" width="640" align="center" cellspacing="0" cellpadding="0" border="0" class="header__outer devicewidth" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                <tr>
+                    <!-- starter image -->
+                    <td align="center" height="8" class="header__inner header__starter-image" style="border-collapse: collapse; line-height: 5px;">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+
+            <table bgcolor="#FFFFFF" width="640" align="center" cellspacing="0" cellpadding="0" border="0" class="header__outer devicewidth" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+
+                <tr>
+                    <td width="640" align="center" style="border-collapse: collapse;">
+                        <table width="190" align="left" cellpadding="0" cellspacing="0" border="0" class="header__logo devicewidth" style="border-collapse: collapse; font: 25px/1.0em 'Helvetica', 'Arial', sans-serif; line-height: 28px; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt; text-align: left;">
+                            <tr>
+                                <td valign="middle" align="center" style="border-collapse: collapse; padding-top: 3px;">
+                                    <a href="{% if cliente %}{% build_email_url settings.SITE_URL cliente %}{% else %}{{ settings.SITE_URL }}{% endif %}" target="_blank" style="color: #00adef; text-decoration: none;">
+                                        <img width="150" src="{{ settings.SITE_URL }}/static/images/logo_mail.gif" alt="Bauzaar" border="0" style="-ms-interpolation-mode: bicubic; border: none; outline: none; text-decoration: none;">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!--[if mso]></td><td><![endif]-->
+
+                        <table width="410" align="right" cellpadding="0" cellspacing="0" border="0" class="header__usp devicewidth" style="border-collapse: collapse; font: 11px/1.3em 'Helvetica', 'Arial', sans-serif; letter-spacing: 1px; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                            <tr>
+                                <td width="12" height="65" style="border-collapse: collapse;">&nbsp;</td>
+                                <td height="65" valign="middle" align="center" style="border-collapse: collapse;">
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                                        <tr>
+                                            <td class="header__usp__icon" align="right" valign="middle" style="border-collapse: collapse; font: 11px/1.3em 'Helvetica', 'Arial', sans-serif;">
+                                                <a href="{% if cliente %}{% get_email_url 'flat_pages:processing_time' cliente %}{% else %}{{ settings.SITE_URL }}{% url 'flat_pages:processing_time' %}{% endif %}" target="_blank" style="color: #656565; display: block; text-decoration: none;">
+                                                    <img width="44" height="38" border="0" src="http://media.sailthru.com/3m9/1jz/7/2/5594fa643c889.png" alt="info sulla spedizione" style="-ms-interpolation-mode: bicubic; border: none; font: 11px/15px 'Helvetica', 'Arial', sans-serif; margin-right: 10px; outline: none; text-decoration: none;">
+                                                </a>
+                                            </td>
+                                            <td class="header__usp__text" align="left" valign="middle" style="border-collapse: collapse; color: #656565; font: 11px/15px 'Helvetica', 'Arial', sans-serif; letter-spacing: 0px;">
+                                                <a href="{% if cliente %}{% get_email_url 'flat_pages:processing_time' cliente %}{% else %}{{ settings.SITE_URL }}{% url 'flat_pages:processing_time' %}{% endif %}" target="_blank" style="color: #656565; display: block; text-decoration: none;">
+                                                    Spedizione Gratuita
+                                                    <br>
+                                                    sopra i {{ settings.SPESE_SPEDIZIONE_THRESHOLD|stringformat:'.0f' }}&euro;
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td height="65" valign="middle" align="center" style="border-collapse: collapse;">
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                                        <tr>
+                                            <td class="header__usp__icon" align="right" style="border-collapse: collapse; font: 11px/1.3em 'Helvetica', 'Arial', sans-serif;">
+                                                <a href="{% if cliente %}{% get_email_url 'flat_pages:security' cliente %}{% else %}{{ settings.SITE_URL }}{% url 'flat_pages:security' %}{% endif %}#metodi-di-pagamento" target="_blank" style="color: #656565; display: block; text-decoration: none;">
+                                                    <img width="44" height="38" border="0" src="http://media.sailthru.com/3m9/1jz/7/2/5594fa5946a89.png" alt="info sul pagamento" style="-ms-interpolation-mode: bicubic; border: none; font: 11px/15px 'Helvetica', 'Arial', sans-serif; margin-right: 10px; outline: none; text-decoration: none;">
+                                                </a>
+                                            </td>
+                                            <td class="header__usp__text" align="left" style="border-collapse: collapse; color: #656565; font: 11px/15px 'Helvetica', 'Arial', sans-serif; letter-spacing: 0px;">
+                                                <a href="{% if cliente %}{% get_email_url 'flat_pages:security' cliente %}{% else %}{{ settings.SITE_URL }}{% url 'flat_pages:security' %}{% endif %}#metodi-di-pagamento" target="_blank" style="color: #656565; display: block; text-decoration: none;">
+                                                    Reso entro
+                                                    <br>
+                                                    30 giorni
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td height="65" valign="middle" align="center" style="border-collapse: collapse;">
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                                        <tr>
+                                            <td class="header__usp__icon" align="right" style="border-collapse: collapse; font: 11px/1.3em 'Helvetica', 'Arial', sans-serif;">
+                                                <a href="{% if cliente %}{% build_email_url settings.SITE_URL cliente %}{% else %}{{ settings.SITE_URL }}{% endif %}" target="_blank" style="color: #656565; display: block; text-decoration: none;">
+                                                    <img width="44" height="38" border="0" src="http://media.sailthru.com/3m9/1jz/7/2/5594fa643c889.png" alt="programma fedeltà" style="-ms-interpolation-mode: bicubic; border: none; font: 11px/15px 'Helvetica', 'Arial', sans-serif; margin-right: 10px; outline: none; text-decoration: none;">
+                                                </a>
+                                            </td>
+                                            <td class="header__usp__text" align="left" style="border-collapse: collapse; color: #656565; font: 11px/15px 'Helvetica', 'Arial', sans-serif; letter-spacing: 0px;">
+                                                <a href="{% if cliente %}{% build_email_url settings.SITE_URL cliente %}{% else %}{{ settings.SITE_URL }}{% endif %}" target="_blank" style="color: #656565; display: block; text-decoration: none;">
+                                                    5% di sconto
+                                                    <br>
+                                                    al primo ordine
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td width="12" height="65" style="border-collapse: collapse;">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+
+</table>
+
+<!-- @end: header -->

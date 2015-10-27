@@ -1,0 +1,43 @@
++min-screen($mq-0)
+  body
+    min-width: $layout_min_width !important
+    background-repeat: repeat
+    +padding(0)
+
+  #wrap
+    width: $layout_width
+    min-width: $layout_min_width
+    position: relative
+    +margin(0 auto)
+    +padding(0)
+
+    &.boxed
+      +boxed
+
+      +min-screen($mq-md)
+        box-shadow: 0 1px #FFFFFF inset, 0 1px 1px #98A3A5
+
+    &.unboxed
+      +unboxed
+
+    &.full-width
+      +full-width
+
+    .container-fluid
+      max-width: $layout_max_width !important
+      width: auto !important
+
+  #main, .header, .footer
+    &.boxed
+      +boxed
+
+  #content
+    min-height: 400px
+    +margin(0)
+
+  #sidebar
+    +margin(0)
+
++max-screen($mq-sm)
+  html, body
+    overflow-x: hidden

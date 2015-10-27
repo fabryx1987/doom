@@ -1,0 +1,13 @@
+{
+  "name": "preventivi-it",
+  "description": "Preventivi online",
+  "repository": {
+    "type": "svn",
+    "url": "https://svn.preventivi.it/svn/cms25/trunk/"
+  },
+  "dependencies": {
+    "globals": "^8.2.0",
+    "run-sequence": "^1.1.4"
+  },
+  "devDependencies": {}
+}

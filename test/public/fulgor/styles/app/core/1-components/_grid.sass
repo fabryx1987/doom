@@ -1,0 +1,35 @@
+.grid
+  overflow: hidden
+
+  .item
+    position: relative
+    overflow: hidden
+    float: left
+
+    img
+      transition: all .8s
+
+    .overlay
+      transition: all .4s
+
+    .caption
+      width: 90%
+      text-align: center
+      +position(absolute, null null 0 5%)
+      +padding(10px 0)
+      +margin(0 auto)
+
+      .title
+        position: relative
+        z-index: $z-level-2
+        color: #aeaeaf
+        +margin(0)
+        +rem(font-size, 1.2rem)
+    > a
+      &:hover
+        .caption
+          .title
+            color: #fff
+
+        .mask
+          opacity: 1

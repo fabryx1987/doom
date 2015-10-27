@@ -1,0 +1,52 @@
++min-screen($mq-0)
+  .tabs
+    .nav-tabs li a
+      border-radius: 0
+      +padding(15px 20px)
+
+    .tab-pane
+      +padding(10px 20px)
+
+      &.active
+        background-color: $color_white
+
+    .tab-content
+      border: 1px solid
+      border-top: none
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+
++min-screen($mq-md)
+
++min-screen($mq-lg)
+
++max-screen($mq-sm)
+  .tabs .nav-tabs li a
+    width: 100%
+
+  .nav-tabs > li
+    float: none
+    border-radius: 0
+
+    > a
+      border: 1px solid
+      border-radius: 0
+
+    &.active > a
+      border: 1px solid
+
+      &:hover, &:focus
+        border: 1px solid
+
+.tabs .reviews ul li
+  +padding(10px 0 0 0)
+
+  &:first-child
+    +padding(5px 0 0 0)
+
+#tab-brand .block-center
+  height: $tab-brand-img-container

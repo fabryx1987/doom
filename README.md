@@ -1,1 +1,412 @@
 # doom
+
+A bunch of useful configurable Gulp tasks global to many projects,
+to manage development and production tasks with ease.
+
+- Asset pipeline for SASS, JavaScript, images, and HTML that does compilation with souremaps
+and syntax checking in development mode and minification for production mode
+- Advanced Bower integration
+- Watch changed files with [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) integration
+- Mail inliner 
+- Project tasks customization
+
+```bash
+ gulp ls
+ Using gulpfile ~/path/to/gulpfile.js
+ Starting 'default'...
+ 
+ Main Tasks
+ ------------------------------
+     default
+     dev
+     prod
+     serve
+     vendor
+ 
+ Sub Tasks
+ ------------------------------
+     create:bower_fonts
+     create:bower_images
+     create:bower_install
+     create:bower_scripts
+     create:bower_styles
+     create:fonts_app
+     create:images_app
+     create:scripts_app
+     create:styles_app
+     create:styles_gui
+     delete:bower_fonts
+     delete:bower_images
+     delete:bower_install
+     delete:bower_scripts
+     delete:bower_styles
+     delete:dist
+     delete:fonts_app
+     delete:images_app
+     delete:scripts_app
+     delete:styles_app
+     delete:styles_gui
+     flush:cache_bower
+     flush:cache_npm
+```
+
+## Get Started
+
+Before get started with doom-tasks, verify that you have installed node with npm
+
+```bash
+which node
+which npm
+```
+
+if are not installed, install it with brew or similar
+
+```bash
+brew install node
+```
+
+And verify that gulp and bower are installed globally
+
+```bash
+$ sudo npm install -g gulp bower
+```
+
+Then you can install doom-tasks
+
+```bash
+$ sudo npm install -g doom-tasks
+```
+
+## Set Global Gulp
+
+You must add to your .bashrc or .zshenv the global node_modules path
+
+``` bash
+export NODE_PATH=/path/to/node_modules/
+```
+
+## Usage
+
+To use:
+
+Create a bower.json into your project root
+
+```json
+{
+  "name": "project-name",
+  "version": "1.0",
+  "authors": [
+    "Name-1",
+    "Name-2"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "word-1",
+    "word-2"
+  ],
+  "license": "MIT",
+  "homepage": "http://project-name.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "*.map",
+    "*.json",
+    "*.md",
+    "*.editorconfig",
+    "*.yml",
+    "bower_components",
+    "node_modules",
+    "media",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "plugin-1": "~number-version",
+    "plugin-2": "~number-version"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "shim-plugin-1": "~number-version",
+    "shim-plugin-2": "~number-version"
+  },
+  "install": {
+    "base": "path/to/static",
+    "path": "name_vendor_folder",
+    "sources": {
+      "plugin-1": [
+        "bower_components/path/to/plugin-1.js",
+        "bower_components/path/to/plugin-1.css",
+        "bower_components/path/to/fonts/*.**",
+        "bower_components/path/to/*.{gif,png,jpg,jpeg,svg}"
+      ],
+      "plugin-2": [
+        "bower_components/path/to/plugin-2.js",
+        "bower_components/path/to/plugin-2.css",
+        "bower_components/path/to/fonts/*.**",
+         "bower_components/path/to/*.{gif,png,jpg,jpeg,svg}"
+      ]
+    },
+    "ignore": [
+      "plugin-or-dependencies-to-ignore-1",
+      "plugin-or-dependencies-to-ignore-2"
+    ]
+  }
+}
+```
+
+Then run the gulp install that create the node_modules and bower_components dependencies
+
+```bash
+$ gulp install
+```
+
+Then create a gulpfile.js at the same level
+
+```javascript
+/*
+ gulpfile.js
+ ===========
+ Rather than manage one giant configuration file responsible
+ for creating multiple tasks, each task has been broken out into
+ its own file in ./tasks. Any files in that directory get
+ automatically required below.
+ To add a new task, simply add a new task file that directory.
+ ./tasks/*.js specifies the default set of tasks to run
+ when you run gulp.
+ */
+
+
+require('./doomfile')();
+require('doom.core')();
+require('doom.install')();
+require('doom.bower')();
+require('doom.styles')();
+require('doom.scripts')();
+require('doom.images')();
+require('doom.fonts')();
+require('doom.third_party')();
+require('doom.mail')();
+require('doom.serve')();
+
+```
+
+And then create a doomfile.js at the same level
+
+```javascript
+module.exports = function () {
+
+    // ---------------------------------------------
+    // @doomfile settings
+    // ---------------------------------------------
+    
+    // dependecies
+    var gulp = require('gulp');
+    var run_sequence = require('run-sequence');
+    
+    process.wraith = {
+        paths: {
+            halo: '/desktop/halo',
+            quake: '/desktop/quake',
+            rampage: '/desktop/rampage',
+            jago: '/desktop/jago',
+            riptor: '/desktop/riptor',
+            cinder: '/desktop/cinder',
+            glacius: '/desktop/glacius',
+            sabrewolf: '/desktop/sabrewolf',
+            eydol: '/desktop/eydol',
+            orchid: '/desktop/orchid',
+            fulgor: '/pincopalla/fulgor'
+        },
+        active: ''
+    };
+    
+    process.doom = {
+        gulp: gulp,
+        static: './public',
+        templates: './view/',
+        dist: '/_dist',
+        proxy: 'local2-preventivi.it',
+        app: {
+            name: 'app',
+            styles: '/styles',
+            scripts: '/scripts',
+            images: '/images',
+            fonts: '/fonts'
+        },
+        gui: {
+            name: 'gui',
+            styles: '/styles',
+            images: '/images'
+        },
+        mail: {
+            dist: '/_dist',
+            root: '/mail_system',
+            styles: '/styles',
+            templates: {
+                src: '/templates/src',
+                inlined: '/templates/inlined'
+            }
+        },
+        bower: {
+            name: 'vendor',
+            root: './bower_components',
+            static: '/vendor',
+            order: [
+                'jquery/*.js',
+                'modernizr/*.js',
+                '**/*.js'
+            ],
+            include_paths: [
+                './bower_components/sass-mediaqueries',
+                './bower_components/bourbon/app/assets/stylesheets',
+                './bower_components/neat/app/assets/stylesheets'
+            ],
+            fonts: [
+                '/font-awesome'
+            ],
+            images: []
+        },
+        third_party: {
+            name: 'third_party',
+            static: '/third_party'
+        },
+        serve: {
+            styles: '/styles/**/*.{sass,scss}',
+            scripts: '/scripts/**/*.js',
+            markup: '/**/*.{html, phtml}',
+            mail: {
+                templates: '/templates/src/**/*.{html}',
+                styles: '/styles/sass/**/*.{sass,scss}'
+            },
+            bower: '/**/*.*',
+            third_party: '/**/*.js'
+        }
+    }
+    
+    module.exports = function () {
+    
+        gulp.task('dev', ['clean:dist'], function () {
+            process.prod = false;
+            run_sequence(['styles:app', 'styles:gui', 'serve:halo']);
+        });
+    
+        gulp.task('prod', ['clean:dist'], function () {
+            process.prod = true;
+            run_sequence('vendor', ['styles:app', 'styles:gui']);
+        });
+    
+        gulp.task('serve', function () {
+            gulp.watch(serve_paths.styles, {interval: 900}, ['clean:app_styles', 'clean:gui_styles', 'styles:app', 'styles:gui']);
+            gulp.watch(serve_paths.scripts, {interval: 900}, ['clean:scripts', 'scripts:app']);
+            gulp.watch(serve_paths.markup, {interval: 900}, ['serve:html']);
+            gulp.watch(serve_paths.bower, {interval: 900}, ['clean:vendor_dist', 'vendor']);
+        });
+    };
+};
+```
+
+For verify if node_modules need an update install npm-check
+
+``` bash
+$ sudo npm install npm-check -g
+```
+
+and then you can update all modules version running
+
+``` bash
+$ npm-check -u
+```
+
+Now you must simpy include css and js dist into your base template
+
+``` html
+<link rel="stylesheet" href="path/to/static/_dist/app.css">
+<link rel="stylesheet" href="path/to/static/_dist/vendor.css">
+...
+<script src="path/to/static/_dist/vendor.js"></script>
+<script src="path/to/static/_dist/app.js"></script>
+```
+
+## Tasks
+
+### install
+
+Run this task to install bower and npm project's dependencies
+
+``` bash
+gulp install
+```
+
+### vendor
+
+This task create a vendor folder into your static with your plugins 
+(images, fonts, and various assets of your choice), then 
+create two files vendor.js and vendor.css and exports those (including assets) to dist folder.
+
+``` bash
+gulp vendor
+```
+
+### default
+
+Run this task to:
+
+- clean any already generated JS/CSS file 
+- compile your SASS files to one unified file (with sourcemaps enabled)
+
+and, parallelly:
+- compile your JS browserify files to one unified file (with sourcemaps enabled)
+
+``` bash
+gulp
+```
+
+### prod
+
+Run this task to:
+
+- clean any already generated JS/CSS file 
+- compile your SASS files to one unified file and minified CSS file removing 
+sourcemaps
+
+and, parallelly:
+- compile your JS browserify files to one unified file and uglified JS file removing 
+  sourcemaps
+
+``` bash
+gulp prod
+```
+
+### serve
+
+When you run this task, it will watch your project for changes.
+To use this you have to install livereload.
+
+
+``` bash
+gulp serve
+```
+
+### mail
+
+Run this task to:
+
+- clean any already generated inlined mail templates
+- inline your CSS class to multiple html templates
+
+and, parallelly:
+- inject your responsive style after the inliner
+- convert your responsive style after the inject into style tag
+
+``` bash
+gulp mail
+```
+
+
+## License
+
+This project is released under the MIT license.

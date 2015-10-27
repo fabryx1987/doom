@@ -1,0 +1,120 @@
++min-screen($mq-0)
+
+  .homepage-head
+    background-color: #FCFCFC
+    +clearfix
+
+    .teasers-container
+      +margin(0 10px 10px 10px)
+
+      .hero
+        +margin(15px 0)
+
+        .item
+          background: $color_white
+          +padding(0)
+
+          img
+            width: auto
+            max-width: 100%
+
+      .teaser-lg
+        img
+          border: 1px solid transparent
+
+      .teaser-sm
+        img
+          border: 1px solid #EBEAEA
+
+      .teasers
+        +margin(0)
+        +padding(null 0)
+
+        .teaser-sm
+          display: block
+          float: left
+          width: 33.33%
+          +margin(0)
+          +padding(0)
+
+          +max-screen($mq-sm)
+            display: none
+
+            &.owl-carousel
+              .owl-stage-outer
+                +margin(0)
+
+              .owl-controls
+                display: none
+
+          .item
+            max-height: 148px
+            background: $color_white
+
+            img
+              width: auto
+              max-width: 100%
+
+      +min-screen($mq-sm)
+        .teasers
+          .teaser-sm
+            margin-bottom: 3.15% !important
+
+      +min-screen($mq-md)
+        float: left
+        +clearfix
+        +calc(width, '100% - #{$homepage_teaser_container_width}')
+        +margin(0)
+
+        .hero
+          width: 70%
+          float: left
+          +margin(0)
+          +padding(15px)
+
+          .item
+            img
+              width: 100% !important
+              max-width: 100% !important
+              min-width: 100% !important
+
+              // only if carousel disabled
+              +min-screen($mq-md)
+                max-height: 443px !important
+
+        .teasers
+          width: 30%
+          float: left
+          +padding(15px 10px 0 0)
+
+          .teaser-sm
+            float: none
+            width: 100%
+            display: block
+            margin-bottom: 4.5% !important
+            +padding(0 5px)
+
+            .item
+              img
+                width: 100% !important
+                min-width: 100% !important
+                max-height: 138px !important
+                min-height: 61px !important
+
+  .homepage-head__catalog
+    float: left
+    background-color: #FCFCFC
+    width: $homepage_catalog_width
+    +padding(0 10px 10px 10px)
+    +margin(15px 8px 15px 7px)
+
+    ul
+      list-style: none
+      +clearfix()
+      +padding(null null 4px null)
+
+      > li
+        +margin(3px 0)
+
+      .btn
+        +margin(5px 0)

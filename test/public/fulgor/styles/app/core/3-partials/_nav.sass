@@ -1,0 +1,215 @@
+// Mediaqueries min-screen
+// --------------------------------------------------------------------------
+
++min-screen($mq-0)
+  #nav
+    background-color: #E6FBFF
+    color: #1F587D
+
+    > .container-fluid
+      +padding(0)
+
+    a
+      color: #0366AC
+
+      &:hover
+        color: #0868AC
+
+      &.btn-inner
+        background-color: #36CEEC
+
+        +max-screen($mq-md)
+          +padding(0)
+
+        .btn-inner__bg
+          color: $color_white
+          +position(relative, 0)
+          +padding(0)
+
+          +max-screen($mq-md)
+            width: 100%
+            +border-radius(0)
+
+    ul
+      list-style: none
+
+    > li
+      color: #3A7FB3
+      line-height: 2
+      +rem(font-size, 1.4rem)
+
+      &.active a
+        color: #0868AC
+    .btn
+      font-weight: normal
+
+    [class^="icon-"]
+      display: inline-block
+      background-position: 0 0
+      width: 19px
+      height: 18px
+      +position(relative, 4px null null null)
+      +padding(null null null 25px)
+
+    .icon-clock
+      top: 0
+      width: 20px
+      height: 20px
+      +padding(0)
+
+    .caret
+      display: block
+      position: absolute
+      z-index: $z-level-10
+      border-top: 7px solid #1F587D
+      border-left: 7px solid transparent
+      border-right: 7px solid transparent
+      border-bottom: none
+
+    .primary-nav
+      position: relative
+      z-index: $z-level-4
+      +margin(0)
+
+      > li
+        list-style: none
+        display: inline-block
+        float: left
+        +padding(null null null 0)
+
+        &:hover
+          background-color: #CCF4FE
+          color: #0868AC
+          .caret
+            display: block
+
+        > a
+          position: relative
+          display: block
+          +padding(3px 15px 5px)
+
+      .dropdown:hover
+        .dropdown-menu
+          a:hover
+            text-decoration: none
+            color: #FF7B4D
+
+      .secondary-nav
+        .catalog-link
+          display: block
+          +padding(4px 10px)
+          +margin(0 0 10px 0)
+
+        ul
+          li
+            +padding(null null null 0)
+
+            a
+              display: block
+              +padding(5px)
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+
++min-screen($mq-md)
+
+  #nav
+    .caret
+      display: none
+      left: 50%
+      bottom: -2px
+      border-top: none
+      border-left: 7px solid transparent
+      border-right: 7px solid transparent
+      border-bottom: 7px solid #FFF
+      +margin(null null null -10px)
+
+    .dropdown
+      &.dropdown--flashsales
+        .caret
+          border-top: 7px solid #36CEEC
+          border-bottom: 7px solid transparent
+          display: block
+          bottom: -14px
+          z-index: 1
+
+    .dropdown:hover
+      .dropdown-menu
+        display: block
+
+      .caret
+        display: block
+
+    .secondary-nav
+      +margin(-5px null null null)
+
+      .catalog-link
+        display: none !important
+
+      +hdpi
+        +margin(-2px null null null)
+
+      .col
+        &:first-child
+          +padding(null null null 10px)
+
+        &:last-child
+          +padding(null 10px null null)
+
++min-screen($mq-lg)
+
+// Mediaqueries max-screen
+// --------------------------------------------------------------------------
+
++max-screen($mq-md)
+  #nav
+    .primary-nav
+      > li
+        display: block
+        clear: both
+        float: none
+        [class^="icon-"]
+          +margin(null 15px null null)
+
+        > a
+          position: relative
+          line-height: 24px
+          border-bottom: 1px solid #fff
+          +rem(font-size, 1.6rem)
+
+          .caret
+            display: block
+            float: right
+            +position(absolute, 18px 20px null null)
+
+        &.dropdown
+          > a
+            .caret
+              &.caret--no-mobile
+                display: none !important
+
+          .secondary-nav
+            border: none
+            +position(relative, 0 null null 0)
+            +margin(0)
+
+            > .col
+              float: none
+              display: block
+              width: 100%
+              +padding(0)
+              +margin(null 15px null null)
+
+              &:first-child
+                +margin(0 null null null)
+
+    .secondary-nav
+      +padding(10px null)
+
++max-screen($mq-md)
+  #nav
+    .list-multi-col > li
+      width: 100% !important

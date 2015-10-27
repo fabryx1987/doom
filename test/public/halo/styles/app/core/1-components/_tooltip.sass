@@ -1,0 +1,27 @@
+.tooltip-link
+  &.tooltip-link--hoverable
+    &:hover
+      cursor: pointer !important
+
+.tooltip
+  position: absolute
+  z-index: $z-level-11
+
+  &.top
+    .tooltip-arrow
+      border-top-color: #7e8da3
+
+  &.right
+    .tooltip-arrow
+      border-right-color: #7e8da3
+
+  &.bottom
+    .tooltip-arrow
+      border-bottom-color: #7e8da3
+
+  &.left
+    .tooltip-arrow
+      border-left-color: #7e8da3
+
+  .tooltip-inner
+    background-color: #7e8da3

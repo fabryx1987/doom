@@ -1,0 +1,24 @@
+// --------------------------------------------------------------------------
+// Ribbon
+// --------------------------------------------------------------------------
+
+.ribbon
+  width: 105px
+  height: 108px
+  overflow: hidden
+  +position(absolute, -13px null null -13px)
+
+  .ribbon__inner
+    color: $color_white
+    width: 260px
+    transform: rotate(-45deg)
+    background: #d43332
+    text-align: center
+    +padding(2px)
+    +position(relative, 25px null null -92px)
+
+  .ribbon__label
+    display: inline
+    font-size: 16px
+    font-weight: bold
+    font-family: $secondary-font

@@ -1,0 +1,89 @@
+<!-- inject:base:css --><!-- endinject -->
+
+{% load email_url %}
+
+<!-- @start: postfooter
+///////////////////////////////////////////////////////////////////////////// -->
+
+<table width="640" cellpadding="0" cellspacing="0" border="0" align="center" class="postfooter devicewidth" style="border-collapse: collapse; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+    <tr>
+        <td width="100%" style="border-collapse: collapse;">
+            <table cellspacing="0" cellpadding="0" width="600" align="center" class="postfooter__outer devicewidth" style="border-collapse: collapse; color: #334455; font-family: helvetica, sans-serif; font-size: 13px; line-height: 12px; margin: 0 auto; mso-table-lspace: -1pt; mso-table-rspace: -1pt;">
+                <tr>
+                    <td height="20" class="spacing" style="border-collapse: collapse; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="postfooter__inner" style="border-collapse: collapse; color: #9da2a8; font-size: 10px; line-height: 12px; padding-bottom: 5px; text-align: center;">
+                        <strong>Metodi di pagamento</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="postfooter__inner" style="border-collapse: collapse; color: #9da2a8; font-size: 10px; line-height: 12px; padding-bottom: 5px; text-align: center;">
+                        <a href="{{ settings.SITE_URL }}{% url 'flat_pages:security' %}#metodi-di-pagamento" class="postfooter__inner__social" target="_blank" style="color: #00adef; margin: 0 5px; text-decoration: none;">
+                            <img src="http://media.sailthru.com/3m9/1jz/7/2/5594fab629c4f.png" alt="metodi pagamento" width="336" height="26" border="0" style="-ms-interpolation-mode: bicubic; border: none; outline: none; text-decoration: none;">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="postfooter__inner" style="border-collapse: collapse; color: #9da2a8; font-size: 10px; line-height: 12px; padding-bottom: 5px; text-align: center;">
+                        &copy;
+                        <a href="{{ settings.SITE_URL }}" class="text-color-gray" target="_blank" style="color: #9DA2A8; text-decoration: none;">
+                            Bauzaar
+                        </a> Srl 2015, Tutti i diritti riservati.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="postfooter__inner" style="border-collapse: collapse; color: #9da2a8; font-size: 10px; line-height: 12px; padding-bottom: 5px; text-align: center;">
+
+                        Per rimuoverti dalla newsletter
+                        <a href="{{ settings.SITE_URL }}{% url 'user_admin:index' %}" target="_blank" style="color: #00adef; text-decoration: none;">
+                            clicca qui
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="postfooter__inner" style="border-collapse: collapse; color: #9da2a8; font-size: 10px; line-height: 12px; padding-bottom: 5px; text-align: center;">
+                        Questo &egrave; un sistema elettronico automatico destinato unicamente all'invio e non alla
+                        ricezione di mail. Ti preghiamo pertanto di non rispondere alla presente. Per
+                        qualsiasi domanda o chiarimento contatta il nostro servizio clienti servendoti del
+                        modulo di contatto o chiamando il numero 080.3382061 (attivo dal luned&igrave; al venerd&igrave;,
+                        h 9.00 - 13.00 e h 14.30 - 18.30).
+                        La tua privacy &egrave; garantita dalla nostra policy interna. vieni a scoprirla cliccando
+
+                        <a href="{{ settings.SITE_URL }}{% url 'flat_pages:privacy' %}" target="_blank" style="color: #00adef; text-decoration: none;">
+                            qui
+                        </a>.
+
+                        <br>
+                        <br>
+
+                        <a href="https://www.facebook.com/bauzaar.it/" target="_blank" class="postfooter__inner__social" style="color: #00adef; margin: 0 5px; text-decoration: none;">
+                            <img src="http://media.sailthru.com/3m9/1jz/7/2/5594fa82cb149.png" alt="Facebook" width="28" height="28" border="0" style="-ms-interpolation-mode: bicubic; border: none; outline: none; text-decoration: none;">
+                        </a>
+                        &nbsp;
+                        <a href="https://twitter.com/Bauzaar_it/" target="_blank" class="postfooter__inner__social" style="color: #00adef; margin: 0 5px; text-decoration: none;">
+                            <img src="http://media.sailthru.com/3m9/1jz/7/2/5594fa91ad379.png" alt="Twitter" width="28" height="28" border="0" style="-ms-interpolation-mode: bicubic; border: none; outline: none; text-decoration: none;">
+                        </a>
+                        &nbsp;
+                        <a href="http://it.linkedin.com/company/bauzaar/" target="_blank" class="postfooter__inner__social" style="color: #00adef; margin: 0 5px; text-decoration: none;">
+                            <img src="http://media.sailthru.com/3m9/1jz/7/2/5594fa8a15875.png" alt="Linkedin" width="28" height="28" border="0" style="-ms-interpolation-mode: bicubic; border: none; outline: none; text-decoration: none;">
+                        </a>
+                        &nbsp;
+                        <a href="https://www.youtube.com/user/BauzaarITA/" target="_blank" class="postfooter__inner__social" style="color: #00adef; margin: 0 5px; text-decoration: none;">
+                            <img src="http://media.sailthru.com/3m9/1jz/7/2/5594fa9a91c5b.png" alt="Youtube" width="28" height="28" border="0" style="-ms-interpolation-mode: bicubic; border: none; outline: none; text-decoration: none;">
+                        </a>
+                        &nbsp;
+                </td></tr>
+                <tr>
+                    <td height="5" style="border-collapse: collapse;">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- @end: postfooter -->

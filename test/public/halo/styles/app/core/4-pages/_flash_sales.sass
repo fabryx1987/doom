@@ -1,0 +1,21 @@
+.flash-sales
+  background-color: #F7F7F7
+  +margin(0 -15px)
+
+  &.panel-body
+    +margin(0)
+    +padding(5px)
+
+    .products
+      +margin(0)
+
+  .products
+    display: none
+
+    &.js-active
+      display: block
+
+  .owl-carousel
+    &.nav-out.nav-inline
+      .owl-nav
+        top: -2px

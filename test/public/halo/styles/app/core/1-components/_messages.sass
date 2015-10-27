@@ -1,0 +1,24 @@
++min-screen($mq-0)
+  #messages
+    position: absolute
+    display: none
+
+  .alert
+    [data-growl="title"]
+      font-weight: bold
+      +padding(null 10px null null)
+
+    .icon, [data-growl="icon"]
+      +rem(font-size, 2.0rem)
+      +position(relative, -1px null null null)
+      +padding(null 10px null null)
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+
++min-screen($mq-md)
+
++min-screen($mq-lg)

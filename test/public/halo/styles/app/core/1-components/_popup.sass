@@ -1,0 +1,451 @@
++min-screen($mq-0)
+  .mfp-wrap
+    transition: opacity 0.3s
+    background: transparent
+    z-index: $z-level-12
+
+  .mfp-close
+    width: 50px
+    height: 50px
+    line-height: 50px
+    +rem(font-size, 5.0rem)
+
+    &, &:active
+      +min-screen($mq-0)
+        +position(absolute, -55px -15px null null)
+
+      +min-screen($mq-sm)
+        +position(absolute, -20px -60px null null)
+
+  .popup-content
+    position: relative
+    width: auto
+    max-width: 700px
+    border: 1px solid
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06) !important
+    +padding(25px)
+    +margin(0 auto)
+
+    .title
+      .icon
+        top: 5px !important
+        +rem(font-size, 2.0rem)
+
+  .mfp-image-holder .mfp-content
+    border-radius: 3px
+
+  .mfp-figure
+    figure
+      border-radius: 3px
+      +padding(20px 40px)
+
+    &:after
+      box-shadow: none
+
+  .mfp-content
+    min-width: 400px
+    z-index: $z-level-12
+
+    +max-screen($mq-xs)
+      &
+        min-width: 300px
+        .mfp-bottom-bar
+          .mpf-title
+            +rem(font-size, 1.3rem)
+
+    .mfp-bottom-bar
+      .mfp-title
+        line-height: 1.5
+
+  .mfp-counter
+    display: none !important
+
+  .mfp-bg
+    opacity: .75 !important
+
+  .mfp-bottom-bar
+    border-radius: 0 0 4px 4px
+    +padding(10px 25px)
+
+  .mfp-figure:after
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06) !important
+
+  .mfp-img
+    cursor: pointer
+
+  .mfp-force-scrollbars
+    .mfp-wrap
+      overflow-y: auto !important
+      overflow-x: auto !important
+
+    .mfp-img
+      max-width: none
+
+    .mfp-close
+      position: fixed
+      top: 10px
+      right: 10px
+      width: 50px
+      height: 50px
+      line-height: 50px
+      +rem(font-size, 5.0rem)
+
+  // ====== Zoom effect ======
+  .mfp-zoom-in
+    // start state
+    // animate in
+    // animate out
+    .mfp-with-anim
+      opacity: 0
+      transition: all 0.2s ease-in-out
+      transform: scale(0.8)
+
+    &.mfp-bg
+      opacity: 0
+      transition: all 0.3s ease-out
+
+    &.mfp-ready
+      .mfp-with-anim
+        opacity: 1
+        transform: scale(1)
+
+      &.mfp-bg
+        opacity: 0.8
+
+    &.mfp-removing
+      .mfp-with-anim
+        transform: scale(0.8)
+        opacity: 0
+
+      &.mfp-bg
+        opacity: 0
+
+  // ====== Newspaper effect ======
+  .mfp-newspaper
+    // start state
+    // animate in
+    // animate out
+    .mfp-with-anim
+      opacity: 0
+      -webkit-transition: all 0.2s ease-in-out
+      transition: all 0.5s
+      transform: scale(0) rotate(500deg)
+
+    &.mfp-bg
+      opacity: 0
+      transition: all 0.5s
+
+    &.mfp-ready
+      .mfp-with-anim
+        opacity: 1
+        transform: scale(1) rotate(0deg)
+
+      &.mfp-bg
+        opacity: 0.8
+
+    &.mfp-removing
+      .mfp-with-anim
+        transform: scale(0) rotate(500deg)
+        opacity: 0
+
+      &.mfp-bg
+        opacity: 0
+
+  // ====== Move-horizontal effect ======
+  .mfp-move-horizontal
+    // start state
+    // animate in
+    // animate out
+    .mfp-with-anim
+      opacity: 0
+      transition: all 0.3s
+      transform: translateX(-50px)
+
+    &.mfp-bg
+      opacity: 0
+      transition: all 0.3s
+
+    &.mfp-ready
+      .mfp-with-anim
+        opacity: 1
+        transform: translateX(0)
+
+      &.mfp-bg
+        opacity: 0.8
+
+    &.mfp-removing
+      .mfp-with-anim
+        transform: translateX(50px)
+        opacity: 0
+
+      &.mfp-bg
+        opacity: 0
+
+  // ====== Move-from-top effect ======
+  .mfp-move-from-top
+    // start state
+    // animate in
+    // animate out
+    .mfp-content
+      vertical-align: top
+
+    .mfp-with-anim
+      opacity: 0
+      transition: all 0.2s
+      transform: translateY(-100px)
+
+    &.mfp-bg
+      opacity: 0
+      transition: all 0.2s
+
+    &.mfp-ready
+      .mfp-with-anim
+        opacity: 1
+        transform: translateY(0)
+
+      &.mfp-bg
+        opacity: 0.8
+
+    &.mfp-removing
+      .mfp-with-anim
+        transform: translateY(-50px)
+        opacity: 0
+
+      &.mfp-bg
+        opacity: 0
+
+  // ====== 3d unfold ======
+  .mfp-3d-unfold
+    // start state
+    // animate in
+    // animate out
+    .mfp-content
+      perspective: 2000px
+
+    .mfp-with-anim
+      opacity: 0
+      transition: all 0.3s ease-in-out
+      transform-style: preserve-3d
+      transform: rotateY(-60deg)
+
+    &.mfp-bg
+      opacity: 0
+      transition: all 0.5s
+
+    &.mfp-ready
+      .mfp-with-anim
+        opacity: 1
+        transform: rotateY(0deg)
+
+      &.mfp-bg
+        opacity: 0.8
+
+    &.mfp-removing
+      .mfp-with-anim
+        transform: rotateY(60deg)
+        opacity: 0
+
+      &.mfp-bg
+        opacity: 0
+
+  // ====== Zoom-out effect ======
+  .mfp-zoom-out
+    // start state
+    // animate in/
+    // animate out
+    .mfp-with-anim
+      opacity: 0
+      transition: all 0.3s ease-in-out
+      transform: scale(1.3)
+
+    &.mfp-bg
+      opacity: 0
+      transition: all 0.3s ease-out
+
+    &.mfp-ready
+      .mfp-with-anim
+        opacity: 1
+        transform: scale(1)
+
+      &.mfp-bg
+        opacity: 0.8
+
+    &.mfp-removing
+      .mfp-with-anim
+        transform: scale(1.3)
+        opacity: 0
+
+      &.mfp-bg
+        opacity: 0
+
+  .mfp-with-fade
+    .mfp-content, &.mfp-bg
+      opacity: 0
+      transition: opacity .5s ease-out
+
+    &.mfp-ready
+      .mfp-content
+        opacity: 1
+
+      &.mfp-bg
+        opacity: 0.8
+
+    &.mfp-removing.mfp-bg
+      opacity: 0
+
+// modal
+.popup-content
+  &.popup-modal
+    background-color: #fff
+    position: relative
+    width: auto
+    max-width: 700px
+    border: none
+    box-shadow: none
+    border-radius: 0.25em
+    transition-property: transform
+    transition-duration: 0.3s
+    +padding(0)
+
+    +min-screen($mq-0)
+      +margin(0 20px)
+
+    +min-screen($mq-sm)
+      +margin(0 auto)
+
+    .head, .body, .foot
+      +padding(5px 20px)
+
+    .head
+      background: #FDFDFD
+      color: $color_burnt_orange
+      border-bottom: 1px solid #eee
+      p
+        +margin(0)
+
+    .body
+      .text-block
+        +max-screen($mq-sm)
+          text-align: center
+          +padding(20px null null null)
+          +rem(font-size, 2.6rem)
+
+    .foot
+      +padding(15px 20px)
+      border-top: 1px solid #eee
+      color: $color_comet
+      p
+        +margin(0)
+
+    .tabs
+      .nav-tabs
+        border: none
+
+        > li
+          float: left !important
+          width: 50%
+          text-align: center
+          +margin(0)
+
+          > a
+            border: none
+            line-height: 25px
+            display: block
+            width: 100%
+            background-color: #d2d8d8
+            color: #809191
+            +rem(font-size, 1.6rem)
+
+            &:hover
+              border-color: #fff
+
+          &:first-child
+            > a
+              border-radius: .25em 0 0 0
+
+          &:last-child
+            > a
+              border-radius: 0 .25em 0 0
+
+          &.active
+            > a
+              background-color: #fff
+              color: #505260
+
+      .tab-content
+        h4
+          +rem(font-size, 1.6rem)
+
+        .btn
+          font-weight: 600
+          font-family: $primary-font
+          background-image: none
+          box-shadow: none !important
+          border: none
+          width: 100%
+          max-width: 250px
+          +rem(font-size, 1.6rem)
+
+        .text-blue
+          +padding(null 0 null null)
+
+#modal-cart
+  +padding(30px 25px 0 25px)
+
+  .modal-product__items
+    +padding(null null 15px null)
+
+  .modal-product__image
+    height: $modal-cart-img
+    +padding(10px)
+
+  .modal-product__buttons
+    .btn-container
+      float: left
+      width: 50%
+
+      &:first-child
+        +padding(null 5px null null)
+
+      &:last-child
+        +padding(null null null 5px)
+
+      +max-screen($mq-xs)
+        float: none
+        width: 100%
+
+        &:first-child, &:last-child
+          +padding(0)
+
+      .btn
+        width: 100%
+        +padding(12px 20px)
+        +margin(0 0 10px 0)
+        +max-screen($mq-xs)
+          white-space: normal
+
+  .modal-product__title
+    font-family: $secondary-font
+    line-height: 1.4em
+    +margin(0 0 5px 0)
+    +padding(7% 5% null null)
+    +rem(font-size, 2.0rem)
+
+    .icon
+      display: none
+
+    .text
+      +rem(font-size, 2.0rem)
+      +margin(0)
+      +padding(null null null 0)
+
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+
++min-screen($mq-md)
+
++min-screen($mq-lg)

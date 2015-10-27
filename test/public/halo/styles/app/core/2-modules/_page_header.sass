@@ -1,0 +1,52 @@
+.page-header
+  +clearfix
+  +padding(0 15px)
+
+  .right-header
+    float: right
+    +margin(null null null 20px)
+    +padding(7px 0 6px)
+
++min-screen($mq-0)
+
+  .page-header
+    position: relative
+    width: auto
+    +margin(0 -15px)
+    +padding(3px null 2px null)
+
+    .title
+      text-align: center
+      +margin(0)
+      +padding(2px 0 0 0)
+
+    .breadcrumb
+      text-align: center
+      +margin(0)
+      +padding(7px 15px 6px 15px)
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+  .page-header
+    .title
+      text-align: left
+
+    .breadcrumb
+      text-align: right
+
++min-screen($mq-md)
+
++min-screen($mq-lg)
+
++max-screen($mq-sm)
+  .page-header
+    +padding(3px null 2px null)
+
+    .right-header
+      display: none
+
+      &.products-count
+        display: none !important

@@ -1,0 +1,137 @@
++max-screen($mq-xs)
+  #header
+    .header-content
+      .search
+        +position(fixed, 85px null null null)
+
++max-screen($mq-md)
+  html
+    &.no-scrollable
+      overflow: hidden
+  body
+    position: relative
+    &.to-push
+      overflow-x: hidden
+      position: relative
+      &.pull-to-top
+        top: 0
+      &.pull-to-right
+        right: 0
+      &.pull-to-left
+        left: 0
+      &.push-to-bottom
+        top: $user_nav_height
+      &.push-to-right
+        left: $mobile_nav_width
+      &.push-to-left
+        right: $mobile_sidebar_width
+
+    #header
+      position: static
+      min-height: 85px
+      z-index: $z-level-12
+      top: 0
+      width: 100%
+      +margin(0)
+
+      .header-top
+        position: fixed
+        width: 100%
+        z-index: $z-level-9
+        &.user-nav-open
+          z-index: $z-level-13
+
+      .header-content
+        position: fixed
+        width: 100%
+        z-index: $z-level-8 + 200
+        top: 15px
+        background: $color_white
+        border-bottom: 1px solid #eee
+
+    &.sidebar-is-fixed
+      .equal-height
+        #sidebar
+          height: 100%
+          +margin(null null 0 null)
+          padding-bottom: 0 !important
+      #sidebar
+        position: fixed
+        overflow: hidden
+        z-index: $z-level-12
+        top: 0
+        background-color: #fff
+        width: $mobile_sidebar_width
+        +margin(0)
+        &.to-push
+          overflow-y: auto
+          right: -$mobile_sidebar_width
+          &.pull-to-right
+            right: -$mobile_sidebar_width
+          &.push-to-left
+            right: 0
+
+    &.page-header-is-fixed
+      .page-header
+        position: fixed
+        z-index: $z-level-8
+        width: 100%
+        background-color: #fff
+
+  #sidebar
+    transition: all 0.25s ease
+    display: none
+  // TODO aggiungere classe specifica sidebar del catalog x fare hide on mobile
+
+  #nav
+    display: none
+    &.to-push
+      display: block
+      position: fixed
+      overflow-y: auto
+      top: 0
+      left: -$mobile_nav_width
+      width: $mobile_nav_width
+      height: 100%
+      z-index: $z-level-12
+      transition: all 0.25s ease
+      &.pull-to-left
+        left: -$mobile_nav_width
+      &.push-to-right
+        left: 0
+
+  .header-top
+    .user-menu
+      .dropdown
+        .dropdown-menu
+          background: $color_tree_poppy
+          text-align: center
+          transition: all 0.25s ease
+          .dropdown-header
+            color: #aaa
+            display: none
+          li
+            font-size: 20px
+            a
+              color: #fff !important
+              padding-top: 15px !important
+              padding-bottom: 15px !important
+              &:hover
+                background: rgba(253, 253, 252, 0.15) !important
+            &.divider
+              display: none
+            &:last-child a
+              padding-top: 15px !important
+              padding-bottom: 15px !important
+          &.to-push
+            position: fixed
+            z-index: $z-level-12
+            top: -$user_nav_height
+            left: 0
+            border: none
+            display: block
+            overflow-y: auto
+            &.pull-to-top
+              top: -$user_nav_height
+            &.push-to-bottom
+              top: 0

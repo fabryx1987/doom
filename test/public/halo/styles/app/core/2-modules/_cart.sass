@@ -1,0 +1,181 @@
++min-screen($mq-0)
+  .cart
+    float: none
+    width: 100%
+    +position(relative, 14px null null null)
+    +margin(0)
+
+    > a
+      width: 100%
+      height: 100%
+      display: block
+
+    .img
+      float: left
+      display: block
+      +margin(null 0 null null)
+
+    .text
+      float: left
+      font-weight: normal
+      +padding(15px 0)
+
+    .circle
+      width: 18px
+      height: 18px
+      //+position(absolute, 14px null null 51px)
+      +position(absolute, 18px null null 48px)
+      +padding(0)
+
+    .icon-cart
+      left: 40px
+
+    .cart-cta
+      display: inline-block
+      z-index: $z-level-5
+      width: auto
+      height: 62px
+      text-align: center
+      vertical-align: middle
+      background-image: none
+      border: 1px solid transparent
+      border-radius: 0
+      float: right
+      +position(relative, -10px 0 null null)
+      +padding(0)
+      +margin(0)
+
+      > a
+        display: block
+        width: 100%
+        height: 100%
+        +padding(10px 10px 0 10px)
+
+      hr
+        width: 100%
+        +padding(0)
+        +margin(0 0 0 -10px)
+        +position(absolute, null null -1px 10px)
+
+      &.active
+        position: relative
+        box-shadow: none
+
+    &:hover
+      .cart-cta
+        position: relative
+        box-shadow: none
+        border: 1px solid transparent
+
+      .dropdown-menu
+        display: none
+
+    .dropdown-menu
+      display: none
+      z-index: $z-level-4
+      width: 260px
+      left: -118px
+      top: 48px
+      border-radius: 0
+      +padding(0)
+      +margin(3px null null null)
+
+      .cart-preview
+        list-style: none
+        +padding(0)
+        +margin(0)
+
+        > li
+          > a
+            +clearfix
+            font-weight: 500
+
+            .title
+              color: #465B6D
+
+      .cart-foot
+        background-color: #fcfcfc
+        clear: both
+        display: block
+        width: 100%
+        +clearfix
+        +margin(0)
+        +padding(8px)
+
+    &.dropdown
+      text-align: center
+
+    .cart-preview
+      +padding(null null 0 null)
+
+      li
+        a
+          border-bottom: 1px solid #F7EFEA
+          display: block
+          +padding(8px 12px)
+
+        .img
+          float: left
+          width: 40px
+
+          &.block-center
+            height: $cart_preview_item_height
+
+          > img
+            +margin(0 auto)
+
+        .title
+          display: block
+
+        .details
+          float: left
+          width: 179px
+          white-space: normal
+          +margin(0)
+          +padding(3px 0)
+
+    &.empty
+      .cart-cta
+        border-color: transparent !important
+        box-shadow: none !important
+
+      .dropdown-menu
+        display: none !important
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+  .cart
+    float: right
+    width: auto
+
++min-screen($mq-sm)
+  .cart
+    top: 16px
+
+    .img
+      +margin(null 12px null null)
+
+    .cart-cta
+      width: 142px
+
++min-screen($mq-md)
+  .cart
+    float: right
+    top: 5px
+    +margin(15px null null null)
+
+    &.dropdown:hover
+      .dropdown-menu
+        display: block
+
+    &.dropdown
+      text-align: left
+
+    &:hover .dropdown-menu
+      display: block
+
+    .dropdown-menu li a .title
+      border-bottom: none
+
++min-screen($mq-lg)

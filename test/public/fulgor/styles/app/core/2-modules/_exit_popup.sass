@@ -1,0 +1,72 @@
+#exit-popup
+  +min-screen($mq-0)
+    max-width: 600px
+
+  +min-screen($mq-md)
+    max-width: 800px
+
+  .img-column
+    overflow: hidden
+    +padding(0)
+    +margin(0)
+
+    .img-wrap
+      width: 100%
+      height: 100%
+      +position(relative, 0)
+
+      .img-cover
+        width: 100%
+        height: 100%
+        display: block
+
+  .form-container
+    background: rgba(255, 255, 255, .85)
+    border-radius: 4px
+    width: 100%
+    text-align: left
+    +margin(0)
+    +padding(20px)
+
+    .wording
+      font-family: $primary-font
+      font-size: 17px
+      font-weight: 500 !important
+      line-height: 1.5em
+      margin-bottom: 21px
+      text-transform: uppercase
+
+      .text-green
+        display: block
+        margin-bottom: 5px
+        color: #43B05D !important
+
+        strong
+          color: #399D51
+
+      .text-dark
+        font-size: 15px
+        text-transform: none
+        color: #333
+
+        strong
+          color: #2a2a2a
+
+
+
+    .facebook-btn
+      +max-screen($mq-sm)
+        margin: 0 auto
+        padding-right: 0
+        font-size: 14px !important
+
+    #registration-box
+      display: block
+      +margin(15px null null null)
+
+    #login-box
+      display: block
+      +margin(15px null null null)
+
+    #user_registered
+      display: none

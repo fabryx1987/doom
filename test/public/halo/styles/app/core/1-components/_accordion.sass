@@ -1,0 +1,50 @@
++min-screen($mq-0)
+  .accordion
+    .panel-group
+      .panel-heading
+        +padding(0)
+
+        a
+          position: relative
+          display: block
+          line-height: 1.4
+          +padding(15px)
+
+          i
+            display: none
+            +position(absolute, 16px 15px null null)
+
+            &.minimize
+              display: block
+
+          &.collapsed i
+            &.expand
+              display: block
+
+            &.minimize
+              display: none
+
+        + .panel-collapse .panel-body
+          border: 1px solid
+          border-top-style: none
+
+      .panel
+        border: none
+
+    &.no-fill .panel-group .panel-heading
+      border: 1px solid
+
+    .panel-title
+      a
+        border: 1px solid
+        text-shadow: none
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+
++min-screen($mq-md)
+
++min-screen($mq-lg)

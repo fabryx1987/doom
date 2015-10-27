@@ -1,0 +1,44 @@
+// --------------------------------------------------------------------------
+// Title with icon
+// --------------------------------------------------------------------------
+
+.section-title
+  font-size: 18px !important
+  +margin(21px 0)
+
+.title
+  position: relative
+
+  .icon
+    float: left
+    top: 2px !important
+    width: 20px
+    height: 20px
+    +position(absolute, 2px null null 0)
+
+    &:not(:first-child)
+      left: 30px
+
+      & + .text
+        +padding(null null null 70px)
+
+    & + .text
+      display: inline-block
+      +padding(null null null 30px)
+
+.panel .head .title
+  +padding(6px 15px)
+  +rem(font-size, 1.4rem)
+
+  .icon
+    top: 10px !important
+    left: 0
+    +padding(0)
+
+  .text
+    text-shadow: none
+    +padding(null null null 7px)
+
+// flags
+.flag-box
+  top: -4px

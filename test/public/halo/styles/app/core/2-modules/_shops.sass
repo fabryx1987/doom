@@ -1,0 +1,85 @@
+.shops
+  +padding(0)
+
+  +min-screen($mq-md)
+    > .col-sm-6, > .col-md-6
+      &:first-child
+        +padding(0 5px 0 15px)
+
+      &:last-child
+        +padding(0 15px 0 5px)
+
+  .shop
+    border: 1px solid #EFEFEF
+    background-color: $color_white
+    border-radius: 2px
+    +padding(0 0 15px 0)
+
+    +max-screen($mq-sm)
+      margin-bottom: 15px
+
+    ul
+      list-style: none
+      +margin(0 -7.5px)
+
+    li
+      line-height: 1.5
+      +margin(2px 0)
+      +padding(0 7.5px)
+
+    a
+      +margin(0)
+
+    figure
+      +padding(null null null 0)
+
+    .btn
+      +margin(10px null null null)
+
+    .shop-button-container
+      height: 110px
+
+    .head
+      border-bottom: 0 solid
+      +clearfix
+      +padding(10px null)
+
+      a
+        +max-screen($mq-sm)
+          box-sizing: initial
+          font-size: 12px
+          +padding(5px)
+
+    .categories
+      +padding(null null null 15px)
+
+    .products-carousel
+      +clearfix
+
+      .title
+        background-color: #FCFBFA
+        color: #F2B71F
+        +padding(14px)
+
+      .item
+        +margin(2px 5px)
+        +padding(null null 10px null)
+
+        &.item
+          border: none
+
+        .title
+          background-color: transparent
+          +padding(0)
+
+      +min-screen($mq-sm)
+        .owl-nav
+          top: -5px
+
+// products-carousel
+.shops
+  .shop
+    .products-carousel
+      .item
+        +max-screen($mq-xs)
+          +margin(null 60px)

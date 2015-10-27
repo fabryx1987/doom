@@ -1,0 +1,26 @@
+.product__overlay
+  display: none
+  background-color: rgba(black, .35)
+  z-index: $z-level-3
+  overflow: hidden
+  +position(absolute, 0 null null 0)
+  +calc(width, '100%')
+  +calc(height, '100%')
+
+.product__overlay__inner
+  width: 100%
+  height: 100%
+  +position(absolute, 0 null null 0)
+
+.product__overlay__ribbon
+  font-size: 30px
+  font-weight: bold
+  text-align: center
+  color: #fff
+  background: #666
+  transform: rotate(-45deg)
+  width: 155%
+  height: 40px
+  line-height: 40px
+  +margin(-20px null null null)
+  +position(absolute, 50% null null -27%)

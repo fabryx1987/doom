@@ -1,0 +1,81 @@
+// Mediaqueries min-screen
+// --------------------------------------------------------------------------
+
++min-screen($mq-0)
+  .header-content
+    .search
+      display: none
+
+    .header-buttons
+      list-style: none
+      display: block
+      float: left
+      +margin(0)
+
+      li
+        display: inline-block
+        float: left
+
+        > a
+          display: block
+          +padding(22px 11px)
+          color: #9797A6
+
+          &:hover
+            color: #63677F
+
+          .fa
+            +rem(font-size, 2.3rem)
+
+        &:first-child > a
+          +padding(24px 11px 20px 0)
+
+        &:nth-child(2) > a
+          +padding(24px 0 20px 7px)
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+  .header-content
+    .header-buttons
+      li
+        &:first-child > a
+          +padding(23px 11px)
+
+        &:nth-child(2) > a
+          display: none
+    .search
+      display: block
+
++min-screen($mq-md)
+  .header-content
+    .header-buttons
+      display: none
+
++min-screen($mq-lg)
+
+// Mediaqueries max-screen
+// --------------------------------------------------------------------------
+
++max-screen($mq-sm)
+  .header-content
+    +padding(null null 0 null)
+
++min-max-screen($mq-sm, $mq-md)
+  .header-content
+    .header-buttons
+      width: 5%
+
+    .logo
+      width: 18%
+      top: 12px
+      +margin(0 2% 0 1%)
+
+    .search
+      width: 50%
+      +margin(18px 0)
+
+    .cart
+      width: 20%

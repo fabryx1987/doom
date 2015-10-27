@@ -1,0 +1,852 @@
+.products
+  list-style: none
+  +position(relative, 0)
+  +margin(0)
+  +padding(0)
+
+.product
+  overflow: hidden
+  border: 1px solid #EAE8E7
+  +clearfix
+  +margin(10px)
+  +padding(0)
+
+  &:hover
+    border: 1px solid #FF8D1D !important
+
+  .ribbon
+    +position(absolute, -20px null null -15px)
+
+  .promo
+    +position(absolute, 0px null null 0px)
+
+  +max-screen($mq-md)
+    .ribbon
+      z-index: 10
+      +position(absolute, 10px null null 10px)
+
+    .product-head__mobile
+      +padding(null null null null !important)
+
+    .promo
+      top: 10px
+
+  .delivery
+    display: none
+    border: none !important
+
+  .price
+    +rem(font-size, 1.6rem)
+
+  ul
+    list-style: none
+    +padding(0)
+
+    li
+      +padding(0)
+
+    &.list
+      background: transparent
+      border: 1px solid #F2F2F2
+      border-radius: 0
+      +padding(5px)
+      +margin(null null 10px null)
+
+      li
+        +padding(1px 0 2px 15px)
+
+    &.list--inline
+      background: transparent
+      border: none
+      +margin(5px 0 0 5px)
+
+      li
+        +padding(1px 15px 2px 15px)
+
+        > span
+          display: inline
+
+        &:before
+          +rem(font-size, 0.8rem)
+
+  .gallery__thumbs
+    display: none
+
+    img
+      +margin(0 auto)
+
+    .item
+      display: inline-block
+      height: $gallery-thumbs-height !important
+      +padding(0 2px)
+
+  .gallery__preview
+    border: none !important
+
+    &:hover
+      box-shadow: none !important
+
+  .spinbox
+    .spinbox-input
+      height: 25px !important
+      +margin(0)
+      +padding(0 7px)
+
+    .spinbox-buttons
+      height: 25px !important
+
+      .btn
+        height: 13px
+        +padding(0 !important)
+
+        > *
+          font-size: 9px
+
+.product__inner
+  +clearfix
+  +margin(0 -15px)
+  +padding(15px)
+
+.product__offers
+  +clearfix
+
+.product__table
+  +margin(10px 0)
+
+  +min-screen($mq-md)
+    +padding(0)
+
+  .body
+    +rem(font-size, 1.2rem)
+
+    &.scrollbar-dynamic
+      max-height: 204px
+      overflow: hidden
+
+      +max-screen($mq-md)
+        overflow-x: auto !important
+
+    &.scroll-scrolly_visible
+      padding-right: 10px
+
+    > .scroll-element
+      &.scroll-x .scroll-bar
+        display: none
+
+  .row
+    +clearfix
+    +padding(4px 0)
+
+    +min-screen($mq-lg)
+      max-height: 100%
+
+    &.form-group:hover
+      cursor: pointer
+
+    &.js-product-row-active
+      background-color: #E8F6FD !important
+
+    .js-product-row-disabled,
+    .js-product-row-disabled:hover
+      .spinbox,
+      .js-rrp-price-container,
+      .js-gp-price-container
+        opacity: .5
+
+    > li
+      +padding(2px 8px)
+
+      +max-screen($mq-md)
+        +padding(null 0)
+
+  .btn
+    +margin(0)
+
+    &.js-add-to-cart
+      +margin(0)
+
+  .btn--phone
+    +margin(0 5px 0 0)
+
+  +max-screen($mq-md)
+    [class*="mg-"]
+      +margin(null 0)
+
+        .btn
+        width: 100%
+        +margin(6px 0)
+
+    .btn--phone
+      +margin(null null 15px null !important)
+
+.product__l-col
+  +padding(0 15px)
+
+.product__r-col
+  +padding(0 15px)
+
+  .text
+    +margin(0)
+
+  .brand
+    display: inline-block
+    line-height: 1.7
+
+.product__info
+  .list
+    border: none !important
+    background-color: transparent !important
+    +margin(0)
+
+  li
+    float: none !important
+    display: block
+    +margin(0 0 5px 0)
+    +padding(null null null 20px)
+
+    &:before
+      font-size: 8px !important
+      width: 8px
+      text-align: center
+
+.product__info__text
+  display: inline !important
+
+.product__info__ingredients
+  a
+    color: #435C6D !important
+
+  &:hover
+    &:before, a
+      color: #FF8F24 !important
+
+  &:before
+    color: #435C6D !important
+    font-size: 12px
+
+.product__features
+  +margin(15px 0)
+  +padding(0)
+
+  .title
+    background: #FDFDFD
+    border: 1px solid #E6EAEF
+    border-bottom: none
+    border-top-left-radius: 2px
+    border-top-right-radius: 2px
+    +padding(5px 10px)
+    +margin(0)
+
+  .list
+    background-color: $color_white
+    border: 1px solid #E6EAEF
+    border-bottom-left-radius: 2px
+    border-bottom-right-radius: 2px
+
+    li
+      &:before
+        top: 1px
+        left: 2px
+
+      > *
+        +padding(null null null 2px)
+
+.product__total-price
+  border: 2px solid #EDEFF1
+  +padding(10px 15px)
+  +margin(0 0 15px 0)
+
+.product__total-price__label
+  color: #465B6D
+  text-transform: uppercase
+  font-family: $secondary-font
+  font-weight: normal
+  font-size: 15px
+
+.product__buttons
+  .btn
+    +max-screen($mq-xs)
+      float: none
+      width: 100%
+      display: block
+      +margin(null 0)
+
+.product--listing
+  +min-screen($mq-0)
+    .product__l-col,
+    .product__r-col
+      width: 100%
+      min-height: 1px
+
+  +min-screen($mq-md)
+    display: block
+
+    .product__l-col,
+    .product__r-col
+      float: left
+      +padding(0 15px)
+
+    .gallery__preview
+      +margin(0)
+
+    .product__l-col
+      width: 25%
+      +position(relative, null 75% null null)
+
+    .product__r-col
+      width: 75%
+      +position(relative, null null null 25%)
+
+  +max-screen($mq-md)
+    .product__inner
+      +display(flex)
+      +justify-content(space-around)
+      +align-items(flex-start)
+      +align-content(flex-start)
+      +flex-direction(column)
+      +flex-wrap(wrap)
+
+    .product__l-col,
+    .product__r-col
+      +margin(0 auto)
+
+    .product__l-col
+      +order(1)
+
+    .product__r-col
+      +order(2)
+
+.products--detail-page
+  .product
+    background: #fefefe !important
+    border: 1px solid #EAE8E7
+    +margin(10px 0 0 0)
+    +padding(0)
+
+    .ribbon
+      +position(absolute, -20px null null -15px)
+
+    +max-screen($mq-md)
+      +padding(null 10px)
+
+      .ribbon
+        +position(absolute, 0 null null 0)
+
+      .product__table
+        +padding(0)
+
+        ul > li
+          +max-screen($mq-sm)
+            [class*="mg-"]
+              +margin(null 0)
+
+            .btn
+              &.js-add-to-cart
+                width: 100%
+                +margin(6px 0)
+
+      .product__r-col
+        .text
+          &.collapsed-group
+            +margin(null null 10px null)
+
+    +max-screen($mq-sm)
+      .product__r-col
+        +padding(0 !important)
+
+    .brand
+      &.block-center
+        height: 45px
+
+        +min-screen($mq-sm)
+          +margin(0)
+
+    .title
+      float: none
+      +margin(2px 0 0 0)
+
+    .product__l-col
+      +min-screen($mq-md)
+        +padding(null null null 15px)
+
+    .gallery
+      +margin(null null 15px null)
+
+    .gallyer__thumbs
+      display: block
+
+  .gallery__thumbs
+    display: block
+
+  .product__buttons
+    .btn
+      +max-screen($mq-md)
+        float: none
+        width: 100%
+        display: block
+        +margin(null 0)
+
+        &.btn--phone
+          +margin(null 10px null null)
+
+.product--grid
+  background-color: transparent !important
+  border: none !important
+  +margin(0)
+  +padding(0)
+
+  .ribbon
+    +position(absolute, -15px null null -20px)
+
+  +max-screen($mq-md)
+    &:nth-child(2n+1)
+      clear: left
+
+    .ribbon
+      +position(absolute, -15px null null -15px)
+
+  +max-screen($mq-sm)
+    float: none
+    width: 100%
+
+    .ribbon
+      +position(absolute, 0 null null -5px)
+
+  +min-screen($mq-md)
+    &:nth-child(4n+1)
+      clear: left
+
+  &:last-child
+    +padding(0)
+
+  &:hover
+    border: none !important
+
+  .product__total-price
+    border: none
+    +padding(0)
+
+  .product__inner
+    overflow: hidden
+    background-color: #fefefe !important
+    border: 1px solid #EAE8E7 !important
+    +position(relative, 0)
+    +margin(10px)
+    +padding(15px 0)
+    +display(flex)
+    +justify-content(space-around)
+    +align-items(flex-start)
+    +align-content(flex-start)
+    +flex-direction(column)
+    +flex-wrap(wrap)
+
+  .product__l-col,
+  .product__r-col
+    width: 100%
+    +margin(0 auto)
+
+  .product__l-col
+    +order(1)
+
+  .product__r-col
+    +order(2)
+
+  .product__table
+    .head, .body, .table-title
+      min-width: 0 !important
+
+.product--flash
+  .ribbon
+    +position(absolute, -20px null null -20px)
+
+  +max-screen($mq-md)
+    .ribbon
+      +position(absolute, -15px null null -15px)
+
+  +max-screen($mq-sm)
+    .ribbon
+      +position(absolute, 0 null null 0)
+
+  .product__inner
+    +padding(15px 0)
+
+  .gallery
+    +margin(0)
+
+  .gallery__thumbs
+    display: none
+
+  .product__heading
+    .head
+      +padding(0)
+
+  &:not(.js-product-expired)
+    &:not(.js-product-sold-out)
+      &:hover
+        .starburst
+          display: block
+
+  &.js-product-sold-out,
+  &.js-product-expired
+    .product__overlay
+      display: block
+
+.products-carousel
+  .owl-carousel
+    display: block !important
+
+  .owl-item
+    list-style: none
+    display: inline-block
+    line-height: 1.5
+    +margin(0)
+
+    +max-screen($mq-xs)
+      float: none !important
+
+  .product
+    &.product--grid
+      &.product--carousel
+        display: block
+        background-color: $color_white
+        clear: none !important
+        +margin(0)
+
+        +max-screen($mq-xs)
+          +margin(0)
+
+        .product__inner
+          border-color: transparent !important
+          +padding(0)
+          +clearfix
+
+        .product__title
+          display: block
+          width: 100%
+          height: $product_carousel_title_height
+          line-height: 1.4
+          +margin(0)
+          +rem(font-size, 1.2rem)
+
+        .product__l-col,
+        .product__r-col
+          +padding(0)
+
+        .product__table
+          display: block !important
+
+        .brand
+          color: #FF7600
+
+        .price
+          +rem(font-size, 1.4rem)
+
+  .product__flat-image
+    border: none !important
+    +position(relative, 0)
+
+    .overlay
+      z-index: 5
+
+      .icon
+        z-index: 10
+
+    &:hover
+      box-shadow: none !important
+
+    &.block-center
+      height: $product_carousel_height
+      +padding(10px)
+
+      img
+        max-width: 100%
+
+.product__usp
+  +max-screen($mq-md)
+    display: none
+
+
+// --------------------------
+// product__table - grid
+// --------------------------
+
+
+.product--listing
+  .mu-table .scrollable .head,
+  .mu-table .scrollable .body,
+  .mu-table .scrollable .table-title
+    min-width: 320px !important
+
+  // .product__table .head
+  // -------------------
+  .head__name
+    +min-screen($mq-0)
+      text-align: left
+      +span(70 of 100)
+
+    +min-screen($mq-xs)
+      +span(50 of 100)
+
+    +min-screen($mq-sm)
+      +span(35 of 100)
+
+  .head__options
+    +min-screen($mq-0)
+      +span(0 of 100)
+
+      +max-screen($mq-md)
+        display: none
+
+    +min-screen($mq-md)
+      +span(20 of 100)
+
+  .head__qty
+    +min-screen($mq-0)
+      text-align: left
+      +span(20 of 100)
+
+    +min-screen($mq-xs)
+      +span(15 of 100)
+
+    +min-screen($mq-md)
+      display: block
+      +span(13 of 100)
+
+  .head__price-unit
+    +min-screen($mq-0)
+      display: none
+      +span(0 of 100)
+
+  .head__price-rrp
+    +min-screen($mq-0)
+      text-align: right
+      +span(0 of 100)
+
+      +max-screen($mq-xs)
+        display: none
+
+    +min-screen($mq-xs)
+      +span(15 of 100)
+
+    +min-screen($mq-md)
+      +span(10 of 100)
+
+  .head__price-gp
+    +min-screen($mq-0)
+      text-align: right
+      +span(0 of 100)
+
+      +max-screen($mq-xs)
+        display: none
+
+    +min-screen($mq-xs)
+      +span(15 of 100)
+
+    +min-screen($mq-md)
+      +span(10 of 100)
+
+  .head__btn
+    +min-screen($mq-0)
+      +span(0 of 100)
+
+      +max-screen($mq-sm)
+        display: none
+
+    +min-screen($mq-sm)
+      +span(20 of 100)
+
+    +min-screen($mq-md)
+      +span(12 of 100)
+
+  // .product__table .body
+  // -------------------
+  .body__radio
+    +min-screen($mq-0)
+      +span(15 of 100)
+
+    +min-screen($mq-xs)
+      +span(10 of 100)
+
+    +min-screen($mq-sm)
+      +span(5 of 100)
+
+  .body__name
+    +min-screen($mq-0)
+      text-align: left
+      height: 1.5em
+      +span(60 of 100)
+
+    +min-screen($mq-xs)
+      +span(40 of 100)
+
+    +min-screen($mq-sm)
+      +span(30 of 100)
+
+  .body__options
+    +min-screen($mq-0)
+      text-align: left
+      +span(0 of 100)
+
+      +max-screen($mq-md)
+        display: none
+
+    +min-screen($mq-md)
+      +span(20 of 100)
+
+  .body__qty
+    +min-screen($mq-0)
+      text-align: right
+      +span(20 of 100)
+
+    +min-screen($mq-xs)
+      +span(15 of 100)
+
+    +min-screen($mq-md)
+      +span(13 of 100)
+
+  .body__price-unit
+    +min-screen($mq-0)
+      display: none
+      +span(0 of 100)
+
+  .body__price-rrp
+    +min-screen($mq-0)
+      text-align: right
+      +span(0 of 100)
+
+      +max-screen($mq-xs)
+        display: none
+
+    +min-screen($mq-xs)
+      +span(15 of 100)
+
+    +min-screen($mq-md)
+      +span(10 of 100)
+
+  .body__price-gp
+    +min-screen($mq-0)
+      text-align: right
+      +span(0 of 100)
+
+      +max-screen($mq-xs)
+        display: none
+
+    +min-screen($mq-xs)
+      +span(15 of 100)
+
+    +min-screen($mq-md)
+      +span(10 of 100)
+
+  .body__btn
+    +min-screen($mq-0)
+      text-align: right
+      +span(0 of 100)
+
+      +max-screen($mq-sm)
+        display: none
+
+    +min-screen($mq-sm)
+      +span(20 of 100)
+
+    +min-screen($mq-md)
+      +span(12 of 100)
+
+  .product__pricing
+    width: 100%
+
+    +min-screen($mq-md)
+      display: none
+
+  .product__total-price
+    +clearfix
+
+    +min-screen($mq-0)
+      .product__total-price__label
+        +span(45 of 100)
+
+      .product__total-price__data
+        +span(55 of 100)
+
+    +min-screen($mq-sm)
+      display: none
+      +span(0 of 100)
+      +padding(null 0)
+      +margin(10px null null null)
+
+  .product__buttons
+    +min-screen($mq-sm)
+      display: none
+
+    .btn
+      +min-screen($mq-0)
+        width: 100%
+
+    .btn--phone
+      display: none !important
+
+
+.products--detail-page
+  .product--listing
+    .product__table
+      +padding(0 !important)
+
+      .head__name
+        +min-screen($mq-sm)
+          +span(37 of 100 !important)
+
+      .body__name
+        +min-screen($mq-sm)
+          +span(32 of 100 !important)
+
+      .head__btn,
+      .body__btn
+        +min-screen($mq-0)
+          display: none !important
+          +span(0 of 100 !important)
+
+      .head__price-unit,
+      .body__price-unit
+        text-align: right
+
+        +min-screen($mq-sm)
+          display: block
+          +span(15 of 100)
+
+        +min-screen($mq-md)
+          display: block
+          +span(10 of 100)
+
+    .product__pricing
+      +min-screen($mq-md)
+        float: left
+        width: 50% !important
+        display: block !important
+        +clearfix
+
+    .product__total-price
+      +min-screen($mq-sm)
+        float: none
+        width: 100%
+        display: block !important
+        +padding(10px 15px)
+        +margin(0 null null null)
+
+    .product__buttons
+      +min-screen($mq-sm)
+        display: block !important
+        text-align: right
+        +padding(8px 0 12px 0)
+
+      .btn
+        +min-screen($mq-sm)
+          display: block
+          width: 100%
+
+        +min-screen($mq-md)
+          display: inline
+          width: auto
+
+      .btn--phone
+        +min-screen($mq-md)
+          display: inline !important
+          +margin(null 15px null null)

@@ -1,0 +1,600 @@
+// --------------------------------------------------------------------------
+// 1. Generic
+// --------------------------------------------------------------------------
+
+.satisfy
+  font-family: $satisfy-font !important
+
+.primary-font
+  font-family: $primary-font !important
+
+.secondary-font
+  font-family: $secondary-font !important
+
+body
+  line-height: 1.75
+  word-spacing: 0
+  font-weight: 500
+  +font-smoothing(on)
+  +font($primary-font, 13px)
+
+
+h1, h2, h3, h4, h5, h6, b, th, dt, button,
+.btn, [class^="btn-"], a.btn, input.btn, button.btn,
+.header-top .dropdown-header, .cart .cart-cta strong,
+#partners .title > *, .panel .head, .brand
+  font-weight: normal !important
+  +font-smoothing(off)
+  +font-family($secondary-font)
+
+
+.flat-page
+  .title
+    font-weight: 400 !important
+    +font-family($secondary-font)
+
+blockquote p
+  line-height: 35px
+  +rem(font-size, 1.6rem)
+
+a
+  text-decoration: none
+
+  &:hover
+    text-decoration: none
+
+.fuelux .h4, .fuelux h4
+  +rem(font-size, 1.4rem)
+
+// --------------------------------------------------------------------------
+// 2. Atoms
+// --------------------------------------------------------------------------
+
+// Icon
+
+.icon
+  &.icon-round
+    text-align: center
+
+  &.icon-tiny
+    +rem(font-size, 1.2rem)
+
+  &.icon-1x
+    +rem(font-size, 1.8rem)
+
+  &.icon-2x
+    +rem(font-size, 2.4rem)
+
+  &.icon-3x
+    +rem(font-size, 3.6rem)
+
+  &.icon-circled
+    text-align: center
+
+    &.icon-tiny
+      line-height: 20px
+
+  &.icon-round.icon-tiny
+    line-height: 20px
+
+  &.icon-circled.icon-1x, &.icon-round.icon-1x
+    line-height: 32px
+
+  &.icon-circled.icon-2x, &.icon-round.icon-2x
+    line-height: 64px
+
+  &.icon-circled.icon-3x, &.icon-round.icon-3x
+    line-height: 96px
+
+// List
+
+.list li:before
+  font-family: $fa-font
+  +rem(font-size, 1.0rem)
+
+// Table
+
+.table-bordered thead th
+  line-height: 30px
+
+// Form
+
+.form-control
+  +rem(font-size, 1.2rem)
+
+label
+  +rem(font-size, 1.2rem)
+
+.form-control-feedback
+  line-height: 36px
+
+// File Upload
+
+.file-upload input.upload
+  +rem(font-size, 2.0rem)
+
+// Badge
+
+*[class*="badge"]
+  line-height: 45
+  font-weight: bold
+  text-align: center
+  text-indent: -1px
+  letter-spacing: -1px
+  +rem(font-size, 1.9rem)
+
+
+.badge.double
+  line-height: 42px
+  +rem(font-size, 1.6rem)
+
+.badge-xs
+  line-height: 25px
+  +rem(font-size, 1.0rem)
+
+  &.double
+    line-height: 28px
+    +rem(font-size, 0.9rem)
+
+.badge-sm
+  line-height: 35px
+  +rem(font-size, 1.3rem)
+
+  &.double
+    line-height: 38px
+    +rem(font-size, 1.3rem)
+
+.badge-md
+  line-height: 55px
+  +rem(font-size, 2.1rem)
+
+  &.double
+    line-height: 58px
+    +rem(font-size, 1.8rem)
+
+.badge-lg
+  line-height: 65px
+  +rem(font-size, 2.8rem)
+
+  &.double
+    line-height: 68px
+    +rem(font-size, 2.5rem)
+
+.badge-xlg
+  line-height: 75px
+  +rem(font-size, 3.3rem)
+
+  &.double
+    line-height: 68px
+    +rem(font-size, 3.0rem)
+
+// Ribbon
+
+.ribbon a
+  font-size: 81.25%
+  font-weight: bold
+  text-align: center
+  text-decoration: none
+
+// Blockquote
+
+blockquote
+  +rem(font-size, 1.4rem)
+
+// Panel
+
+.panel
+  > .head
+    line-height: 38px
+    font-weight: bold
+    text-align: center
+    text-shadow: 0 1px rgba(255, 255, 255, 0.7)
+    +rem(font-size, 1.6rem)
+
+  &.flat
+    > .head
+      text-align: left
+
+  > .head
+    +rem(font-size, 1.5rem)
+    font-weight: 400
+
+// Code
+
+code, pre
+  +rem(font-size, 1.2rem)
+  line-height: 20px
+  font-family: $code-font
+
+// Button
+
+.btn.btn-xs, input.btn-xs
+  +rem(font-size, 1.0rem)
+
+.btn.btn-sm, input.btn-sm
+  +rem(font-size, 1.2rem)
+
+.btn, input.btn
+  +rem(font-size, 1.4rem)
+
+.btn.btn-md, input.btn-md
+  +rem(font-size, 1.5rem)
+
+.btn.btn-lg, input.btn-lg
+  +rem(font-size, 1.7rem)
+
+.btn.btn-xlg, input.btn-xlg
+  +rem(font-size, 2.0rem)
+
+// Price
+
+.price
+  font-weight: bold
+
+// Title with icon
+
+.title .text
+  line-height: 1.6
+
+// --------------------------------------------------------------------------
+// 2. Modules
+// --------------------------------------------------------------------------
+
+// Dropdown
+
+.dropdown-mega .promo
+  .timer
+    line-height: 1.4
+
+  .title
+    line-height: 20px
+
+// Accordion
+
+.accordion .panel-group .panel-heading
+  h4
+    line-height: 1em
+  a
+    text-decoration: none
+    font-weight: normal
+
+// Tabs
+
+.tabs .nav-tabs li a
+  line-height: 1em
+  font-weight: 600
+  +rem(font-size, 1.4rem)
+
+  h1, h2, h3, h4, h5, h6
+    line-height: 1em
+    font-family: $primary-font !important
+    font-weight: 600 !important
+    -webkit-font-smoothing: antialiased
+    +rem(font-size, 1.4rem)
+    +margin(0)
+
+// Back top
+
+#back-top .icon
+  +rem(font-size, 1.8rem)
+
+// Counter
+
+.counter
+  text-align: center
+
+  span.number
+    +rem(font-size, 6.0rem)
+    line-height: 1em
+    font-weight: 600
+
+// Chosen
+
+.chosen-container-single .chosen-single
+  line-height: 33px
+  text-decoration: none
+
+// Catalog + Filter
+
+.homepage-head__catalog,
+.filter--catalog
+  .title
+    +rem(font-size, 1.4rem)
+    font-weight: normal
+
+  li
+    line-height: 1.4
+
+  a
+    +rem(font-size, 1.2rem)
+
+  &.filter
+    .filter-label
+      +rem(font-size, 1.4rem)
+
+    .title
+      +rem(font-size, 1.4rem)
+      font-weight: normal
+
+    .level-2 .title
+      +rem(font-size, 1.2rem)
+
+    .icon-circle
+      &:before, li:before
+        +rem(font-size, 0.5rem)
+
+    .icon-check
+      &:before, li:before
+        +rem(font-size, 0.8rem)
+
+// --------------------------------------------------------------------------
+// 3. Partials
+// --------------------------------------------------------------------------
+
+// Header
+
+.logo
+  line-height: 1.0em
+  text-indent: -9999em
+
+// 2.1 Top-bar
+// --------------------------------------------------------------------------
+
+#header
+  .header-top
+    +rem(font-size, 1.0rem)
+    font-weight: 500
+
+    .dropdown-menu
+      +rem(font-size, 1.3rem)
+
+// 2.2 Search
+// --------------------------------------------------------------------------
+.search
+  input
+    +rem(font-size, 1.2rem)
+
+  [class^="icon-"], .fa-search
+    +rem(font-size, 1.8rem)
+
+// 2.3 Usp
+// --------------------------------------------------------------------------
+
+.usp li .text
+  line-height: 1.4
+  +rem(font-size, 1.2rem)
+
+
+// 2.4 Cart
+// --------------------------------------------------------------------------
+
+.cart
+  .cart-cta
+    +rem(font-size, 1.4rem)
+    font-weight: normal
+    line-height: 1.4
+  .circle
+    font-weight: bold
+  .qty
+    +rem(font-size, 1.0rem)
+  .cart-preview
+    +rem(font-size, 1.2rem)
+
+// 2.5 Nav
+// --------------------------------------------------------------------------
+
+#nav
+  ul > li
+    +rem(font-size, 1.4rem)
+    line-height: 2
+  .btn
+    +font-family($secondary-font)
+    font-weight: normal
+
+.dropdown-mega
+  .dropdown-menu
+    +rem(font-size, 1.3rem)
+
+    a
+      +rem(font-size, 1.3rem)
+
+    .title
+      +rem(font-size, 1.4rem)
+
+  .promo
+    .timer, .btn
+      +rem(font-size, 1.1rem)
+
+    .desc
+      +rem(font-size, 1.2rem)
+
+    .title
+      +rem(font-size, 1.3rem)
+
+    .sub-title
+      +rem(font-size, 1.2rem)
+      line-height: 1.4
+
+    .price
+      font-weight: normal
+      .price__new
+        font-weight: normal
+
+// Main
+
+// Footer
+#partners
+  .title > *
+    font-weight: bold
+
+// 4.1 Top
+// --------------------------------------------------------------------------
+
+#footer
+  .top .circle
+    +rem(font-size, 1.2rem)
+    line-height: 15px
+
+  nav .title
+    +rem(font-size, 1.1rem)
+    font-weight: 400
+    text-transform: uppercase
+    line-height: 1.6
+
+// 4.2 Nav
+// --------------------------------------------------------------------------
+
++min-screen($mq-xxs)
+  #footer nav
+    +rem(font-size, 1.1rem)
+    line-height: 1.3
+
++min-screen($mq-md)
+  #footer nav
+    +rem(font-size, 1.2rem)
+
+// 4.3 Partners
+// --------------------------------------------------------------------------
+
+#partners .title > *
+  +rem(font-size, 1.2rem)
+  font-weight: bold
+
+// 4.4 Copy
+// --------------------------------------------------------------------------
+
+#copy
+  +rem(font-size, 1.1rem)
+
+// --------------------------------------------------------------------------
+// 4. Pages
+// --------------------------------------------------------------------------
+
+.error-404
+  text-align: center
+
+// index
+.shop
+  a
+    text-decoration: none
+
+  .title
+    +rem(font-size, 1.8rem)
+    font-weight: 600
+
+  .products-list
+    .title
+      +rem(font-size, 1.5rem)
+
+.products-list
+  .title
+    font-weight: normal
+    line-height: 1.3
+    +rem(font-size, 1.8rem)
+
+  .item
+    .title
+      font-weight: normal
+      +rem(font-size, 1.4rem)
+      a
+        font-weight: normal
+
+  .price
+    +rem(font-size, 1.3rem)
+
+.section-title
+  +rem(font-size, 2.0rem)
+
+.reviews
+  .posted, .reviewer
+    +rem(font-size, 1.4rem)
+
+  blockquote
+    +rem(font-size, 1.3rem)
+
+.product__features
+  .title
+    +rem(font-size, 1.4rem)
+  .list
+    +rem(font-size, 1.3rem)
+
+.head
+  .title
+    line-height: 1.3
+
+  .title, .title .text
+    +rem(font-size, 1.6rem)
+
+
+.gallery
+  .owl-theme .owl-controls .owl-nav
+    [class*=owl-]
+      +rem(font-size, 1.2rem)
+
+.product__r-col .text
+  +rem(font-size, 1.3rem)
+
+.links.text-dark
+  +rem(font-size, 1.2rem)
+
+  a
+    +rem(font-size, 1.2rem)
+
+  .icon-text
+    +rem(font-size, 0.9rem)
+
+.delivery
+  .title
+    text-transform: uppercase
+    text-align: center
+    +rem(font-size, 1.3rem)
+
+  .item
+    .icon
+      +rem(font-size, 2.0rem)
+
+    .text
+      +rem(font-size, 1.1rem)
+      line-height: 1.3
+
+      h5
+        text-transform: uppercase
+        font-weight: bold
+        +rem(font-size, 1.0rem)
+        line-height: 1.3
+
+      p
+        .color
+          text-transform: uppercase
+
+// Product Compare
+
+.product-compare
+  .plus
+    +rem(font-size, 3.0rem)
+
+// override text sizes
+.text-xs
+  font-size: 11px !important
+
+.text-sm
+  font-size: 12px !important
+
+.text-normal
+  font-size: 14px !important
+
+.text-md
+  font-size: 16px !important
+
+.text-lg
+  font-size: 20px !important
+
+.text-xlg
+  font-size: 30px !important
+
+.text-xxlg
+  font-size: 40px !important
+
+.text-100
+  font-size: 100px !important
+

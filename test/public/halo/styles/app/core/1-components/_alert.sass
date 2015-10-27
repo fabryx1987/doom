@@ -1,0 +1,74 @@
++min-screen($mq-0)
+  .alert
+    border-radius: 0
+    width: auto
+    +margin(0)
+    +padding(11px 35px 11px 15px)
+
+    &.fixed
+      position: fixed
+      z-index: $z-level-9
+      left: 0
+      width: 100%
+      +margin(0)
+
+      &.top
+        top: 0
+
+      &.bottom
+        bottom: 0
+
+    button
+      &.close
+        top: 50% !important
+
+    &[data-growl]
+      z-index: $z-level-10 !important
+      margin-right: 15px !important // to fix growl mobile on left-top align
+
+      button
+        &.close
+          +margin(-6px null null null)
+          font-size: 30px !important
+
+          &:hover
+            cursor: pointer !important
+
+    &.alert-danger
+      strong, b, .close
+        color: #a94442
+
+    &.alert-success
+      border-color: #AAE094
+
+      strong, b, .close
+        color: #309208
+
+    &.alert-warning
+      strong, b, .close
+        color: #8a6d3b
+
+    &.alert-info
+      strong, b, .close
+        color: #31708f
+
+  #main
+    .alert
+      +position(relative, 0)
+      +padding(10px 15px)
+
+      button
+        &.close
+          font-size: 40px
+          +margin(-10px 0 0 0)
+
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+
++min-screen($mq-md)
+
++min-screen($mq-lg)

@@ -1,0 +1,67 @@
+// Mediaqueries min-screen
+// --------------------------------------------------------------------------
+
++min-screen($mq-0)
+  .search
+    background: $color_white
+    z-index: $z-level-9
+    width: 100%
+    +position(absolute, 88px null null 0)
+    +padding(3px null 5px null)
+
+    [class^="icon-"], .fa-search
+      top: 10px
+      left: auto
+      right: 15px
+
+    .form-group
+      position: relative
+      width: 100%
+      +padding(0 15px)
+
+      input
+        width: 100%
+        float: left
+        +padding(null null null 15px)
+        +margin(0)
+
+      .btn
+        height: 40px
+        display: block
+        border: none
+        background: transparent
+        float: right
+        width: auto
+        +position(absolute, null 15px null null)
+        +margin(0 0 0 -1px)
+
+  .header-is-fixed
+    .search
+      top: 68px
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+  .search
+    display: block !important
+    float: left
+    width: 44%
+    background: transparent
+    +position(relative, 0 null null null)
+    +margin(23px 5px)
+    +padding(0)
+
+  .header-is-fixed
+    .search
+      top: 0
+
++min-screen($mq-md)
+  .search
+    width: 25%
+
++min-screen($mq-lg)
+
+// Mediaqueries max-screen
+// --------------------------------------------------------------------------

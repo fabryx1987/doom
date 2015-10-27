@@ -1,0 +1,128 @@
+#doofinder
+  border: 1px solid #CECFD2 !important
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1)
+  margin-top: 5px
+
+  #hck-f-total
+    color: #675E53
+
+  #doofinder-header
+    background-color: #FFFEFC
+    +padding(9px 10px !important)
+
+  #doofinder-facets
+    background-color: #FFF !important
+
+    .checked
+      .hck-facet-title
+        color: #FF8F24 !important
+
+    #hck-facets
+      .hck-facet >
+        p.hck-facet-title
+          color: #675E54 !important
+          background-color: #f5f4f2 !important
+          border-bottom: 1px solid #E5E5E5 !important
+          +margin(0 !important)
+
+    #hck-f-wrap
+      *
+        color: #675E54
+        font-family: 'Raleway', sans-serif !important
+
+    #hck-facets
+      .hck-facet-subtotal
+        border-radius: 10px !important
+        padding: 0 !important
+        text-align: center !important
+        margin-right: 2px !important
+        background-color: #FFFEFC !important
+        color: $color_tree_poppy !important
+
+      .hck-facet + .hck-facet
+        border-top: none !important
+        &.collapsed
+          +margin(0 !important)
+
+      li
+        background-color: #FFF !important
+        border-bottom: 1px solid #EDEDED !important
+
+        &.checked
+          background-color: #F2F2F2 !important
+          padding: 5px 10px !important
+
+          a
+            background-color: $color_white !important
+            border: 1px solid $color_tree_poppy !important
+            border-radius: 10px !important
+
+            .hck-facet-value
+              color: $color_tree_poppy !important
+
+            &:hover
+              background-color: $color_tree_poppy !important
+              border-color: $color_tree_poppy !important
+              color: $color_white !important
+              border-radius: 10px !important
+
+              .hck-facet-value
+                color: $color_white !important
+        a
+          &:hover
+            background-color: #E8E7E4 !important
+            border-radius: 8px !important
+
+    .hck-facet-range
+      .noUiSlider.horizontal .noUi-base,
+      #doofinder-facets .hck-facet-range .noUiSlider.horizontal .noUi-connect
+        height: 3px !important
+        background: #D2CECE !important
+
+      .noUiSlider.horizontal
+        .noUi-handle
+          border-color: #bebebe !important
+          background: #F2EEE7 !important
+          height: 16px !important
+          width: 8px !important
+          border-radius: 2px !important
+          top: -4px !important
+
+        .noUi-connect
+          height: 3px !important
+          background-color: #CFC8C4 !important
+
+  .df-reset
+    .dfjspTrack
+      background-color: #F8F8F8 !important
+      border-radius: 0 !important
+      width: 6px !important
+      margin: 0 !important
+      padding: 0 !important
+      float: right !important
+
+    .dfjspDrag
+      border-radius: 0 !important
+      background-color: #E5E5E5 !important
+      width: 6px !important
+
+  #helpck-results
+    ul
+      &.GridView, &.ListView
+        span
+          &.dfprice
+            color: #FF7601
+
+        li
+          > a
+            font-family: 'Raleway', sans-serif !important
+
+            > h1
+              color: #52565C !important
+
+              &:hover
+                color: $color_tree_poppy !important
+
+  #doofinder-results
+    #doofinderLogo
+      display: none !important

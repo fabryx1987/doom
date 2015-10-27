@@ -1,0 +1,72 @@
+// --------------------------------------------------------------------------
+// Img
+// --------------------------------------------------------------------------
+
+.bg
+  position: absolute
+  width: 100%
+  height: 100%
+  opacity: .1
+
+.img-full
+  max-width: 100%
+  height: auto
+
+// Img
+// --------------------------------------------------------------------------
+
+.img-cover
+  width: 100%
+  height: 100%
+  background-position: top
+  background-size: cover
+
+.cover
+  background: no-repeat fixed center center
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+
+.responsive
+  display: block
+  width: 100% !important
+  /* fix firefox responsive images
+  max-width: 100% !important
+  height: auto !important
+  vertical-align: middle
+  border: 0
+  -ms-interpolation-mode: bicubic
+
+img
+  &.align-left
+    float: left
+    +margin(0 25px 20px 0)
+
+  &.align-right
+    float: right
+    display: block
+    +margin(0 0 20px 25px)
+
+  &.align-center
+    display: block
+    clear: both
+    +margin(0 auto)
+
+  &.align-none
+    display: block
+    max-width: 100%
+    height: auto
+    +margin(20px 0)
+
+  &.full
+    width: 100%
+    height: auto
+    display: inline-block
+    max-width: none
+
+  &.border
+    border: 3px solid
+
+a:hover > .overlay
+  opacity: 1

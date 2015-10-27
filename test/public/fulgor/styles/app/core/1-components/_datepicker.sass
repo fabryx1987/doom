@@ -1,0 +1,104 @@
++min-screen($mq-0)
+  .fuelux
+
+    .datepicker
+      z-index: $z-level-7
+
+      .input-group-btn
+        position: static
+
+        .btn
+          border-color: #d3d3d4 !important
+          position: relative
+          z-index: $z-level-2
+
+          &:hover
+            border-color: #9CC1DF !important
+            background-color: #F4FAFF !important
+
+      .form-control
+        +padding(null 10px)
+        +rem(font-size, 1.1rem)
+
+        +max-screen($mq-md)
+          +padding(null 8px)
+
+      .btn
+        +padding(7px 12px)
+
+    .datepicker-calendar-wrapper
+      border-color: #D2D2D2
+
+      +max-screen($mq-md)
+        left: 0
+
+    .datepicker-calendar-header
+      .prev
+        color: #fff
+
+        &:hover
+          background-color: $color_burnt_orange
+
+      .next
+        color: #fff
+
+        &:hover
+          background-color: $color_burnt_orange
+
+      .title
+        text-decoration: none
+        width: 200px
+
+        &:hover
+          color: $color_burnt_orange
+          text-decoration: none
+
+    .datepicker-calendar-footer
+      background: #F4F4F4
+      border-top-color: #EDEDED
+
+      .datepicker-today
+        &:hover
+          color: $color_burnt_orange
+
+    .datepicker-calendar-days
+      th
+        +rem(font-size, 1.2rem)
+
+      td
+        &.selected
+          span
+            background-color: $color_burnt_orange
+
+            button
+              color: $color_white
+
+
+        &.current-day
+          span
+            border: 1px solid #F63
+            +margin(4px 2px)
+
+          button
+            color: $color_burnt_orange
+            border-color: $color_burnt_orange
+
+        &.restricted
+          .datepicker-date, b
+            color: #ccc
+
+            &:before
+              border-color: #ccc
+
+    .datepicker-wheels-footer
+      +clearfix
+
++min-screen($mq-xxs)
+
++min-screen($mq-xs)
+
++min-screen($mq-sm)
+
++min-screen($mq-md)
+
++min-screen($mq-lg)
