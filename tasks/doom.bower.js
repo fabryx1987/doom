@@ -12,7 +12,10 @@ var $ = require('../lib/plugins');
 // ---------------------------------------------
 
 var bower_manager = function () {
-    //console.log($.path.join(doom.bower.root, 'bower.json'));
+    $.gulp.task('bower:manager', function(){
+        return $.gulp.src($.path.join(doom.bower.root, '/**/bower.json'))
+            .pipe(console.log(this))
+    });
 };
 
 var create_bower_stack = function (vendor_src, vendor_files) {

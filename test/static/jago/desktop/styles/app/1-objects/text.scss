@@ -1,0 +1,40 @@
+//------------------------------------
+//  $Text
+//------------------------------------
+
+.o--text--green {
+    color: #02b616;
+}
+
+.o--text--blue {
+    color: #067ACB;
+}
+
+.o--text--gray {
+    color: #7486A0;
+}
+
+.o--text--red {
+    color: #EA3157;
+}
+
+
+//  $Text--position
+//------------------------------------
+
+.o--text--left {
+  text-align: left !important;
+}
+
+.o--text--right {
+  text-align: right !important;
+}
+
+.o--text--center {
+  text-align: center !important;
+}
+
+.o--text--antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

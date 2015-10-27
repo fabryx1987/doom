@@ -1,0 +1,95 @@
+//------------------------------------
+//  $Panel
+//------------------------------------
+
+.c--panel {
+  width: auto !important;
+  float: none !important;
+  height: auto !important;
+  margin: 25px auto !important;
+  padding: 25px;
+  font-family: "Open Sans", sans-serif;
+  background: #f6f6f6 none !important;
+  border: 1px solid #d9e4ea !important;
+}
+
+.c--panel__inner {
+  float: none !important;
+  display: inline-block !important;
+  margin: 0;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+.c--panel__inner--l {
+  width: 65% !important;
+}
+
+.c--panel__inner--r {
+  width: 34% !important;
+}
+
+.c--panel__title {
+  color: #0071D3 !important;
+  font-size: 22px !important;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.c--panel__subtitle {
+  padding: 5px 0 0 0 !important;
+  color: #5B6E77 !important;
+  font-size: 30px;
+  font-style: italic;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.c--panel__btn {
+  max-width: 250px;
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  padding: 10px 20px !important;
+  border-radius: 8px;
+  line-height: 22px !important;
+  .text {
+    font-size: 17px !important;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .c--panel {
+    margin-bottom: 20px !important;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .c--panel__inner {
+    float: none !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .c--panel__title, .c--panel__subtitle {
+    text-align: center !important;
+  }
+  .c--panel__btn {
+    margin-top: 15px !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .c--panel {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
+}

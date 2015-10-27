@@ -8,10 +8,13 @@ var run_sequence = require('run-sequence');
 // process objects
 // ---------------------------------------------
 
+var base = process.cwd();
+
 process.wraith = {
     'paths': {
         'halo': '/halo',
-        'fulgor': '/fulgor'
+        'fulgor': '/fulgor',
+        'jago': '/jago'
     },
     'context': {
         'desktop': '/desktop',
@@ -22,9 +25,9 @@ process.wraith = {
 
 process.doom = {
     'gulp': gulp,
-    'static': './static',
-    'templates': './templates',
-    'common': '/common',
+    'static': base + '/static',
+    'templates': base + '/templates',
+    'common': '/_common',
     'dist': '/_dist',
     'proxy': 'local.dev:8000',
     'app': {
@@ -40,7 +43,7 @@ process.doom = {
         'images': '/images'
     },
     'mail': {
-        'root': './mail_system',
+        'root': base + '/mail_system',
         'dist': '/static/_dist',
         'styles': '/static/styles',
         'templates': {
@@ -81,9 +84,9 @@ process.doom = {
             '**/*.js'
         ],
         'include_paths': [
-            './bower_components/sass-mediaqueries',
-            './bower_components/bourbon/app/assets/stylesheets',
-            './bower_components/neat/app/assets/stylesheets'
+            base + '/bower_components/sass-mediaqueries',
+            base + '/bower_components/bourbon/app/assets/stylesheets',
+            base + '/bower_components/neat/app/assets/stylesheets'
         ],
         'fonts': [
             '/font-awesome'
