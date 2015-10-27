@@ -48,7 +48,7 @@ var create_third_party_scripts = function () {
     $.gulp.task('create:third_party_scripts', function () {
         core.wraith_manager(function () {
             return $.gulp.src(config.static + doom.third_party.static + '/**/*.js')
-                .pipe($.concat(doom.third_party.name + '.css'))
+                .pipe($.concat(doom.third_party.name + '.js'))
                 .pipe($.uglify({mangle: true}))
                 .pipe($.gulp.dest(config.static + doom.dist))
                 .on('error', errors)
@@ -57,12 +57,19 @@ var create_third_party_scripts = function () {
     });
 };
 
+var third_party = function () {
+    $.gulp.task('3rd', ['delete:third_party_styles', 'delete:third_party_scripts'], function () {
+        $.run_sequence(['create:third_party_styles', 'create:third_party_scripts']);
+    });
+};
+
 // Module API
 // ---------------------------------------------
 
 module.exports = {
-    delete_third_party_styles: delete_third_party_styles,
-    delete_third_party_scripts: delete_third_party_scripts,
-    create_third_party_styles: create_third_party_styles,
-    create_third_party_scripts: create_third_party_scripts
+    delete_third_party_styles: delete_third_party_styles(),
+    delete_third_party_scripts: delete_third_party_scripts(),
+    create_third_party_styles: create_third_party_styles(),
+    create_third_party_scripts: create_third_party_scripts(),
+    third_party: third_party()
 };

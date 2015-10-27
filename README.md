@@ -37,6 +37,8 @@ and syntax checking in development mode and minification for production mode
      create:scripts_app
      create:styles_app
      create:styles_gui
+     create:third_party_scripts
+     create:third_party_styles
      delete:bower_fonts
      delete:bower_images
      delete:bower_install
@@ -48,6 +50,8 @@ and syntax checking in development mode and minification for production mode
      delete:scripts_app
      delete:styles_app
      delete:styles_gui
+     delete:third_party_scripts
+     delete:third_party_styles
      flush:cache_bower
      flush:cache_npm
      mail:delete_styles
