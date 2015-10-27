@@ -10,6 +10,7 @@ and syntax checking in development mode and minification for production mode
 - Mail inliner 
 - Project tasks customization
 - Wraith manager
+- Context manager
 
 ```bash
  gulp ls
