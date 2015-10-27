@@ -1,0 +1,447 @@
+//------------------------------------
+//  $b2c-quotes
+//------------------------------------
+
+//  $page--btn
+//------------------------------------
+
+.page--btn {
+  display: block;
+  margin: 0 15px;
+  padding: 15px 25px;
+  border-radius: 8px;
+}
+
+.page--nav__btn {
+  display: block;
+  padding: 15px 0;
+  border: none;
+
+  img {
+    display: block;
+  }
+}
+
+//  $Override
+//------------------------------------
+
+nav#nav {
+  height: 80px;
+
+  .logo {
+    display: block;
+    padding: 0;
+  }
+}
+
+#nav > ul > li.logo > a > span {
+  max-width: 290px;
+}
+
+.fittiz-logo-blu {
+  width: 265px !important;
+  height: 65px !important;
+}
+
+.wrapper.footer {
+  overflow: hidden;
+  padding: 50px 0 60px 0;
+  background: #4E5464 !important;
+}
+
+.page--service__b2b, .page--service__b2c {
+  margin: 10px 0;
+}
+
+.page--wizard-article {
+  background: #067ACB;
+  background: -webkit-linear-gradient(210deg, #08A2D6 10%, #067ACB 90%);
+  background: -moz-linear-gradient(210deg, #08A2D6 10%, #067ACB 90%);
+  background: -ms-linear-gradient(210deg, #08A2D6 10%, #067ACB 90%);
+  background: -o-linear-gradient(210deg, #08A2D6 10%, #067ACB 90%);
+  background: linear-gradient(210deg, #08A2D6 10%, #067ACB 90%);
+
+  #wizard {
+    padding: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #overwrite-landing {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #keywordsImageRelated img {
+    min-width: 100%;
+    width: auto;
+    border: none !important;
+  }
+
+  #choice-container {
+    padding: 0;
+    background: transparent !important;
+    width: 65%;
+
+    .title, .subtitle, .container-button-open-popup {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
+  }
+
+  div#overwrite-landing div#choice-container a.button-open-popup {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .list-b2c {
+    margin-bottom: 0;
+  }
+}
+
+.page--btn--cta {
+  line-height: 1.3em;
+  text-align: center;
+}
+
+.page--wizard-article {
+  font-family: 'Open Sans', sans-serif;
+
+  .button-open-popup {
+    border-color: #0e6d0e !important;
+  }
+
+  #choice-container .button-open-popup {
+    width: 320px !important;
+    text-align: center !important;
+
+    span {
+      &.first-line, &.second-line {
+        position: relative !important;
+        top: 25px !important;
+        left: 0 !important;
+      }
+    }
+  }
+  .selectcategory {
+    table.popup-category {
+      margin-bottom: 0 !important;
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          &.first_opt {
+            padding-bottom: 10px;
+          }
+
+          display: block;
+          line-height: 1em;
+          height: auto;
+          font-size: 12px;
+        }
+      }
+
+      .closer_span {
+        font-size: 12px;
+      }
+
+      .selected {
+        font-weight: bold !important;
+        text-transform: uppercase !important;
+      }
+    }
+
+    a.next_button {
+      border: none !important;
+    }
+  }
+
+  #form-to-hide {
+    text-align: left;
+  }
+
+  .title.title-popup-category {
+    padding: 5px 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #000;
+  }
+
+  .selectcategory table.popup-category {
+    width: 960px;
+    margin-top: 15px;
+
+    td {
+      vertical-align: top;
+      width: 230px;
+    }
+
+    dl {
+      clear: both;
+      width: 100%;
+      padding-bottom: 20px;
+      margin: 0;
+    }
+
+    dt {
+      font-size: 120%;
+      font-weight: bold;
+      padding: 5px 2px;
+      color: #1B75BB;
+    }
+  }
+
+  form label {
+    display: inline;
+    margin: 0;
+  }
+
+  .selectcategory table.popup-category {
+    dt label {
+      color: #1576BD;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    dd {
+      padding: 5px;
+      line-height: 1;
+
+      input {
+        width: 13px;
+        height: 13px;
+        padding: 0;
+        vertical-align: top;
+        position: relative;
+        top: 1px;
+        margin-left: 0;
+      }
+
+      label {
+        padding-left: 2px;
+        text-indent: -15px;
+        font-size: 14px;
+        font-weight: normal;
+        position: relative;
+        text-transform: none;
+        vertical-align: top;
+        color: #000;
+      }
+    }
+  }
+}
+
+//  $Mq
+//------------------------------------
+
+.page--wizard-article\@phone #keywordsImageRelated,
+.page--wizard-article\@tablet #keywordsImageRelated {
+  display: none;
+}
+
+.page--btn--cta\@tablet {
+  margin: 15px 18%;
+  font-size: 1.5em !important;
+}
+
+.page--btn--cta\@phone {
+  margin: 15px;
+  font-size: 1.3em !important;
+}
+
+@media screen and (max-width: 979px) {
+
+  .page--wizard-article {
+    #colrow {
+      display: block;
+    }
+
+    #choice-container {
+      display: block;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+    }
+
+    #keywordsImageRelated {
+      display: none !important;
+    }
+  }
+
+  .page--btn--cta {
+    margin: 15px 18%;
+    font-size: 1.3em;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .page--wizard-article {
+
+    ul.list-b2c {
+      display: none !important;
+      float: none !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 15px !important;
+    }
+
+    .container-button-open-popup {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .button-open-popup {
+      margin: 15px 0 0 0 !important;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .page--wizard-article #wizard {
+    padding: 15px 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  nav#nav .logo {
+    padding: 0 15px;
+    line-height: 80px;
+  }
+}
+
+@media screen and (min-width: 897px) {
+  .container-fittiz-logo-blu {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content_wide_inner > .wrapper {
+    padding-top: 0 !important;
+  }
+
+  .page--wizard-article {
+    #colrow {
+      display: block !important;
+    }
+
+    #choice-container {
+      text-align: center;
+
+      .container-button-open-popup {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .page--btn--cta {
+    margin: 15px;
+    font-size: 1.1em !important;
+  }
+}
+
+@media screen and (min-width: 979px) {
+  .page--wizard-article #choice-container .button-open-popup {
+    width: 260px !important;
+  }
+}
+
+//  $page--configurator
+//------------------------------------
+
+.page--configurator {
+  font-family: 'Open Sans', sans-serif;
+
+  .pannel-big .text-pannel {
+    height: 135px;
+  }
+
+  .configurator-wrap {
+    height: 100px;
+  }
+
+  #mostra-configuratore {
+    max-width: 500px;
+    border: none;
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 1.2em;
+  }
+
+  #configuratore {
+
+    .row > * {
+      padding-top: 0 !important;
+    }
+
+    .row-configuratore-fotovoltaico {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
+
+    .row [class*='space-'] {
+      display: none !important;
+    }
+
+    .example-dimensions, .input-text + span {
+      font-size: 15px;
+      font-family: Open sans;
+      font-weight: normal;
+    }
+  }
+  #range-tipologia .range-picker-item {
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  .btn-calcola {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    padding: 5px 10px;
+    text-align: center;
+  }
+
+  .configuratore-result {
+    height: auto;
+  }
+
+  .configuratore-result-value {
+    margin: 0;
+    line-height: 1em;
+  }
+
+  .row > * {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .col-sm-12.col-md-8.col-equal {
+    padding-left: 0 !important;
+
+    > * {
+      text-align: left !important;
+    }
+  }
+
+  .row > .col-md-6 {
+    width: 50% !important;
+  }
+
+  .pannel-big {
+    margin-top: 0 !important;
+  }
+}

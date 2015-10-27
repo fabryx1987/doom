@@ -1,0 +1,46 @@
+//------------------------------------
+//  $Col
+//------------------------------------
+
+.o--col {
+  position: relative;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  min-height: 1px;
+  float: left;
+
+  + .o--col {
+    &:last-child {
+      float: right;
+    }
+
+    &.o--col--end {
+      float: left;
+    }
+  }
+}
+
+[class*='o--col'].o--col--centered {
+  float: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  > * {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/*------------------------------------*\
+    $Equal
+\*------------------------------------*/
+
+.o--col--equal {
+  overflow-y: hidden;
+}
+
+.o--col--equal__child {
+  margin-bottom: -9999px;
+  padding-bottom: 9999px;
+}

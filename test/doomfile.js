@@ -8,27 +8,18 @@ var run_sequence = require('run-sequence');
 
 process.wraith = {
     paths: {
-        halo: '/desktop/halo',
-        quake: '/desktop/quake',
-        rampage: '/desktop/rampage',
-        jago: '/desktop/jago',
-        riptor: '/desktop/riptor',
-        cinder: '/desktop/cinder',
-        glacius: '/desktop/glacius',
-        sabrewolf: '/desktop/sabrewolf',
-        eydol: '/desktop/eydol',
-        orchid: '/desktop/orchid',
-        fulgor: '/pincopalla/fulgor'
-    },
-    active: ''
+        halo: '/halo',
+        fulgor: '/fulgor'
+    }
 };
 
 process.doom = {
     gulp: gulp,
-    static: './public',
-    templates: './view/',
+    static: './static',
+    templates: './templates',
+    common: '/common',
     dist: '/_dist',
-    proxy: 'local2-preventivi.it',
+    proxy: 'local.dev:8000',
     app: {
         name: 'app',
         styles: '/styles',
@@ -52,7 +43,7 @@ process.doom = {
     },
     bower: {
         name: 'vendor',
-        root: './bower_components',
+        root: '/bower_components',
         static: '/vendor',
         order: [
             'jquery/*.js',
@@ -84,24 +75,24 @@ process.doom = {
         bower: '/**/*.*',
         third_party: '/**/*.js'
     }
-}
+};
 
 module.exports = function () {
 
-    gulp.task('dev', ['clean:dist'], function () {
+    gulp.task('dev', ['delete:dist'], function () {
         process.prod = false;
-        run_sequence(['styles:app', 'styles:gui', 'serve:halo']);
+        run_sequence(['create:styles_app', 'create:styles_gui']);
     });
 
-    gulp.task('prod', ['clean:dist'], function () {
+    gulp.task('prod', ['delete:dist'], function () {
         process.prod = true;
-        run_sequence('vendor', ['styles:app', 'styles:gui']);
+        run_sequence(['create:styles_app', 'create:styles_gui']);
     });
 
     gulp.task('serve', function () {
-        gulp.watch(serve_paths.styles, {interval: 900}, ['clean:app_styles', 'clean:gui_styles', 'styles:app', 'styles:gui']);
-        gulp.watch(serve_paths.scripts, {interval: 900}, ['clean:scripts', 'scripts:app']);
+        gulp.watch(serve_paths.styles, {interval: 900}, ['create:styles_app', 'create:styles_gui']);
+        gulp.watch(serve_paths.scripts, {interval: 900}, ['create:scripts_app']);
         gulp.watch(serve_paths.markup, {interval: 900}, ['serve:html']);
-        gulp.watch(serve_paths.bower, {interval: 900}, ['clean:vendor_dist', 'vendor']);
+        gulp.watch(serve_paths.bower, {interval: 900}, ['vendor']);
     });
 };

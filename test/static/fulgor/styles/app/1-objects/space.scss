@@ -1,0 +1,34 @@
+//------------------------------------
+//  $Space
+//------------------------------------
+
+.o--space {
+  display: block;
+  width: 100%;
+  clear: both;
+
+  &:before, &:after {
+    display: table;
+    content: " ";
+  }
+}
+
+.o--space--xs {
+  height: 5px;
+}
+
+.o--space--sm {
+  height: 10px;
+}
+
+.o--space--md {
+  height: 20px;
+}
+
+.o--space--lg {
+  height: 40px;
+}
+
+.o--space--xl {
+  height: 80px;
+}

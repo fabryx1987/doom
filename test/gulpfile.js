@@ -12,13 +12,12 @@
 
 
 require('./doomfile')();
-require('doom.core')();
-require('doom.install')();
+require('doom.index')();
 require('doom.bower')();
 require('doom.styles')();
 require('doom.scripts')();
 require('doom.images')();
 require('doom.fonts')();
-require('doom.third_party')();
-require('doom.mail')();
-require('doom.serve')();
+//require('doom.third_party')();
+//require('doom.mail')();
+//require('doom.serve')();

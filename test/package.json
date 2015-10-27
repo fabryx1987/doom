@@ -1,9 +1,9 @@
 {
-  "name": "preventivi-it",
-  "description": "Preventivi online",
+  "name": "doomjs",
+  "description": "doomjs test",
   "repository": {
-    "type": "svn",
-    "url": "https://svn.preventivi.it/svn/cms25/trunk/"
+    "type": "git",
+    "url": "https://github.com/codezilla-it/doom.git"
   },
   "dependencies": {
     "globals": "^8.2.0",

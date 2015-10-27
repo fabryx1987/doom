@@ -1,0 +1,121 @@
+//------------------------------------
+//  $Colors
+//------------------------------------
+
+.o--color {
+  border: 1px solid;
+
+  &:not(.o--no--text) {
+    color: #FFF;
+  }
+
+  /* $Green
+  ---------------------*/
+
+  &.o--color--green {
+    background: #32bf37;
+    border-color: #219B23;
+
+    &:not(.o--no--hover):hover {
+      background: #1ba31b;
+    }
+
+    &.o--no--fill {
+      border-color: #38B93D !important;
+      color: #38B93D !important;
+
+      > * {
+        border-color: #38B93D !important;
+        color: #38B93D !important;
+      }
+
+      &:hover {
+        background: #38B93D !important;
+        color: #fff !important;
+
+        > * {
+          background: #38B93D !important;
+          color: #fff !important;
+        }
+      }
+    }
+
+    &.o--color--gradient {
+      background: -moz-linear-gradient(top, #32bf37 0%, #1ba31b 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #32bf37), color-stop(100%, #1ba31b));
+      background: -webkit-linear-gradient(top, #32bf37 0%, #1ba31b 100%);
+      background: -o-linear-gradient(top, #32bf37 0%, #1ba31b 100%);
+      background: -ms-linear-gradient(top, #32bf37 0%, #1ba31b 100%);
+      background: linear-gradient(to bottom, #32bf37 0%, #1ba31b 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#32bf37', endColorstr='#1ba31b', GradientType=0);
+
+      &:not(.o--no--shadow) {
+        text-shadow: 1px 1px 0 #1ba31b;
+      }
+
+      &:not(.o--no--hover):hover {
+        background: -moz-linear-gradient(top, #1ba31b 0%, #1ba31b 0%, #32bf37 99%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1ba31b), color-stop(0%, #1ba31b), color-stop(99%, #32bf37));
+        background: -webkit-linear-gradient(top, #1ba31b 0%, #1ba31b 0%, #32bf37 99%);
+        background: -o-linear-gradient(top, #1ba31b 0%, #1ba31b 0%, #32bf37 99%);
+        background: -ms-linear-gradient(top, #1ba31b 0%, #1ba31b 0%, #32bf37 99%);
+        background: linear-gradient(to bottom, #1ba31b 0%, #1ba31b 0%, #32bf37 99%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1ba31b', endColorstr='#32bf37', GradientType=0);
+      }
+    }
+  }
+
+  /* $Blue
+  ---------------------*/
+
+  &.o--color--blue {
+    background: #0071d3;
+    border-color: #1B75BB;
+
+    &:not(.o--no--hover):hover {
+      background: #2895F1;
+    }
+
+    &.o--no--fill {
+      border-color: #0071d3 !important;
+      color: #0071d3 !important;
+
+      > * {
+        border-color: #0071d3 !important;
+        color: #0071d3 !important;
+      }
+
+      &:hover {
+        background: #0071d3 !important;
+        color: #fff !important;
+
+        > * {
+          background: #0071d3 !important;
+          color: #fff !important;
+        }
+      }
+    }
+
+    &.o--color--gradient {
+      background: -o-linear-gradient(top, #00B6FA 0%, #007ee5 100%) !important;
+      background: -ms-linear-gradient(top, #00B6FA 0%, #007ee5 100%) !important;
+      background: -moz-linear-gradient(top, #00B6FA 0%, #007ee5 100%) !important;
+      background: -webkit-linear-gradient(top, #00B6FA 0%, #007ee5 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2895F1), color-stop(100%, #007ee5)) !important;
+      background: linear-gradient(to bottom, #00B6FA 0%, #1B75BB 100%) !important;
+
+      &:not(.o--no--shadow) {
+        text-shadow: 1px 1px 0 #1B75BB;
+      }
+
+      &:not(.o--no--hover):hover {
+        background: -o-linear-gradient(top, #007ee5 0%, #00B6FA 100%) !important;
+        background: -ms-linear-gradient(top, #007ee5 0%, #00B6FA 100%) !important;
+        background: -moz-linear-gradient(top, #007ee5 0%, #00B6FA 100%) !important;
+        background: -webkit-linear-gradient(top, #007ee5 0%, #00B6FA 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #007ee5), color-stop(100%, #00B6FA)) !important;
+        background: linear-gradient(to bottom, #007ee5 0%, #00B6FA 100%) !important;
+      }
+    }
+  }
+}

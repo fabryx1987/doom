@@ -1,0 +1,74 @@
+{
+  "name": "doomjs",
+  "version": "1.0",
+  "authors": [
+    "Fabio Cencetti"
+  ],
+  "description": "doomjs test",
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "preventivi"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.doomjs.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "*.map",
+    "*.json",
+    "*.md",
+    "*.editorconfig",
+    "*.yml",
+    "bower_components",
+    "media",
+    "test",
+    "tests",
+    "data",
+    "config",
+    "bin",
+    "temp_img",
+    "vendor"
+  ],
+  "dependencies": {
+    "animate.css": "daneden/animate.css#~3.2.6",
+    "bourbon": "~4.2.5",
+    "font-awesome": "~4.4.0",
+    "holderjs": "~2.8.2",
+    "jquery": "~2.1.4",
+    "modernizr": "~2.8.3",
+    "sass-mediaqueries": "~1.5.1",
+    "neat": "~1.7.2"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "jquery": "~1.11.3"
+  },
+  "overrides": {},
+  "install": {
+    "base": "public/common/",
+    "path": "vendor",
+    "sources": {
+      "jquery": [
+        "bower_components/jquery/dist/jquery.min.js"
+      ],
+      "font-awesome": [
+        "bower_components/font-awesome/css/font-awesome.css",
+        "bower_components/font-awesome/fonts/*.**"
+      ],
+      "modernizr": [
+        "bower_components/modernizr/modernizr.js"
+      ]
+    },
+    "ignore": [
+      "requirejs",
+      "gsap",
+      "bourbon",
+      "neat",
+      "sass-mediaqueries"
+    ]
+  }
+}

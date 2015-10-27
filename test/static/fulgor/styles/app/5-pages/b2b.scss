@@ -1,0 +1,47 @@
+//------------------------------------
+//  $b2b
+//------------------------------------
+
+//  $page--hero
+//------------------------------------
+
+.page--hero {
+  .inputCta {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .sendCta {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: #007ee5;
+    background: -o-linear-gradient(top, #2895F1 0%, #007ee5 100%);
+    background: -ms-linear-gradient(top, #2895F1 0%, #007ee5 100%);
+    background: -moz-linear-gradient(top, #2895F1 0%, #007ee5 100%);
+    background: -webkit-linear-gradient(top, #2895F1 0%, #007ee5 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2895F1), color-stop(100%, #007ee5));
+    background: linear-gradient(to bottom, #2094EE 0%, #1B75BB 100%);
+    border: 1px solid #1B75BB;
+  }
+}
+
+//  $Mq
+//------------------------------------
+
+@media screen and (min-width: 979px) {
+
+  .page--hero #mainCtaTop > {
+    .first {
+      width: 54%;
+    }
+
+    .second {
+      display: inline-block;
+      width: 43%;
+      float: left;
+      margin-left: 3%;
+    }
+  }
+}

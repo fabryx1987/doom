@@ -1,0 +1,26 @@
+//------------------------------------
+//    $No-fill
+//------------------------------------
+
+.o--no--fill {
+  border-width: 2px !important;
+  background: transparent !important;
+  text-shadow: none !important;
+
+  > * {
+    background: transparent !important;
+    text-shadow: none !important;
+  }
+}
+
+/*------------------------------------*\
+    $No-Border
+\*------------------------------------*/
+
+.o--no--border {
+  border: none !important;
+
+  &:hover {
+    border: none !important;
+  }
+}
