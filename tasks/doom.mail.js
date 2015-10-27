@@ -101,7 +101,7 @@ var mail = function () {
     });
 };
 
-// Module Api
+// Module API
 // ---------------------------------------------
 
 module.exports = {

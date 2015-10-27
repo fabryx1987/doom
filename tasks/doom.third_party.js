@@ -58,7 +58,7 @@ var create_third_party_scripts = function () {
     });
 };
 
-// Module Api
+// Module API
 // ---------------------------------------------
 
 module.exports = {

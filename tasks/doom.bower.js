@@ -120,7 +120,7 @@ var vendor = function () {
     });
 };
 
-// Module Api
+// Module API
 // ---------------------------------------------
 
 module.exports = {

@@ -70,7 +70,7 @@ var create_styles_gui = function () {
     });
 }
 
-// Module Api
+// Module API
 // ---------------------------------------------
 
 module.exports = {

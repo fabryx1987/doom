@@ -45,7 +45,7 @@ var create_scripts_app = function () {
     });
 };
 
-// Module Api
+// Module API
 // ---------------------------------------------
 
 module.exports = {

@@ -37,7 +37,7 @@ var create_fonts_app = function () {
     });
 };
 
-// Module Api
+// Module API
 // ---------------------------------------------
 
 module.exports = {

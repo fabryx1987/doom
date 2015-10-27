@@ -26,7 +26,7 @@ var serve_templates = function () {
     });
 };
 
-// Module Api
+// Module API
 // ---------------------------------------------
 
 module.exports = {

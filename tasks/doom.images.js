@@ -37,7 +37,7 @@ var create_images_app = function () {
     });
 };
 
-// Module Api
+// Module API
 // ---------------------------------------------
 
 module.exports = {

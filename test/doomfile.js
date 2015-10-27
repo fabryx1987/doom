@@ -2,9 +2,11 @@
 // @doomfile settings
 // ---------------------------------------------
 
-// dependecies
 var gulp = require('gulp');
 var run_sequence = require('run-sequence');
+
+// process objects
+// ---------------------------------------------
 
 process.wraith = {
     paths: {
@@ -77,6 +79,9 @@ process.doom = {
     }
 };
 
+// Methods
+// ---------------------------------------------
+
 var dev = function () {
     gulp.task('dev', ['delete:dist'], function () {
         process.prod = false;
@@ -99,6 +104,9 @@ var serve = function () {
         gulp.watch(serve_paths.bower, {interval: 900}, ['vendor']);
     });
 };
+
+// Module API
+// ---------------------------------------------
 
 module.exports = {
     dev: dev(),
