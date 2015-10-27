@@ -189,132 +189,127 @@ Then create a gulpfile.js at the same level
  */
 
 
-require('./doomfile')();
-require('doom.core')();
-require('doom.install')();
-require('doom.bower')();
-require('doom.styles')();
-require('doom.scripts')();
-require('doom.images')();
-require('doom.fonts')();
-require('doom.third_party')();
-require('doom.mail')();
-require('doom.serve')();
-
+require('./doomfile');
+require('doom.index');
+require('doom.bower');
+require('doom.styles');
+require('doom.scripts');
+require('doom.images');
+require('doom.fonts');
+require('doom.third_party');
+require('doom.mail');
+require('doom.serve');
 ```
 
 And then create a doomfile.js at the same level
 
 ```javascript
-module.exports = function () {
+// ---------------------------------------------
+// @doomfile settings
+// ---------------------------------------------
 
-    // ---------------------------------------------
-    // @doomfile settings
-    // ---------------------------------------------
-    
-    // dependecies
-    var gulp = require('gulp');
-    var run_sequence = require('run-sequence');
-    
-    process.wraith = {
-        paths: {
-            halo: '/desktop/halo',
-            quake: '/desktop/quake',
-            rampage: '/desktop/rampage',
-            jago: '/desktop/jago',
-            riptor: '/desktop/riptor',
-            cinder: '/desktop/cinder',
-            glacius: '/desktop/glacius',
-            sabrewolf: '/desktop/sabrewolf',
-            eydol: '/desktop/eydol',
-            orchid: '/desktop/orchid',
-            fulgor: '/pincopalla/fulgor'
-        },
-        active: ''
-    };
-    
-    process.doom = {
-        gulp: gulp,
-        static: './public',
-        templates: './view/',
-        dist: '/_dist',
-        proxy: 'local2-preventivi.it',
-        app: {
-            name: 'app',
-            styles: '/styles',
-            scripts: '/scripts',
-            images: '/images',
-            fonts: '/fonts'
-        },
-        gui: {
-            name: 'gui',
-            styles: '/styles',
-            images: '/images'
-        },
-        mail: {
-            dist: '/_dist',
-            root: '/mail_system',
-            styles: '/styles',
-            templates: {
-                src: '/templates/src',
-                inlined: '/templates/inlined'
-            }
-        },
-        bower: {
-            name: 'vendor',
-            root: './bower_components',
-            static: '/vendor',
-            order: [
-                'jquery/*.js',
-                'modernizr/*.js',
-                '**/*.js'
-            ],
-            include_paths: [
-                './bower_components/sass-mediaqueries',
-                './bower_components/bourbon/app/assets/stylesheets',
-                './bower_components/neat/app/assets/stylesheets'
-            ],
-            fonts: [
-                '/font-awesome'
-            ],
-            images: []
-        },
-        third_party: {
-            name: 'third_party',
-            static: '/third_party'
-        },
-        serve: {
-            styles: '/styles/**/*.{sass,scss}',
-            scripts: '/scripts/**/*.js',
-            markup: '/**/*.{html, phtml}',
-            mail: {
-                templates: '/templates/src/**/*.{html}',
-                styles: '/styles/sass/**/*.{sass,scss}'
-            },
-            bower: '/**/*.*',
-            third_party: '/**/*.js'
-        }
+// dependecies
+var gulp = require('gulp');
+var run_sequence = require('run-sequence');
+
+process.wraith = {
+    paths: {
+        halo: '/halo',
+        fulgor: '/fulgor'
     }
-    
-    module.exports = function () {
-    
-        gulp.task('dev', ['clean:dist'], function () {
-            process.prod = false;
-            run_sequence(['styles:app', 'styles:gui', 'serve:halo']);
-        });
-    
-        gulp.task('prod', ['clean:dist'], function () {
-            process.prod = true;
-            run_sequence('vendor', ['styles:app', 'styles:gui']);
-        });
-    
-        gulp.task('serve', function () {
-            gulp.watch(serve_paths.styles, {interval: 900}, ['clean:app_styles', 'clean:gui_styles', 'styles:app', 'styles:gui']);
-            gulp.watch(serve_paths.scripts, {interval: 900}, ['clean:scripts', 'scripts:app']);
-            gulp.watch(serve_paths.markup, {interval: 900}, ['serve:html']);
-            gulp.watch(serve_paths.bower, {interval: 900}, ['clean:vendor_dist', 'vendor']);
-        });
-    };
+};
+
+process.doom = {
+    gulp: gulp,
+    static: './static',
+    templates: './templates',
+    common: '/common',
+    dist: '/_dist',
+    proxy: 'local.dev:8000',
+    app: {
+        name: 'app',
+        styles: '/styles',
+        scripts: '/scripts',
+        images: '/images',
+        fonts: '/fonts'
+    },
+    gui: {
+        name: 'gui',
+        styles: '/styles',
+        images: '/images'
+    },
+    mail: {
+        root: './mail_system',
+        dist: '/static/_dist',
+        styles: '/static/styles',
+        templates: {
+            origin: '/templates/origin',
+            inlined: '/templates/inlined'
+        }
+    },
+    bower: {
+        name: 'vendor',
+        root: '/bower_components',
+        static: '/vendor',
+        order: [
+            'jquery/*.js',
+            'modernizr/*.js',
+            '**/*.js'
+        ],
+        include_paths: [
+            './bower_components/sass-mediaqueries',
+            './bower_components/bourbon/app/assets/stylesheets',
+            './bower_components/neat/app/assets/stylesheets'
+        ],
+        fonts: [
+            '/font-awesome'
+        ],
+        images: []
+    },
+    third_party: {
+        name: 'third_party',
+        static: '/third_party'
+    },
+    serve: {
+        styles: '/styles/**/*.{sass,scss}',
+        scripts: '/scripts/**/*.js',
+        markup: '/**/*.{html, phtml}',
+        mail: {
+            templates: '/templates/src/**/*.{html}',
+            styles: '/styles/sass/**/*.{sass,scss}'
+        },
+        bower: '/**/*.*',
+        third_party: '/**/*.js'
+    }
+};
+
+var dev = function () {
+    gulp.task('dev', ['delete:dist'], function () {
+        process.prod = false;
+        run_sequence(['create:styles_app', 'create:styles_gui']);
+    });
+};
+
+var prod = function () {
+    gulp.task('prod', ['delete:dist'], function () {
+        process.prod = true;
+        run_sequence(['create:styles_app', 'create:styles_gui']);
+    });
+};
+
+var serve = function () {
+    gulp.task('serve', function () {
+        gulp.watch(serve_paths.styles, {interval: 900}, ['create:styles_app', 'create:styles_gui']);
+        gulp.watch(serve_paths.scripts, {interval: 900}, ['create:scripts_app']);
+        gulp.watch(serve_paths.markup, {interval: 900}, ['serve:html']);
+        gulp.watch(serve_paths.bower, {interval: 900}, ['vendor']);
+    });
+};
+
+module.exports = {
+    dev: dev(),
+    prod: prod(),
+    serve: serve()
 };
 ```
 
@@ -342,12 +337,14 @@ Now you must simpy include css and js dist into your base template
 
 ## Tasks
 
-### install
+### default
 
-Run this task to install bower and npm project's dependencies
+Run this task to:
+
+- print the tasks list
 
 ``` bash
-gulp install
+gulp
 ```
 
 ### vendor
@@ -360,7 +357,7 @@ create two files vendor.js and vendor.css and exports those (including assets) t
 gulp vendor
 ```
 
-### default
+### dev
 
 Run this task to:
 
@@ -371,7 +368,7 @@ and, parallelly:
 - compile your JS browserify files to one unified file (with sourcemaps enabled)
 
 ``` bash
-gulp
+gulp dev
 ```
 
 ### prod
