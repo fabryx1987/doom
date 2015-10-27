@@ -19,6 +19,7 @@ and syntax checking in development mode and minification for production mode
  ------------------------------
      default
      dev
+     mail
      prod
      serve
      vendor
@@ -48,6 +49,14 @@ and syntax checking in development mode and minification for production mode
      delete:styles_gui
      flush:cache_bower
      flush:cache_npm
+     mail:delete_styles
+     mail:delete_templates
+     mail:styles
+     mail:styles_convert
+     mail:styles_inject
+     mail:styles_inliner
+     serve:browser-sync
+     serve:html
 ```
 
 ## Get Started
