@@ -21,20 +21,20 @@ var bower_manager = function () {
                 no_main: {}
             };
 
-            var bower_dependencies = results.dependencies;
+            var dependencies = results.dependencies;
 
-            for (var i = 0; i < Object.keys(bower_dependencies).length; i++) {
-                var bower_key = Object.keys(bower_dependencies)[i];
-                var bower_value = bower_dependencies[bower_key];
-                var bower_canonical = bower_value.canonicalDir;
-                var bower_pkg = bower_value.pkgMeta;
-                var bower_main = bower_pkg.main;
+            for (var i = 0; i < Object.keys(dependencies).length; i++) {
+                var key = Object.keys(dependencies)[i];
+                var value = dependencies[key];
+                var canonical = value.canonicalDir;
+                var pkg = value.pkgMeta;
+                var main = pkg.main;
 
-                if (bower_main === undefined) {
-                    doom.bower.manager.no_main[bower_key] = bower_key;
+                if (main === undefined) {
+                    doom.bower.manager.no_main[key] = key;
                 }
                 else {
-                    doom.bower.manager.main[bower_key] = bower_canonical + '/' + bower_main;
+                    doom.bower.manager.main[key] = canonical + '/' + main;
                 }
 
                 //$.path.join(doom.bower.root, '/**/bower.json');
@@ -54,7 +54,7 @@ var bower_manager = function () {
 var create_bower_stack = function (vendor_src, vendor_files) {
 
     var vendor_stack = [];
-    for (i = 0; i < vendor_src.length; i++) {
+    for (var i = 0; i < vendor_src.length; i++) {
         vendor_stack.push(config.static + doom.common + doom.bower.static + vendor_src[i] + vendor_files);
     }
     return vendor_stack;
