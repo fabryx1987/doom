@@ -26,7 +26,7 @@ process.wraith = {
 process.doom = {
     'gulp': gulp,
     'static': base + '/static',
-    'templates': base + '/templates',
+    'templates': './templates',
     'common': '/_common',
     'dist': '/_dist',
     'proxy': 'local.dev:8000',
@@ -53,7 +53,7 @@ process.doom = {
     },
     'bower': {
         'name': 'vendor',
-        'root': '/bower_components',
+        'root': './bower_components',
         'static': '/vendor',
         'install': {
             'base': 'static/common/',

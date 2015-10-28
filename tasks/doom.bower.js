@@ -12,49 +12,53 @@ var $ = require('../lib/plugins');
 // ---------------------------------------------
 
 var bower_manager = function () {
-    $.gulp.task('bower:manager', function () {
+    core.wraith_manager(function () {
+        $.gulp.task('bower:manager', function () {
 
-        $.bower.commands.list().on('end', function (results) {
+            $.bower.commands.list().on('end', function (results) {
 
-            doom.bower.manager = {
-                main: {},
-                no_main: {}
-            };
+                var bower_components = {
+                    main: {},
+                    no_main: {}
+                };
 
-            var dependencies = results.dependencies;
+                var dependencies = results.dependencies;
 
-            for (var i = 0; i < Object.keys(dependencies).length; i++) {
-                var key = Object.keys(dependencies)[i];
-                var value = dependencies[key];
-                var canonical = value.canonicalDir;
-                var pkg = value.pkgMeta;
-                var main = pkg.main;
+                for (var i = 0; i < Object.keys(dependencies).length; i++) {
+                    var key = Object.keys(dependencies)[i];
+                    var value = dependencies[key];
+                    var canonical = value.canonicalDir;
+                    var pkg = value.pkgMeta;
+                    var main = pkg.main;
 
-                if (main === undefined) {
-                    doom.bower.manager.no_main[key] = key;
+                    if (main === undefined) {
+                        bower_components.no_main[key] = key;
+                    }
+                    else {
+                        bower_components.main[key] = canonical + '/' + main;
+                    }
+
+                    // dont't work -- only first file is written
+                    return $.gulp.src(bower_components.main[key])
+                        .pipe($.gulp.dest(config.static + '/vendor/' + key))
+                        .on('error', errors)
+                        .pipe($.size({showFiles: true}));
+
                 }
-                else {
-                    doom.bower.manager.main[key] = canonical + '/' + main;
-                }
 
-                //$.path.join(doom.bower.root, '/**/bower.json');
-                //doom.bower.manager[key] = main;
-            }
+                console.log(bower_components);
+            });
 
-            console.log(doom.bower.manager);
-
-            return doom.bower.manager;
+            //return $.gulp.src($.path.join(doom.bower.root, '/**/bower.json'))
+            //    .pipe();
         });
-
-        //return $.gulp.src($.path.join(doom.bower.root, '/**/bower.json'))
-        //    .pipe();
-    });
+    })
 };
 
 var create_bower_stack = function (vendor_src, vendor_files) {
 
     var vendor_stack = [];
-    for (var i = 0; i < vendor_src.length; i++) {
+    for (i = 0; i < vendor_src.length; i++) {
         vendor_stack.push(config.static + doom.common + doom.bower.static + vendor_src[i] + vendor_files);
     }
     return vendor_stack;
