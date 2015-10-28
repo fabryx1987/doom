@@ -1,5 +1,6 @@
 {
   "name": "doomjs",
+  "version": "1.0.0",
   "description": "doomjs test",
   "repository": {
     "type": "git",

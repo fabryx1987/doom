@@ -130,7 +130,7 @@ Create a bower.json into your project root
 ```json
 {
   "name": "project-name",
-  "version": "1.0",
+  "version": "1.0.0",
   "authors": [
     "Name-1",
     "Name-2"
