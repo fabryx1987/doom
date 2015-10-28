@@ -86,6 +86,7 @@ process.doom = {
         'include_paths': [
             base + '/bower_components/sass-mediaqueries',
             base + '/bower_components/bourbon/app/assets/stylesheets',
+            base + '/bower_components/jeet/scss/',
             base + '/bower_components/neat/app/assets/stylesheets'
         ],
         'fonts': [

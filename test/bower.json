@@ -4,7 +4,7 @@
   "authors": [
     "Fabio Cencetti"
   ],
-  "description": "doomjs test",
+  "description": "doomjs test.env",
   "main": "",
   "moduleType": [
     "amd"
@@ -41,6 +41,7 @@
     "jquery": "~2.1.4",
     "modernizr": "~2.8.3",
     "sass-mediaqueries": "~1.5.1",
+    "jeet": "~6.1.2",
     "neat": "~1.7.2"
   },
   "devDependencies": {},
@@ -68,6 +69,7 @@
       "gsap",
       "bourbon",
       "neat",
+      "jeet",
       "sass-mediaqueries"
     ]
   }
