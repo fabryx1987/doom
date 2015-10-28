@@ -235,80 +235,116 @@ And then create a doomfile.js at the same level
 // @doomfile settings
 // ---------------------------------------------
 
-// dependecies
 var gulp = require('gulp');
 var run_sequence = require('run-sequence');
 
+// process objects
+// ---------------------------------------------
+
+var base = process.cwd();
+
 process.wraith = {
-    paths: {
-        halo: '/halo',
-        fulgor: '/fulgor'
+    'paths': {
+        'halo': '/halo',
+        'fulgor': '/fulgor',
+        'jago': '/jago'
+    },
+    'context': {
+        'desktop': '/desktop',
+        'tablet': '/tablet',
+        'phone': '/phone'
     }
 };
 
 process.doom = {
-    gulp: gulp,
-    static: './static',
-    templates: './templates',
-    common: '/common',
-    dist: '/_dist',
-    proxy: 'local.dev:8000',
-    app: {
-        name: 'app',
-        styles: '/styles',
-        scripts: '/scripts',
-        images: '/images',
-        fonts: '/fonts'
+    'gulp': gulp,
+    'static': base + '/static',
+    'templates': './templates',
+    'common': '/_common',
+    'dist': '/_dist',
+    'proxy': 'local.dev:8000',
+    'app': {
+        'name': 'app',
+        'styles': '/styles',
+        'scripts': '/scripts',
+        'images': '/images',
+        'fonts': '/fonts'
     },
-    gui: {
-        name: 'gui',
-        styles: '/styles',
-        images: '/images'
+    'gui': {
+        'name': 'gui',
+        'styles': '/styles',
+        'images': '/images'
     },
-    mail: {
-        root: './mail_system',
-        dist: '/static/_dist',
-        styles: '/static/styles',
-        templates: {
-            origin: '/templates/origin',
-            inlined: '/templates/inlined'
+    'mail': {
+        'root': base + '/mail_system',
+        'dist': '/static/_dist',
+        'styles': '/static/styles',
+        'templates': {
+            'origin': '/templates/origin',
+            'inlined': '/templates/inlined'
         }
     },
-    bower: {
-        name: 'vendor',
-        root: '/bower_components',
-        static: '/vendor',
-        order: [
+    'bower': {
+        'name': 'vendor',
+        'root': './bower_components',
+        'static': '/vendor',
+        'install': {
+            'base': 'static/common/',
+            'path': 'vendor',
+            'sources': {
+                'jquery': [
+                    'bower_components/jquery/dist/jquery.min.js'
+                ],
+                'font-awesome': [
+                    'bower_components/font-awesome/css/font-awesome.css',
+                    'bower_components/font-awesome/fonts/*.**'
+                ],
+                'modernizr': [
+                    'bower_components/modernizr/modernizr.js'
+                ]
+            },
+            'ignore': [
+                'requirejs',
+                'gsap',
+                'bourbon',
+                'neat',
+                'sass-mediaqueries'
+            ]
+        },
+        'order': [
             'jquery/*.js',
             'modernizr/*.js',
             '**/*.js'
         ],
-        include_paths: [
-            './bower_components/sass-mediaqueries',
-            './bower_components/bourbon/app/assets/stylesheets',
-            './bower_components/neat/app/assets/stylesheets'
+        'include_paths': [
+            base + '/bower_components/sass-mediaqueries',
+            base + '/bower_components/bourbon/app/assets/stylesheets',
+            base + '/bower_components/neat/app/assets/stylesheets'
         ],
-        fonts: [
+        'fonts': [
             '/font-awesome'
         ],
-        images: []
+        'images': []
     },
-    third_party: {
-        name: 'third_party',
-        static: '/third_party'
+    'third_party': {
+        'name': 'third_party',
+        'static': '/third_party'
     },
-    serve: {
-        styles: '/styles/**/*.{sass,scss}',
-        scripts: '/scripts/**/*.js',
-        markup: '/**/*.{html, phtml}',
-        mail: {
-            templates: '/templates/src/**/*.{html}',
-            styles: '/styles/sass/**/*.{sass,scss}'
+    'serve': {
+        'styles': '/styles/**/*.{sass,scss}',
+        'scripts': '/scripts/**/*.js',
+        'markup': '/**/*.{html, phtml}',
+        'mail': {
+            'templates': '/templates/src/**/*.{html}',
+            'styles': '/styles/sass/**/*.{sass,scss}'
         },
-        bower: '/**/*.*',
-        third_party: '/**/*.js'
+        'bower': '/**/*.*',
+        'third_party': '/**/*.js'
     }
 };
+
+// Methods
+// ---------------------------------------------
 
 var dev = function () {
     gulp.task('dev', ['delete:dist'], function () {
@@ -333,10 +369,13 @@ var serve = function () {
     });
 };
 
+// Module API
+// ---------------------------------------------
+
 module.exports = {
-    dev: dev(),
-    prod: prod(),
-    serve: serve()
+    'dev': dev(),
+    'prod': prod(),
+    'serve': serve()
 };
 ```
 
@@ -437,6 +476,36 @@ and, parallelly:
 
 ``` bash
 gulp mail
+```
+
+## Flags
+
+### Wraith Manager
+
+Create wraith application dist into specific wraith :
+
+``` bash
+gulp dev --wraith:name_1
+```
+
+Create wraith application dist into all wraiths and common dir:
+
+``` bash
+gulp dev --wraith:all
+```
+
+### Context Manager
+
+Create wraith context application dist into specific wraiths context:
+
+``` bash
+gulp dev --context:name_1
+```
+
+Create wraith context application dist into all wraiths context and common dir:
+
+``` bash
+gulp dev --context:all
 ```
 
 
