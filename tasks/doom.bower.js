@@ -58,7 +58,7 @@ var bower_manager = function () {
 var create_bower_stack = function (vendor_src, vendor_files) {
 
     var vendor_stack = [];
-    for (i = 0; i < vendor_src.length; i++) {
+    for (var i = 0; i < vendor_src.length; i++) {
         vendor_stack.push(config.static + doom.common + doom.bower.static + vendor_src[i] + vendor_files);
     }
     return vendor_stack;
@@ -168,7 +168,6 @@ var vendor = function () {
 // ---------------------------------------------
 
 module.exports = {
-    'bower_manager': bower_manager(),
     'delete_bower_styles': delete_bower_styles(),
     'delete_bower_scripts': delete_bower_scripts(),
     'delete_bower_fonts': delete_bower_fonts(),
@@ -179,5 +178,6 @@ module.exports = {
     'create_bower_scripts': create_bower_scripts(),
     'create_bower_images': create_bower_images(),
     'create_bower_fonts': create_bower_fonts(),
+    'bower_manager': bower_manager(),
     'vendor': vendor()
 };
