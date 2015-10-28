@@ -1,0 +1,200 @@
+<!-- inject:base:css --><!-- endinject -->
+
+{% extends 'mail_system/inlined/transactional/_extend/base.html' %}
+{% load email_url %}
+
+{% block content %}
+
+    <tr>
+        <td valign="middle" align="left">
+            <h1 class="wording__title wording__title--h1 no-mg-b">
+                <b>Conferma Ordine</b>
+            </h1>
+            <h3 class="wording__title wording__title--h3 no-mg-t">
+                Cliente {{ cliente.email }}
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td valign="middle" align="center" class="wording__text devicewidthtext">
+            Gentile {{ cliente.nominativo }},
+            {% if ordine.genere == 'FDS' %}
+                {% if ordine.is_ricorrente %}
+
+                    Ti ricordiamo che questo ordine fa parte della tua
+                    <a href="{% get_email_url 'user_admin:index' cliente %}&programma={{ ordine.rigacalendarioprogramma.programma.id }}">
+                        spedizione
+                        organizzata {{ ordine.rigacalendarioprogramma.programma.codice }}</a>
+                    .
+
+                {% else %}
+
+                    Ti ringraziamo per aver scelto di organizzare le spedizioni con
+                    Bauzaar.
+
+                {% endif %}
+            {% endif %}
+
+            Ti informiamo che
+            <b>l'ordine {{ ordine.codice }}</b>
+            viene processato proprio in questo momento.
+            Da questo momento in poi non è più possibile apportare alcuna modifica.
+            Se desideri restituire un articolo, visualizzare o modificare altri ordini,
+            entra nel tuo
+            <a href="{% get_email_url 'user_admin:index' cliente %}&ordine={{ ordine.id }}">
+                Profilo
+            </a>
+            su Bauzaar.it
+
+        </td>
+    </tr>
+    <tr>
+        <td width="100%" height="15" class="spacing">&nbsp;</td>
+    </tr>
+    <tr>
+        <td valign="middle" align="center"
+            class="wording__text wording__text--bordered text-center devicewidthtext bg-light-gray">
+            <b>Ordine spedito a:</b>
+            <br/>
+            {% with ordine.indirizzo_ordine_sped as indirizzo_sped %}
+                {% include 'mail_system/inlined/transactional/_include/spedito_a.html' %}
+            {% endwith %}
+        </td>
+    </tr>
+    <tr>
+        <td width="100%" height="15" class="spacing">&nbsp;</td>
+    </tr>
+    <tr>
+        <td valign="top" align="justify"
+            class="wording__text devicewidthtext">
+            Riceverai il link per la tracciabilità del tuo ordine nella mail di
+            <b>Conferma Spedizione</b>
+            . Se il link non dovesse funzionare potrai
+            richiedere il numero d'ordine scrivendo a
+            <a href="mailto:{{ settings.MAIL_SERVIZIO_CLIENTI }}">
+                servizioclienti@bauzaar.it
+            </a>
+            o contattandoci telefonicamente chiamando il numero
+            <b>(+39) {{ settings.CUSTOMER_CARE_PHONE }}</b>
+            .
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" align="left"
+            class="wording__text nested-table-container devicewidthtext">
+            <h3 class="wording__title wording__title--h3 text-color-orange">
+                <b>Dettagli Ordine</b>
+            </h3>
+            {% with ordine as basket %}
+                {% with ordine.rigaordine_set.all as righe_contenuto %}
+                    {% include 'mail_system/inlined/transactional/_include/contenuto_ordine.html' %}
+                {% endwith %}
+            {% endwith %}
+        </td>
+    </tr>
+    <tr>
+        <td width="100%" height="15" class="spacing">&nbsp;</td>
+    </tr>
+    <tr>
+        <td valign="top" align="justify" class="wording__text devicewidthtext">
+            {% if ordine.genere == 'OTS' %}
+                {% if ordine.tipo_pagamento == 'CCR' %}
+
+                    Hai scelto di pagare con
+                    <b>Carta di Credito</b>
+                    : ti confermiamo che l’importo
+                    relativo agli articoli inclusi in questa spedizione è stato
+                    addebitato sulla tua carta.
+                    <br/>
+
+                {% elif ordine.tipo_pagamento == 'PAL' %}
+
+                    Ti ricordiamo che hai scelto di pagare con Paypal per questo ti è
+                    stato già addebitato l'importo relativo a quest'ordine.
+
+                {% elif ordine.tipo_pagamento == 'BBA' %}
+                    Hai preferito pagare con
+                    <b>bonifico bancario</b>
+                    , ecco i dati per procedere al pagamento:
+                    <br/>
+                    Intestatario:
+                    <b>Bauzaar Srl</b>
+                    <br/>
+                    IBAN:
+                    <b>{{ settings.IBAN }}</b>
+                    <br/>
+                    Causale:
+                    <b>{{ ordine.codice }}</b>
+                    <br/>
+                    Importo:
+                    <b>{{ ordine.importo_vendita }} €</b>
+                    <br/>
+                    Filiale Fil. Imp. Barletta
+                    <br/>
+                    Via Baldacchini, 6,
+                    <br/>
+                    76121 Barletta (BT)
+                    <br/>
+                    Tel. 0883538911
+                    <br/>
+                    <br/>
+                    Ricorda: il tuo ordine non verrà spedito finché non riceveremo la
+                    notifica di avvenuto pagamento.
+                    Controlla sempre di aver inserito l’IBAN correttamente (27
+                    caratteri) e di indicare nella
+                    causale il tuo numero d’ordine.
+                    <br/>
+                    Il bonifico bancario non può essere usato per Organizzare le proprie
+                    spedizioni.
+
+                {% elif ordine.tipo_pagamento == 'COD' %}
+
+                    Hai scelto di pagare con il contrassegno. Ti ricordiamo che il
+                    corriere non da resto, quindi ti preghiamo di preparare l'importo
+                    relativo a quest'ordine.
+                    L'importo è di
+                    <b>{{ ordine.importo_vendita }} €</b>
+                    .
+
+                {% endif %}
+            {% else %}
+
+                Ti confermiamo che l’importo relativo agli articoli inclusi in questa
+                spedizione è stato
+                addebitato sulla tua carta. Ti ricordiamo che l'addebito relativo alla
+                prossima spedizione
+                verrà effettuato {{ settings.SHIPPED_AFTER_TD.days }} giorni lavorativi
+                prima della data di
+                ricevimento della merce. Se l'addebito non andrà a buon fine verrà
+                contattato dal nostro servizio
+                clienti.
+
+            {% endif %}
+            Se hai bisogno del nostro supporto, visita la
+            <a href="{% get_email_url 'front_office:help' cliente %}">
+                Pagina d'aiuto
+            </a>
+            o contatta il nostro Servizio Clienti all'indirizzo
+            <a href="mailto:{{ settings.MAIL_SERVIZIO_CLIENTI }}">
+                servizioclienti@bauzaar.it
+            </a>
+            .
+            <br/>
+            Buon Appetito,
+            <br/>
+            <b>
+                <i>Il Team di Bauzaar</i>
+            </b>
+
+        </td>
+    </tr>
+    <!-- Spacing -->
+    <tr>
+        <td width="100%" height="15"
+            class="spacing">
+            &nbsp;</td>
+    </tr>
+    <!-- Spacing -->
+    {% include 'mail_system/inlined/transactional/_include/sales_conditions.html' %}
+
+{% endblock %}

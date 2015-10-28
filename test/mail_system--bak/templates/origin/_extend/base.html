@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bauzaar</title>
+
+    <!-- inject:base:css --><!-- endinject -->
+    <!-- inject:responsive:css --><!-- endinject -->
+</head>
+<body leftmargin="0" rightmargin="0" marginwidth="0" topmargin="0" bottommargin="0" marginheight="0" offset="0"
+      bgcolor="#f0f1f4">
+
+<!-- @start: preheader
+///////////////////////////////////////////////////////////////////////////// -->
+
+<div class="preheader">
+    content of preheader must be equal to title
+</div>
+
+<!-- @end: preheader -->
+
+
+<!-- @start: wrap
+///////////////////////////////////////////////////////////////////////////// -->
+
+<!--[if mso]>
+<table width="640" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#f0f1f4"
+        class="wrap outlook--wrap">
+    <tr>
+      <td class="center">
+<![endif]-->
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#f0f1f4"
+       class="wrap">
+    <tr>
+        <td class="center">
+
+            {% block topbar %}{% endblock %}
+
+            {% include 'mail_system/inlined/_include/header.html' %}
+            {% include 'mail_system/inlined/_include/nav.html' %}
+
+            {% block content_pre %}
+
+            <table width="640" cellpadding="0" cellspacing="0" border="0" align="center"
+                   class="wording section devicewidth">
+                <tr>
+                    <td width="100%">
+                        <table bgcolor="#FFFFFF" width="640" align="center" cellspacing="0" cellpadding="0"
+                               border="0" class="devicewidth">
+                            <tr>
+                                <td width="100%">
+                                    <table border="0" cellpadding="0" cellspacing="0" align="center">
+
+            {% endblock %}
+
+            {% block content %}{% endblock %}
+
+            {% block content_post %}
+
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            {% endblock %}
+
+            {% include 'mail_system/inlined/_include/footer.html' %}
+
+            {% block postfooter %}{% endblock %}
+
+        </td>
+    </tr>
+</table>
+
+<!-- @end: wrap -->
+
+<!--[if mso]>
+     </td>
+   </tr>
+</table>
+<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- inject:base:css --><!-- endinject -->
+
+{% load email_url %}
+
+<!-- @start: topbar
+///////////////////////////////////////////////////////////////////////////// -->
+
+<table width="640" cellpadding="0" cellspacing="0" border="0" align="center"
+       class="topbar devicewidth">
+    <tr>
+        <td width="320" height="25" align="left" class="topbar__inner text-left">
+            Se non riesci a leggere la mail
+            <a href="{% if zephir_enabled %}{% verbatim %}{{public_share('url')}}{% endverbatim %}{% endif %}" target="_blank">
+                clicca qui
+            </a>
+        </td>
+        <td width="320" height="25" align="right" class="topbar__inner text-right">
+            Per rimuoverti dalla newsletter
+            <a href="{{ settings.SITE_URL }}{% url 'user_admin:index' %}" target="_blank">
+                clicca qui
+            </a>
+        </td>
+    </tr>
+</table>
+
+<!-- @end: topbar -->

@@ -1,0 +1,93 @@
+<!-- inject:base:css --><!-- endinject -->
+
+{% load email_url %}
+
+<!-- @start: postfooter
+///////////////////////////////////////////////////////////////////////////// -->
+
+<table width="640" cellpadding="0" cellspacing="0" border="0" align="center"
+       class="postfooter devicewidth">
+    <tr>
+        <td width="100%">
+            <table cellspacing="0" cellpadding="0" width="600" align="center"
+                   class="postfooter__outer devicewidth">
+                <tr>
+                    <td height="20" class="spacing">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="postfooter__inner">
+                        <strong>Metodi di pagamento</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="postfooter__inner">
+                        <a href="{% get_email_url 'flat_pages:security' cliente %}#metodi-di-pagamento"
+                           class="postfooter__inner__social" target="_blank">
+                            <img src="http://media.sailthru.com/3m9/1jz/7/2/5594fab629c4f.png"
+                                 alt="metodi pagamento" width="336" height="26" border="0"/>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="postfooter__inner">
+                        &copy;
+                        <a href="{% build_email_url settings.SITE_URL cliente %}"
+                           class="text-color-gray" target="_blank">
+                            Bauzaar
+                        </a> Srl 2015, Tutti i diritti riservati.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="postfooter__inner">
+                        Questo è un sistema elettronico automatico destinato unicamente all'invio e non alla
+                        ricezione di mail. Ti preghiamo pertanto di non rispondere alla presente. Per
+                        qualsiasi domanda o chiarimento contatta il nostro servizio clienti servendoti del
+                        modulo di contatto o chiamando il numero 080.3382061 (attivo dal lunedì al venerdì,
+                        h 9.00 - 13.00 e h 14.30 - 18.30).
+                        La tua privacy è garantita dalla nostra policy interna. vieni a scoprirla cliccando
+
+                        <a href="{% get_email_url 'flat_pages:privacy' cliente %}" target="_blank">
+                            qui
+                        </a>
+                        .
+                        <br/>
+                        <br/>
+
+                        <a href="https://www.facebook.com/bauzaar.it/" target="_blank"
+                           class="postfooter__inner__social">
+                            <img src="http://media.sailthru.com/3m9/1jz/7/2/5594fa82cb149.png"
+                                 alt="Facebook" width="28" height="28" border="0"/>
+                        </a>
+                        &nbsp;
+                        <a href="https://twitter.com/Bauzaar_it/" target="_blank"
+                           class="postfooter__inner__social">
+                            <img src="http://media.sailthru.com/3m9/1jz/7/2/5594fa91ad379.png"
+                                 alt="Twitter" width="28" height="28" border="0"/>
+                        </a>
+                        &nbsp;
+                        <a href="http://it.linkedin.com/company/bauzaar/" target="_blank"
+                           class="postfooter__inner__social">
+                            <img src="http://media.sailthru.com/3m9/1jz/7/2/5594fa8a15875.png"
+                                 alt="Linkedin" width="28" height="28" border="0"/>
+                        </a>
+                        &nbsp;
+                        <a href="https://www.youtube.com/user/BauzaarITA/" target="_blank"
+                           class="postfooter__inner__social">
+                            <img src="http://media.sailthru.com/3m9/1jz/7/2/5594fa9a91c5b.png"
+                                 alt="Youtube" width="28" height="28" border="0"/>
+                        </a>
+                        &nbsp;
+                </tr>
+                <tr>
+                    <td height="5">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- @end: postfooter -->

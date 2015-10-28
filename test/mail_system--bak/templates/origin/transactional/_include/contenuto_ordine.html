@@ -1,0 +1,117 @@
+<!-- inject:base:css --><!-- endinject -->
+
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center"
+       class="devicewidth">
+    <tr>
+        <td width="100%">
+
+            <table width="600" align="center" cellspacing="0" cellpadding="0" border="0" class="nested-table">
+
+                <tr>
+                    <th valign="center" align="center" colspan="2">
+                        Prodotto
+                    </th>
+                    <th valign="center" align="left">
+                        Descrizione
+                    </th>
+                    <th valign="center" align="center">
+                        <span class="remove-mobile">
+                            Prezzo unit.
+                        </span>
+                    </th>
+                    <th valign="center" align="center">
+                        Quantità
+                    </th>
+                    <th valign="center" align="center">
+                        Prezzo vendita
+                    </th>
+                </tr>
+
+                {% for riga_contenuto in righe_contenuto %}
+                    <tr>
+                        <td valign="middle" align="center">
+                            <img src="
+                                    {{ settings.SITE_URL }}{{ riga_contenuto.paginavendita_referenza.referenza.get_immagine.url }}"
+                                 width="{{ riga_contenuto.paginavendita_referenza.referenza.get_image_thumbnail_size.0 }}"
+                                 height="{{ riga_contenuto.paginavendita_referenza.referenza.get_image_thumbnail_size.1 }}"/>
+                        </td>
+                        <td valign="middle" align="center">
+                            <span class="remove-mobile">
+                                {{ riga_contenuto.paginavendita_referenza.referenza.codice }}
+                            </span>
+                        </td>
+                        <td valign="middle" align="left">
+                            {{ riga_contenuto.paginavendita_referenza.referenza.descrizione_estesa }}
+                        </td>
+                        <td valign="middle" align="center">
+                            <span class="remove-mobile">
+                                {{ riga_contenuto.get_prezzo_vendita }}
+                            </span>
+                        </td>
+                        <td valign="middle" align="center">
+                            {{ riga_contenuto.quantita }}
+                        </td>
+                        <td valign="middle" align="center">
+                            {{ riga_contenuto.tot_prezzo_vendita }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td valign="center" align="right" colspan="5">
+                        Importo totale &euro;:
+                    </td>
+                    <td valign="center" align="center">
+                        {{ basket.importo_totale }}
+                    </td>
+                </tr>
+                {% if basket.coupon_ordine %}
+                    <tr>
+                        <td valign="center" align="right" colspan="5">
+                            Coupon Sconto {{ basket.coupon_ordine.codice|truncatechars:14 }} &euro;:
+                        </td>
+                        <td valign="center" align="center">
+                            {{ basket.importo_sconto_coupon }}
+                        </td>
+                    </tr>
+                {% endif %}
+                <tr>
+                    <td valign="center" align="right" colspan="5">
+                        Sconto Sped. Programmate &euro;:
+                    </td>
+                    <td valign="center" align="center">
+                        {{ basket.importo_sconto_fds }}
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="center" align="right" colspan="5">
+                        Spese di consegna &euro;:
+                    </td>
+                    <td valign="center" align="center">
+                        {{ basket.spese_spedizione }}
+                        {% if basket.contrassegno or basket.consegna_al_piano %}
+                            ({{ basket.get_descrizione_spese }})
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="center" align="right" colspan="5">
+                        Servizio "Consegna al piano":
+                    </td>
+                    <td valign="center" align="center">
+                        {% if basket.consegna_al_piano %}Si{% else %}No{% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="center" colspan="5" class="text-right text-bold bg-light-gray">
+                        Totale da pagare &euro;:
+                    </td>
+                    <td valign="center" align="center" class="text-center text-bold bg-light-gray">
+                        {{ basket.importo_vendita }}
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+</table>
