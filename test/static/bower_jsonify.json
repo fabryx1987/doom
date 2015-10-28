@@ -1,0 +1,642 @@
+{
+  endpoint: {
+    name: 'animate.css',
+    source: 'daneden/animate.css',
+    target: '~3.2.6'
+  },
+  canonicalDir: '/Users/mac/Sites/doom/test/bower_components/animate.css',
+  pkgMeta: {
+    name: 'animate.css',
+    version: '3.2.6',
+    main: './animate.css',
+    ignore: [
+      '.*',
+      'src',
+      '*.yml',
+      'Gemfile',
+      'Gemfile.lock',
+      '*.md'
+    ],
+    homepage: 'https://github.com/daneden/animate.css',
+    _release: '3.2.6',
+    _resolution: {
+      type: 'version',
+      tag: '3.2.6',
+      commit: '64d14c1b65c89d588aefe6fccd3a8b76eefd534a'
+    },
+    _source: 'git://github.com/daneden/animate.css.git',
+    _target: '~3.2.6',
+    _originalSource: 'daneden/animate.css'
+  },
+  dependencies: {},
+  nrDependants: 1,
+  versions: [
+    '3.4.0',
+    '3.3.1',
+    '3.3.0',
+    '3.2.6',
+    '3.2.5',
+    '3.2.4',
+    '3.2.3',
+    '3.2.2',
+    '3.2.1',
+    '3.2.0',
+    '3.1.1',
+    '3.1.0',
+    '3.1.0',
+    '3.0.0',
+    '2.1.1',
+    '2.1.0',
+    '2.0.1'
+  ],
+  update: {
+    target: '3.2.6',
+    latest: '3.4.0'
+  }
+}
+{
+  endpoint: {
+    name: 'bourbon',
+    source: 'bourbon',
+    target: '~4.2.5'
+  },
+  canonicalDir: '/Users/mac/Sites/doom/test/bower_components/bourbon',
+  pkgMeta: {
+    name: 'bourbon',
+    description: 'A simple and lightweight mixin library for Sass.',
+    version: '4.2.6',
+    main: 'app/assets/stylesheets/_bourbon.scss',
+    license: 'MIT',
+    ignore: [
+      '**/.*',
+      'CONTRIBUTING.md',
+      'Gemfile',
+      'Gemfile.lock',
+      'Rakefile',
+      '_site',
+      'bin',
+      'bourbon.gemspec',
+      'features',
+      'lib',
+      'package.json',
+      'sache.json',
+      'spec'
+    ],
+    keywords: [
+      'css',
+      'mixins',
+      'sass',
+      'scss'
+    ],
+    authors: [
+      'thoughtbot (http://thoughtbot.com)'
+    ],
+    homepage: 'http://bourbon.io',
+    repository: {
+      type: 'git',
+      url: 'https://github.com/thoughtbot/bourbon.git'
+    },
+    _release: '4.2.6',
+    _resolution: {
+      type: 'version',
+      tag: 'v4.2.6',
+      commit: 'a979f3084e38589f050e1349df71d3a35fe52ae3'
+    },
+    _source: 'git://github.com/thoughtbot/bourbon.git',
+    _target: '~4.2.5',
+    _originalSource: 'bourbon'
+  },
+  dependencies: {},
+  nrDependants: 1,
+  versions: [
+    '4.2.6',
+    '4.2.5',
+    '4.2.4',
+    '4.2.3',
+    '4.2.2',
+    '4.2.1',
+    '4.2.0',
+    '4.1.1',
+    '4.1.0',
+    '4.0.2',
+    '4.0.1',
+    '4.0.0',
+    '4.0.0-rc.2',
+    '4.0.0-rc.1',
+    '3.2.4',
+    '3.2.3',
+    '3.2.2',
+    '3.2.1',
+    '3.2.0',
+    '3.2.0-beta.2',
+    '3.2.0-beta.1',
+    '3.1.8',
+    '3.1.7',
+    '3.1.6',
+    '3.1.5',
+    '3.1.4',
+    '3.1.3',
+    '3.1.2',
+    '3.1.1',
+    '3.1.0',
+    '3.0.1',
+    '3.0.0',
+    '2.1.3',
+    '2.1.2',
+    '2.1.1',
+    '2.1.0',
+    '1.4.0',
+    '1.3.6',
+    '1.3.5',
+    '1.3.4',
+    '1.3.3',
+    '1.3.2',
+    '1.3.1',
+    '1.3.0',
+    '1.2.0',
+    '1.1.0',
+    '1.0.4',
+    '1.0.3',
+    '1.0.2',
+    '1.0.1',
+    '1.0.0',
+    '0.2.1',
+    '0.2.0',
+    '0.1.9',
+    '0.1.8',
+    '0.1.7',
+    '0.1.6',
+    '0.1.5',
+    '0.1.4',
+    '0.1.3',
+    '0.1.2',
+    '0.1.1',
+    '0.1.0',
+    '0.0.9',
+    '0.0.8',
+    '0.0.7',
+    '0.0.6',
+    '0.0.5',
+    '0.0.4',
+    '0.0.3',
+    '0.0.2',
+    '0.0.1'
+  ],
+  update: {
+    target: '4.2.6',
+    latest: '4.2.6'
+  }
+}
+{
+  endpoint: {
+    name: 'font-awesome',
+    source: 'font-awesome',
+    target: '~4.4.0'
+  },
+  canonicalDir: '/Users/mac/Sites/doom/test/bower_components/font-awesome',
+  pkgMeta: {
+    name: 'font-awesome',
+    description: 'Font Awesome',
+    keywords: [],
+    homepage: 'http://fontawesome.io',
+    dependencies: {},
+    devDependencies: {},
+    license: [
+      'OFL-1.1',
+      'MIT',
+      'CC-BY-3.0'
+    ],
+    main: [
+      'less/font-awesome.less',
+      'scss/font-awesome.scss'
+    ],
+    ignore: [
+      '*/.*',
+      '*.json',
+      'src',
+      '*.yml',
+      'Gemfile',
+      'Gemfile.lock',
+      '*.md'
+    ],
+    version: '4.4.0',
+    _release: '4.4.0',
+    _resolution: {
+      type: 'version',
+      tag: 'v4.4.0',
+      commit: 'f2cc73da12f0e6d828bc2daaa72bff457067bf39'
+    },
+    _source: 'git://github.com/FortAwesome/Font-Awesome.git',
+    _target: '~4.4.0',
+    _originalSource: 'font-awesome'
+  },
+  dependencies: {},
+  nrDependants: 1,
+  versions: [
+    '4.4.0',
+    '4.3.0',
+    '4.2.0',
+    '4.1.0',
+    '4.1.0',
+    '4.0.3',
+    '4.0.2',
+    '4.0.1',
+    '4.0.0',
+    '3.2.1',
+    '3.2.0',
+    '3.1.1',
+    '3.1.0',
+    '3.0.2',
+    '3.0.1',
+    '3.0.0',
+    '2.0.0',
+    '1.0.0'
+  ],
+  update: {
+    target: '4.4.0',
+    latest: '4.4.0'
+  }
+}
+{
+  endpoint: {
+    name: 'holderjs',
+    source: 'holderjs',
+    target: '~2.8.2'
+  },
+  canonicalDir: '/Users/mac/Sites/doom/test/bower_components/holderjs',
+  pkgMeta: {
+    name: 'holderjs',
+    main: 'holder.js',
+    license: 'MIT',
+    homepage: 'https://github.com/imsky/holder',
+    version: '2.8.2',
+    _release: '2.8.2',
+    _resolution: {
+      type: 'version',
+      tag: 'v2.8.2',
+      commit: '8233ca9f77c3a8d27ce20319f966c59b7a1ad558'
+    },
+    _source: 'git://github.com/imsky/holder.git',
+    _target: '~2.8.2',
+    _originalSource: 'holderjs'
+  },
+  dependencies: {},
+  nrDependants: 1,
+  versions: [
+    '2.9.0',
+    '2.8.2',
+    '2.8.1',
+    '2.8.0',
+    '2.7.1',
+    '2.7.0',
+    '2.6.1',
+    '2.6.0',
+    '2.5.2',
+    '2.5.0',
+    '2.4.1',
+    '2.4.0',
+    '2.3.2',
+    '2.3.1',
+    '2.3.0',
+    '2.2.0',
+    '2.1.0',
+    '1.9.0'
+  ],
+  update: {
+    target: '2.8.2',
+    latest: '2.9.0'
+  }
+}
+{
+  endpoint: {
+    name: 'jquery',
+    source: 'jquery',
+    target: '~2.1.4'
+  },
+  canonicalDir: '/Users/mac/Sites/doom/test/bower_components/jquery',
+  pkgMeta: {
+    name: 'jquery',
+    version: '2.1.4',
+    main: 'dist/jquery.js',
+    license: 'MIT',
+    ignore: [
+      '**/.*',
+      'build',
+      'dist/cdn',
+      'speed',
+      'test',
+      '*.md',
+      'AUTHORS.txt',
+      'Gruntfile.js',
+      'package.json'
+    ],
+    devDependencies: {
+      sizzle: '2.1.1-jquery.2.1.2',
+      requirejs: '2.1.10',
+      qunit: '1.14.0',
+      sinon: '1.8.1'
+    },
+    keywords: [
+      'jquery',
+      'javascript',
+      'library'
+    ],
+    homepage: 'https://github.com/jquery/jquery',
+    _release: '2.1.4',
+    _resolution: {
+      type: 'version',
+      tag: '2.1.4',
+      commit: '7751e69b615c6eca6f783a81e292a55725af6b85'
+    },
+    _source: 'git://github.com/jquery/jquery.git',
+    _target: '~2.1.4',
+    _originalSource: 'jquery'
+  },
+  dependencies: {},
+  nrDependants: 1,
+  versions: [
+    '3.0.0-alpha1+compat',
+    '3.0.0-alpha1',
+    '2.1.4',
+    '2.1.3',
+    '2.1.2',
+    '2.1.1',
+    '2.1.1-rc2',
+    '2.1.1-rc1',
+    '2.1.1-beta1',
+    '2.1.0',
+    '2.1.0-rc1',
+    '2.1.0-beta3',
+    '2.1.0-beta2',
+    '2.1.0-beta1',
+    '2.0.3',
+    '2.0.2',
+    '2.0.1',
+    '2.0.0',
+    '2.0.0-beta3',
+    '1.11.3',
+    '1.11.2',
+    '1.11.1',
+    '1.11.1-rc2',
+    '1.11.1-rc1',
+    '1.11.1-beta1',
+    '1.11.0',
+    '1.11.0-rc1',
+    '1.11.0-beta3',
+    '1.11.0-beta2',
+    '1.11.0-beta1',
+    '1.10.2',
+    '1.10.1',
+    '1.10.0',
+    '1.10.0-beta1',
+    '1.9.1',
+    '1.9.0',
+    '1.8.3+1',
+    '1.8.3',
+    '1.8.2',
+    '1.8.1',
+    '1.8.0',
+    '1.7.2',
+    '1.7.1',
+    '1.7.0',
+    '1.6.4',
+    '1.6.3',
+    '1.6.2',
+    '1.6.1',
+    '1.6.0',
+    '1.5.2',
+    '1.5.1',
+    '1.5.0',
+    '1.4.4',
+    '1.4.3',
+    '1.4.2',
+    '1.4.1',
+    '1.4.0',
+    '1.3.2',
+    '1.3.1',
+    '1.3.0',
+    '1.2.6',
+    '1.2.5',
+    '1.2.4',
+    '1.2.3',
+    '1.2.2',
+    '1.2.1',
+    '1.1.4',
+    '1.1.3',
+    '1.1.2',
+    '1.1.1',
+    '1.0.4',
+    '1.0.3',
+    '1.0.2',
+    '1.0.1'
+  ],
+  update: {
+    target: '2.1.4',
+    latest: '3.0.0-alpha1+compat'
+  }
+}
+{
+  endpoint: {
+    name: 'modernizr',
+    source: 'modernizr',
+    target: '~2.8.3'
+  },
+  canonicalDir: '/Users/mac/Sites/doom/test/bower_components/modernizr',
+  pkgMeta: {
+    name: 'modernizr',
+    homepage: 'https://github.com/Modernizr/Modernizr',
+    version: '2.8.3',
+    _release: '2.8.3',
+    _resolution: {
+      type: 'version',
+      tag: 'v2.8.3',
+      commit: 'd6bb30c0f12ebb3ddd01e90b0bf435e1c34e6f11'
+    },
+    _source: 'git://github.com/Modernizr/Modernizr.git',
+    _target: '~2.8.3',
+    _originalSource: 'modernizr'
+  },
+  dependencies: {},
+  nrDependants: 1,
+  versions: [
+    '3.1.0',
+    '3.0.0',
+    '2.8.3',
+    '2.8.2',
+    '2.8.1',
+    '2.8.0',
+    '2.7.2',
+    '2.7.1',
+    '2.7.0',
+    '2.6.3',
+    '2.6.2',
+    '2.6.1',
+    '2.5.3',
+    '2.5.2',
+    '2.5.1',
+    '2.0.6'
+  ],
+  update: {
+    target: '2.8.3',
+    latest: '3.1.0'
+  }
+}
+{
+  endpoint: {
+    name: 'neat',
+    source: 'neat',
+    target: '~1.7.2'
+  },
+  canonicalDir: '/Users/mac/Sites/doom/test/bower_components/neat',
+  pkgMeta: {
+    name: 'neat',
+    description: 'A lightweight, semantic grid framework built with Bourbon',
+    version: '1.7.2',
+    main: 'app/assets/stylesheets/_neat.scss',
+    license: 'MIT',
+    ignore: [
+      '**/.*',
+      'CONTRIBUTING.md',
+      'Gemfile',
+      'Gemfile.lock',
+      'NEWS.md',
+      'Rakefile',
+      'bin',
+      'lib',
+      'neat.gemspec',
+      'sache.json',
+      'spec',
+      'test'
+    ],
+    keywords: [
+      'bourbon',
+      'columns',
+      'grid',
+      'layout',
+      'media',
+      'media-queries',
+      'neat',
+      'queries',
+      'sass',
+      'scss',
+      'semantic'
+    ],
+    authors: [
+      'thoughtbot (http://thoughtbot.com)'
+    ],
+    homepage: 'http://neat.bourbon.io',
+    repository: {
+      type: 'git',
+      url: 'https://github.com/thoughtbot/neat.git'
+    },
+    dependencies: {
+      bourbon: '>=4.0'
+    },
+    _release: '1.7.2',
+    _resolution: {
+      type: 'version',
+      tag: 'v1.7.2',
+      commit: '178f2ef2ac2d1273f8c9e7cde67f319761e4b824'
+    },
+    _source: 'git://github.com/thoughtbot/neat.git',
+    _target: '~1.7.2',
+    _originalSource: 'neat'
+  },
+  dependencies: {
+    bourbon: {
+      endpoint: [
+        Object
+      ],
+      canonicalDir: '/Users/mac/Sites/doom/test/bower_components/bourbon',
+      pkgMeta: [
+        Object
+      ],
+      dependencies: {},
+      nrDependants: 1,
+      versions: [
+        Object
+      ],
+      update: [
+        Object
+      ]
+    }
+  },
+  nrDependants: 1,
+  versions: [
+    '1.7.2',
+    '1.7.1',
+    '1.7.0',
+    '1.6.0',
+    '1.5.1',
+    '1.5.0',
+    '1.4.0',
+    '1.3.0',
+    '1.2.1',
+    '1.2.0',
+    '1.1.0',
+    '1.0.2',
+    '1.0.2',
+    '1.0.1',
+    '1.0.0',
+    '0.4.2'
+  ],
+  update: {
+    target: '1.7.2',
+    latest: '1.7.2'
+  }
+}
+{
+  endpoint: {
+    name: 'sass-mediaqueries',
+    source: 'sass-mediaqueries',
+    target: '~1.5.1'
+  },
+  canonicalDir: '/Users/mac/Sites/doom/test/bower_components/sass-mediaqueries',
+  pkgMeta: {
+    name: 'sass-mediaqueries',
+    version: '1.5.1',
+    homepage: 'https://github.com/paranoida/sass-mediaqueries',
+    authors: [
+      'Rafal Bromirski <rafal.bromirski@gmail.com>'
+    ],
+    description: 'Media Queries mixins for Sass - fully customizable and very easy to use. Great extension for compass or bourbon.',
+    main: '_media-queries.scss',
+    ignore: [
+      'demo'
+    ],
+    keywords: [
+      'sass',
+      'scss',
+      'css',
+      'media',
+      'queries',
+      'mediaqueries',
+      'responsive'
+    ],
+    license: 'MIT',
+    _release: '1.5.1',
+    _resolution: {
+      type: 'version',
+      tag: '1.5.1',
+      commit: 'c5d7b4dd195b9769e2f43f038c095413efccb2bd'
+    },
+    _source: 'git://github.com/paranoida/sass-mediaqueries.git',
+    _target: '~1.5.1',
+    _originalSource: 'sass-mediaqueries'
+  },
+  dependencies: {},
+  nrDependants: 1,
+  versions: [
+    '1.6.1',
+    '1.6.0',
+    '1.5.1',
+    '1.5.0',
+    '1.4.0',
+    '1.3.1',
+    '1.3.0'
+  ],
+  update: {
+    target: '1.5.1',
+    latest: '1.6.1'
+  }
+}

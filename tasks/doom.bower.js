@@ -12,9 +12,42 @@ var $ = require('../lib/plugins');
 // ---------------------------------------------
 
 var bower_manager = function () {
-    $.gulp.task('bower:manager', function(){
-        return $.gulp.src($.path.join(doom.bower.root, '/**/bower.json'))
-            .pipe(console.log(this))
+    $.gulp.task('bower:manager', function () {
+
+        $.bower.commands.list().on('end', function (results) {
+
+            doom.bower.manager = {
+                main: {},
+                no_main: {}
+            };
+
+            var bower_dependencies = results.dependencies;
+
+            for (var i = 0; i < Object.keys(bower_dependencies).length; i++) {
+                var bower_key = Object.keys(bower_dependencies)[i];
+                var bower_value = bower_dependencies[bower_key];
+                var bower_canonical = bower_value.canonicalDir;
+                var bower_pkg = bower_value.pkgMeta;
+                var bower_main = bower_pkg.main;
+
+                if (bower_main === undefined) {
+                    doom.bower.manager.no_main[bower_key] = bower_key;
+                }
+                else {
+                    doom.bower.manager.main[bower_key] = bower_canonical + '/' + bower_main;
+                }
+
+                //$.path.join(doom.bower.root, '/**/bower.json');
+                //doom.bower.manager[key] = main;
+            }
+
+            console.log(doom.bower.manager);
+
+            return doom.bower.manager;
+        });
+
+        //return $.gulp.src($.path.join(doom.bower.root, '/**/bower.json'))
+        //    .pipe();
     });
 };
 
