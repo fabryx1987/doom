@@ -13,14 +13,16 @@ and syntax checking in development mode and minification for production mode
 - Context manager
 
 ```bash
- gulp ls
+ gulp
  Using gulpfile ~/path/to/gulpfile.js
  Starting 'default'...
  
  Main Tasks
  ------------------------------
+     3rd
      default
      dev
+     ls
      mail
      prod
      serve
@@ -28,6 +30,7 @@ and syntax checking in development mode and minification for production mode
  
  Sub Tasks
  ------------------------------
+     bower:manager
      create:bower_fonts
      create:bower_images
      create:bower_install
@@ -63,6 +66,18 @@ and syntax checking in development mode and minification for production mode
      mail:styles_inliner
      serve:browser-sync
      serve:html
+ 
+ Wraiths
+ ------------------------------
+     --wraith:name_1
+     --wraith:name_2
+     --wraith:name_3
+ 
+ Contexts
+ ------------------------------
+     --context:desktop
+     --context:tablet
+     --context:phone
 ```
 
 ## Get Started
