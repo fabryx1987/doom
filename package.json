@@ -41,6 +41,7 @@
     "bower-installer": "^1.2.0",
     "browser-sync": "^2.9.11",
     "browserify": "^12.0.0",
+    "colors": "^1.1.2",
     "del": "^2.0.2",
     "fs": "0.0.2",
     "glob": "^5.0.15",

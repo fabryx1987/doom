@@ -12,7 +12,34 @@ var $ = require('./lib/plugins');
 // ---------------------------------------------
 
 var task_listing = function () {
-    $.gulp.task('default', $.task_listing);
+    $.gulp.task('ls', $.task_listing);
+};
+
+var init = function () {
+    $.gulp.task('default', ['ls'], function () {
+
+        console.log(' ');
+        console.log($.colors.gray('Wraiths'));
+        console.log($.colors.gray('------------------------------'));
+
+        for (var i = 0; i < Object.keys(process.wraith.paths).length; i++) {
+
+            var wraith = Object.keys(process.wraith.paths)[i];
+            console.log('    ' + $.colors.magenta('--wraith:' + wraith));
+        }
+
+        console.log(' ');
+        console.log($.colors.gray('Contexts'));
+        console.log($.colors.gray('------------------------------'));
+
+        for (var i = 0; i < Object.keys(process.wraith.context).length; i++) {
+
+            var context = Object.keys(process.wraith.context)[i];
+            console.log('    ' + $.colors.yellow('--context:' + context));
+        }
+
+        console.log(' ');
+    });
 };
 
 var delete_dist = function () {
@@ -39,6 +66,7 @@ var flush_cache_bower = function () {
 // ---------------------------------------------
 
 module.exports = {
+    'init': init(),
     'task_listing': task_listing(),
     'delete_dist': delete_dist(),
     'flush_cache_npm': flush_cache_npm(),
