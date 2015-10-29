@@ -10,7 +10,7 @@
     }
   ],
   "bin": {
-    "module-name": "./tasks"
+    "module-name": "./modules"
   },
   "files": [
     "LICENSE",
