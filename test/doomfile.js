@@ -17,6 +17,7 @@ process.wraith = {
         'jago': '/jago'
     },
     'context': {
+        'common': '/common',
         'desktop': '/desktop',
         'tablet': '/tablet',
         'phone': '/phone'
@@ -26,8 +27,8 @@ process.wraith = {
 process.doom = {
     'gulp': gulp,
     'static': base + '/static',
-    'templates': './templates',
-    'common': '/_common',
+    'templates': base + '/templates',
+    'core': '/_core',
     'dist': '/_dist',
     'proxy': 'local.dev:8000',
     'app': {

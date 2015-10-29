@@ -1,4 +1,4 @@
-# doom
+# Doom
 
 A bunch of useful configurable Gulp tasks global to many projects,
 to manage development and production tasks with ease.
@@ -17,67 +17,72 @@ and syntax checking in development mode and minification for production mode
  Using gulpfile ~/path/to/gulpfile.js
  Starting 'default'...
  
- Main Tasks
- ------------------------------
-     3rd
-     default
-     dev
-     ls
-     mail
-     prod
-     serve
-     vendor
- 
- Sub Tasks
- ------------------------------
-     bower:manager
-     create:bower_fonts
-     create:bower_images
-     create:bower_install
-     create:bower_scripts
-     create:bower_styles
-     create:fonts_app
-     create:images_app
-     create:scripts_app
-     create:styles_app
-     create:styles_gui
-     create:third_party_scripts
-     create:third_party_styles
-     delete:bower_fonts
-     delete:bower_images
-     delete:bower_install
-     delete:bower_scripts
-     delete:bower_styles
-     delete:dist
-     delete:fonts_app
-     delete:images_app
-     delete:scripts_app
-     delete:styles_app
-     delete:styles_gui
-     delete:third_party_scripts
-     delete:third_party_styles
-     flush:cache_bower
-     flush:cache_npm
-     mail:delete_styles
-     mail:delete_templates
-     mail:styles
-     mail:styles_convert
-     mail:styles_inject
-     mail:styles_inliner
-     serve:browser-sync
-     serve:html
- 
- Wraiths
- ------------------------------
-     --wraith:name_1
-     --wraith:name_2
-     --wraith:name_3
- 
- Contexts
- ------------------------------
-     --context:desktop
-     --context:tablet
-     --context:phone
+Main Tasks
+------------------------------
+    3rd
+    default
+    dev
+    ls
+    prod
+    serve
+    vendor
+
+Sub Tasks
+------------------------------
+    bower:manager
+    create:bower_fonts
+    create:bower_images
+    create:bower_install
+    create:bower_scripts
+    create:bower_styles
+    create:fonts_app
+    create:images_app
+    create:scripts_app
+    create:styles_app
+    create:styles_gui
+    create:third_party_scripts
+    create:third_party_styles
+    delete:bower_fonts
+    delete:bower_images
+    delete:bower_install
+    delete:bower_scripts
+    delete:bower_styles
+    delete:dist
+    delete:fonts_app
+    delete:images_app
+    delete:scripts_app
+    delete:styles_app
+    delete:styles_gui
+    delete:third_party_scripts
+    delete:third_party_styles
+    flush:cache_bower
+    flush:cache_npm
+    mail:delete_styles
+    mail:delete_templates
+    mail:dev
+    mail:prod
+    mail:styles
+    mail:styles_convert
+    mail:styles_inject
+    mail:styles_inliner
+    serve:browser-sync
+    serve:html
+
+[12:39:47] Finished 'ls' after 1.48 ms
+[12:39:47] Starting 'default'...
+
+Wraiths
+------------------------------
+    --wraith:halo
+    --wraith:fulgor
+    --wraith:jago
+
+Contexts
+------------------------------
+    --context:common
+    --context:desktop
+    --context:tablet
+    --context:phone
 ```
 
 ## Get Started

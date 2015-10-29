@@ -1,6 +1,6 @@
 {
   "name": "doom",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A bunch of modular gulp tasks",
   "author": "Fabio Cencetti <hey@kreo.me>",
   "contributors": [
@@ -74,6 +74,7 @@
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.3.5",
     "imagemin": "^3.2.1",
+    "nunjucks": "^2.1.0",
     "pretty-hrtime": "^1.0.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",

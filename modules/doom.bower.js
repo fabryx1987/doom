@@ -59,7 +59,7 @@ var create_bower_stack = function (vendor_src, vendor_files) {
 
     var vendor_stack = [];
     for (var i = 0; i < vendor_src.length; i++) {
-        vendor_stack.push(config.static + doom.common + doom.bower.static + vendor_src[i] + vendor_files);
+        vendor_stack.push(config.static + doom.core + doom.bower.static + vendor_src[i] + vendor_files);
     }
     return vendor_stack;
 };
@@ -110,7 +110,7 @@ var create_bower_install = function () {
 
 var create_bower_styles = function () {
     $.gulp.task('create:bower_styles', function () {
-        return $.gulp.src(config.static + doom.common + doom.bower.static + '/**/*.css')
+        return $.gulp.src(config.static + doom.core + doom.bower.static + '/**/*.css')
             .pipe($.order(doom.bower.order))
             .pipe($.concat(doom.bower.name + '.css'))
             .pipe($.replace(/([^'"(]*fonts\/|font\/|images\/|img\/)/g, './'))
@@ -119,7 +119,7 @@ var create_bower_styles = function () {
                 keepSpecialComments: 0,
                 shorthandCompacting: true
             }))
-            .pipe($.gulp.dest(doom.static + doom.common + doom.dist))
+            .pipe($.gulp.dest(doom.static + doom.core + doom.dist))
             .on('error', errors)
             .pipe($.size({showFiles: true}));
     });
@@ -127,11 +127,11 @@ var create_bower_styles = function () {
 
 var create_bower_scripts = function () {
     $.gulp.task('create:bower_scripts', function () {
-        return $.gulp.src(config.static + doom.common + doom.bower.static + '/**/*.js')
+        return $.gulp.src(config.static + doom.core + doom.bower.static + '/**/*.js')
             .pipe($.order(doom.bower.order))
             .pipe($.concat(doom.bower.name + '.js'))
             .pipe($.uglify({mangle: true}))
-            .pipe($.gulp.dest(config.static + doom.common + doom.dist))
+            .pipe($.gulp.dest(config.static + doom.core + doom.dist))
             .on('error', errors)
             .pipe($.size({showFiles: true}));
     });
@@ -140,7 +140,7 @@ var create_bower_scripts = function () {
 var create_bower_images = function () {
     $.gulp.task('create:bower_images', function () {
         return $.gulp.src(create_bower_stack(doom.bower.images, '/*.{gif,png,jpg,jpeg,cur}'))
-            .pipe($.gulp.dest(config.static + doom.common + doom.dist))
+            .pipe($.gulp.dest(config.static + doom.core + doom.dist))
             .on('error', errors)
             .pipe($.size({showFiles: true}));
     });
@@ -149,7 +149,7 @@ var create_bower_images = function () {
 var create_bower_fonts = function () {
     $.gulp.task('create:bower_fonts', function () {
         return $.gulp.src(create_bower_stack(doom.bower.fonts, '/*.{ttf,eot,svg,woff,woff2}'))
-            .pipe($.gulp.dest(config.static + doom.common + doom.dist))
+            .pipe($.gulp.dest(config.static + doom.core + doom.dist))
             .on('error', errors)
             .pipe($.size({showFiles: true}));
     });

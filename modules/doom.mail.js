@@ -31,7 +31,7 @@ var mail_styles = function () {
             .pipe($.sass({
                 sourceMap: doom.mail.dist,
                 includePaths: doom.bower.include_paths,
-                indentedSyntax: true,
+                indentedSyntax: false,
                 precision: 10,
                 outputStyle: 'expanded',
                 sourceMapContents: true
@@ -49,9 +49,9 @@ var mail_styles_inliner = function () {
 
         return $.gulp.src(doom.mail.root + doom.mail.templates.origin + '/**/**/*.html')
             .pipe($.inject(
-                $.gulp.src(doom.mail.root + doom.mail.dist + '/base.css', {read: false}), {
+                $.gulp.src(doom.mail.root + doom.mail.dist + '/app.css', {read: false}), {
                     relative: true,
-                    starttag: '<!-- inject:base:{{ext}} -->'
+                    starttag: '<!-- inject:app:{{ext}} -->'
                 }
             ))
             .pipe($.inline_css({
@@ -65,9 +65,40 @@ var mail_styles_inliner = function () {
     });
 }
 
+//var mail_styles_inject = function () {
+//    $.gulp.task('mail:styles_inject', function () {
+//        return $.gulp.src(doom.mail.root + doom.mail.templates.inlined + '/_extend/base.html')
+//            .pipe($.inject(
+//                $.gulp.src(doom.mail.root + doom.mail.dist + '/responsive.css', {read: true}), {
+//                    relative: true,
+//                    starttag: '<!-- inject:responsive:{{ext}} -->',
+//                    transform: function (filePath, file) {
+//                        return "<style>" + file.contents.toString('utf8') + "</style>";
+//                    }
+//                }
+//            ))
+//            .pipe($.gulp.dest(doom.mail.root + doom.mail.templates.inlined + '/_extend'))
+//            .pipe($.size({showFiles: true}));
+//    });
+//};
+//
+//var mail_styles_convert = function () {
+//    $.gulp.task('mail:styles_convert', function () {
+//        return $.gulp.src(doom.mail.root + doom.mail.templates.inlined + '/_extend/base.html')
+//            .pipe($.debug())
+//            .pipe($.replace(/<link.*?href="(.+?\.css)"[^>]*>/g, function (s, filename) {
+//                var style = $.fs.readFileSync(filename, 'utf8');
+//                return '<style>\n' + style + '\n</style>';
+//            }))
+//            .pipe($.gulp.dest(doom.mail.root + doom.mail.templates.inlined + '/_extend'))
+//            .pipe($.size({showFiles: true}));
+//    });
+//}
+
+
 var mail_styles_inject = function () {
     $.gulp.task('mail:styles_inject', function () {
-        return $.gulp.src(doom.mail.root + doom.mail.templates.inlined + '/_extend/base.html')
+        return $.gulp.src(doom.mail.root + doom.mail.templates.inlined + '/**/*.html')
             .pipe($.inject(
                 $.gulp.src(doom.mail.root + doom.mail.dist + '/responsive.css', {read: true}), {
                     relative: true,
@@ -77,29 +108,36 @@ var mail_styles_inject = function () {
                     }
                 }
             ))
-            .pipe($.gulp.dest(doom.mail.root + doom.mail.templates.inlined + '/_extend'))
+            .pipe($.gulp.dest(doom.mail.root + doom.mail.templates.inlined))
             .pipe($.size({showFiles: true}));
     });
 };
 
 var mail_styles_convert = function () {
     $.gulp.task('mail:styles_convert', function () {
-        return $.gulp.src(doom.mail.root + doom.mail.templates.inlined + '/_extend/base.html')
-            .pipe($.debug())
+        return $.gulp.src(doom.mail.root + doom.mail.templates.inlined + '/**/*.html')
             .pipe($.replace(/<link.*?href="(.+?\.css)"[^>]*>/g, function (s, filename) {
                 var style = $.fs.readFileSync(filename, 'utf8');
                 return '<style>\n' + style + '\n</style>';
             }))
-            .pipe($.gulp.dest(doom.mail.root + doom.mail.templates.inlined + '/_extend'))
+            .pipe($.gulp.dest(doom.mail.root + doom.mail.templates.inlined))
             .pipe($.size({showFiles: true}));
     });
 }
 
-var mail = function () {
-    $.gulp.task('mail', ['mail:delete_styles', 'mail:delete_templates'], function () {
+var mail_dev = function () {
+    process.prod = false;
+    $.gulp.task('mail:dev', ['mail:delete_styles'], function () {
+        $.run_sequence(['mail:styles']);
+    });
+};
+
+var mail_prod = function () {
+    $.gulp.task('mail:prod', ['mail:delete_styles', 'mail:delete_templates'], function () {
         $.run_sequence('mail:styles', ['mail:styles_inliner'], ['mail:styles_inject'], ['mail:styles_convert']);
     });
 };
+
 
 // Module API
 // ---------------------------------------------
@@ -111,5 +149,6 @@ module.exports = {
     'mail_styles_inliner': mail_styles_inliner(),
     'mail_styles_inject': mail_styles_inject(),
     'mail_styles_convert': mail_styles_convert(),
-    'mail': mail()
+    'mail_dev': mail_dev(),
+    'mail_prod': mail_prod()
 };
